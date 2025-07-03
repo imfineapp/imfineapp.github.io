@@ -68,7 +68,7 @@ This project is built with:
 
 The project is automatically deployed to GitHub Pages whenever you push changes to the master branch. The deployment workflow is configured in `.github/workflows/deploy.yml`.
 
-**Live site**: https://imfineapp.github.io/Imfineapp/
+**Live site**: https://imfineapp.github.io/
 
 ### Lovable (Manual)
 
