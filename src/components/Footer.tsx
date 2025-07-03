@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/imfine_bot', '_blank');
+    window.open('https://t.me/imfine_app_bot', '_blank');
   };
 
   const handleChannelOpen = () => {
