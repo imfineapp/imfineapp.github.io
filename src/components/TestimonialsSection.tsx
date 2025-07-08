@@ -2,19 +2,19 @@
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      text: "Сначала это казалось странным. А потом помогло.",
-      author: "Алексей, 34 года",
-      role: "IT-менеджер"
+      text: "At first it seemed weird. But then it helped.",
+      author: "Alex, 34 years old",
+      role: "IT Manager"
     },
     {
-      text: "Я просто начал делать одну карточку в день. И стало проще.",
-      author: "Михаил, 28 лет", 
-      role: "Предприниматель"
+      text: "I just started doing one card a day. And it became easier.",
+      author: "Michael, 28 years old", 
+      role: "Entrepreneur"
     },
     {
-      text: "Мне не нужно было ничего говорить. Это как будто кто-то дал мне голос.",
-      author: "Дмитрий, 41 год",
-      role: "Госслужащий"
+      text: "I didn't need to say anything. It's like someone gave me a voice.",
+      author: "David, 41 years old",
+      role: "Civil Servant"
     }
   ];
 
@@ -23,10 +23,10 @@ export const TestimonialsSection = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Что говорят <span className="text-gradient">пользователи</span>
+            What <span className="text-gradient">users say</span>
           </h2>
           <p className="section-subtitle">
-            Реальные отзывы мужчин, которые сделали первый шаг
+            Real reviews from men who took the first step
           </p>
         </div>
         

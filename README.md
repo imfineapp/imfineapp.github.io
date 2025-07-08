@@ -4,8 +4,6 @@
 
 **URL**: https://lovable.dev/projects/462dccff-743e-4172-aec7-bcfcd1536488
 
-**GitHub Pages**: https://imfineapp.github.io/
-
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -63,14 +61,6 @@ This project is built with:
 - Tailwind CSS
 
 ## How can I deploy this project?
-
-### GitHub Pages (Automatic)
-
-The project is automatically deployed to GitHub Pages whenever you push changes to the master branch. The deployment workflow is configured in `.github/workflows/deploy.yml`.
-
-**Live site**: https://imfineapp.github.io/
-
-### Lovable (Manual)
 
 Simply open [Lovable](https://lovable.dev/projects/462dccff-743e-4172-aec7-bcfcd1536488) and click on Share -> Publish.
 

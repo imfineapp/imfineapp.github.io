@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 export const PricingSection = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/imfine_app_bot', '_blank');
+    window.open('https://t.me/imfine_bot', '_blank');
   };
 
   return (
@@ -12,10 +12,10 @@ export const PricingSection = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Начни <span className="text-gradient">бесплатно</span>
+            Start <span className="text-gradient">free</span>
           </h2>
           <p className="section-subtitle">
-            Базовый доступ всегда бесплатен. Премиум — по желанию
+            Basic access is always free. Premium — by choice
           </p>
         </div>
         
@@ -23,34 +23,34 @@ export const PricingSection = () => {
           {/* Free Plan */}
           <div className="card-pain text-center relative">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2">Базовый</h3>
+              <h3 className="text-2xl font-bold mb-2">Basic</h3>
               <div className="text-4xl font-bold text-primary mb-2">
-                Бесплатно
+                Free
               </div>
-              <p className="text-muted-foreground">Навсегда</p>
+              <p className="text-muted-foreground">Forever</p>
             </div>
             
             <ul className="space-y-3 mb-8 text-left">
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Ежедневный чек-ин</span>
+                <span className="text-sm">Daily check-in</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">3 карточки в день</span>
+                <span className="text-sm">3 cards per day</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Базовые бейджи</span>
+                <span className="text-sm">Basic badges</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Полная анонимность</span>
+                <span className="text-sm">Full anonymity</span>
               </li>
             </ul>
             
             <Button onClick={handleTelegramStart} className="btn-primary w-full">
-              Начать бесплатно
+              Start free
             </Button>
           </div>
           
@@ -58,78 +58,78 @@ export const PricingSection = () => {
           <div className="card-pain text-center relative border-primary">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
               <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold">
-                Популярный
+                Popular
               </span>
             </div>
             
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2">Премиум</h3>
+              <h3 className="text-2xl font-bold mb-2">Premium</h3>
               <div className="text-4xl font-bold text-primary mb-2">
-                149 ₽
+                $4.99
               </div>
-              <p className="text-muted-foreground">в месяц</p>
-              <p className="text-xs text-muted-foreground mt-1">или 1499 ₽ в год</p>
+              <p className="text-muted-foreground">per month</p>
+              <p className="text-xs text-muted-foreground mt-1">or $49.99 per year</p>
             </div>
             
             <ul className="space-y-3 mb-8 text-left">
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Всё из базового</span>
+                <span className="text-sm">Everything from Basic</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Неограниченные карточки</span>
+                <span className="text-sm">Unlimited cards</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Микрокурсы</span>
+                <span className="text-sm">Micro-courses</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Расширенная статистика</span>
+                <span className="text-sm">Advanced statistics</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Приоритетная поддержка</span>
+                <span className="text-sm">Priority support</span>
               </li>
             </ul>
             
             <Button onClick={handleTelegramStart} className="btn-primary w-full">
-              Попробовать премиум
+              Try Premium
             </Button>
           </div>
           
           {/* Donation */}
           <div className="card-pain text-center">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2">Поддержка</h3>
+              <h3 className="text-2xl font-bold mb-2">Support</h3>
               <div className="text-4xl font-bold text-primary mb-2">
                 💎
               </div>
-              <p className="text-muted-foreground">По желанию</p>
+              <p className="text-muted-foreground">Optional</p>
             </div>
             
             <ul className="space-y-3 mb-8 text-left">
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Криптодонаты (TON)</span>
+                <span className="text-sm">Crypto donations (TON)</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Разовые карточки</span>
+                <span className="text-sm">One-time cards</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Помощь проекту</span>
+                <span className="text-sm">Help the project</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">Эксклюзивные бейджи</span>
+                <span className="text-sm">Exclusive badges</span>
               </li>
             </ul>
             
             <Button onClick={handleTelegramStart} variant="outline" className="w-full">
-              Поддержать проект
+              Support project
             </Button>
           </div>
         </div>
