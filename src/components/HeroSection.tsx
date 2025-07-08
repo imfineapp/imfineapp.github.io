@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/menhausen_bot', '_blank');
+    window.open('https://t.me/menhausen_app', '_blank');
   };
 
   return (

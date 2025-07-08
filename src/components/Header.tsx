@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const Header = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/menhausen_bot', '_blank');
+    window.open('https://t.me/menhausen_app', '_blank');
   };
 
   return (

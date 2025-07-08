@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/menhausen_bot', '_blank');
+    window.open('https://t.me/menhausen_app', '_blank');
   };
 
   const handleChannelOpen = () => {
-    window.open('https://t.me/menhausen_channel', '_blank');
+    window.open('https://t.me/menhausen_app', '_blank');
   };
 
   return (

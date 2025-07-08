@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 export const PricingSection = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/imfine_bot', '_blank');
+    window.open('https://t.me/menhausen_app', '_blank');
   };
 
   return (
