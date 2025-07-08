@@ -3,27 +3,27 @@ import { Button } from "@/components/ui/button";
 
 export const Header = () => {
   const handleTelegramStart = () => {
-    window.open('https://t.me/imfine_app_bot', '_blank');
+    window.open('https://t.me/menhausen_bot', '_blank');
   };
 
   return (
-    <header className="section-padding py-4 md:py-6 sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <header className="section-padding py-6 md:py-8 sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container-max flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">I</span>
-          </div>
+        <div className="flex items-center space-x-4">
           <div>
-            <h1 className="text-lg font-bold">I'm fine</h1>
-            <p className="text-xs text-muted-foreground">Я в порядке</p>
+            <img 
+              src="/lovable-uploads/a88e0857-3b52-41f1-b9d1-d49365e4ed35.png" 
+              alt="Menhousen logo" 
+              className="w-32 h-auto"
+            />
           </div>
         </div>
         
         <Button 
           onClick={handleTelegramStart}
-          className="btn-primary"
+          className="btn-primary glow-effect"
         >
-          Начать в Telegram
+          Start in Telegram
         </Button>
       </div>
     </header>

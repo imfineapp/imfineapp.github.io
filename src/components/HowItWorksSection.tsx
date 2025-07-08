@@ -1,25 +1,25 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search, FileText, Award } from "lucide-react";
 
 export const HowItWorksSection = () => {
   const steps = [
     {
       number: "01",
-      title: "Отвечаешь, как ты себя чувствуешь",
-      description: "Простой чек-ин: выбираешь своё состояние из нескольких вариантов",
-      icon: "🔍"
+      title: "Tell us how you feel",
+      description: "Simple check-in: choose your current state from several options",
+      Icon: Search
     },
     {
       number: "02", 
-      title: "Получаешь карточку на тему",
-      description: "60-секундное упражнение: дыхание, рефлексия или когнитивная техника",
-      icon: "📋"
+      title: "Get a card on the topic",
+      description: "60-second exercise: breathing, reflection or cognitive technique",
+      Icon: FileText
     },
     {
       number: "03",
-      title: "Завершаешь — получаешь поддержку",
-      description: "Бейдж за выполнение, возможность продолжить или попробовать ещё",
-      icon: "🏆"
+      title: "Complete and get support",
+      description: "Badge for completion, option to continue or try more",
+      Icon: Award
     }
   ];
 
@@ -28,10 +28,10 @@ export const HowItWorksSection = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Как это <span className="text-gradient">работает</span>
+            How it <span className="text-gradient">works</span>
           </h2>
           <p className="section-subtitle">
-            Три простых шага к лучшему самочувствию
+            Three simple steps to better well-being
           </p>
         </div>
         
@@ -39,7 +39,9 @@ export const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div key={index} className="text-center relative">
               <div className="mb-6">
-                <div className="text-6xl mb-4">{step.icon}</div>
+                <div className="mb-4">
+                  <step.Icon className="w-16 h-16 mx-auto text-primary" strokeWidth={1.5} />
+                </div>
                 <div className="text-2xl font-bold text-primary mb-2">{step.number}</div>
               </div>
               

@@ -9,28 +9,28 @@ import {
 export const FAQSection = () => {
   const faqs = [
     {
-      question: "Это терапия?",
-      answer: "Нет. Это научно обоснованная самопомощь. I'm fine — это инструмент для самостоятельной работы с эмоциями, основанный на проверенных психологических методах. Мы не заменяем профессиональную медицинскую помощь."
+      question: "Is this therapy?",
+      answer: "No. This is evidence-based self-help. I'm fine is a tool for independent work with emotions, based on proven psychological methods. We do not replace professional medical help."
     },
     {
-      question: "Это безопасно?",
-      answer: "Да. Шифрование и анонимность встроены в продукт на всех уровнях. Мы используем AES-256 шифрование, не собираем личные данные и не требуем регистрации. Твоя конфиденциальность — наш приоритет."
+      question: "Is this safe?",
+      answer: "Yes. Encryption and anonymity are built into the product at all levels. We use AES-256 encryption, don't collect personal data and don't require registration. Your privacy is our priority."
     },
     {
-      question: "Это только для мужчин?",
-      answer: "Да, продукт создан с учётом мужской психологии и особенностей. Но мы открыты всем, кто готов быть честным с собой и работать над своим эмоциональным состоянием."
+      question: "Is this only for men?",
+      answer: "Yes, the product is created taking into account male psychology and features. But we are open to everyone who is ready to be honest with themselves and work on their emotional state."
     },
     {
-      question: "Как это работает в Telegram?",
-      answer: "I'm fine — это Telegram Mini App. Открываешь бота, проходишь простой чек-ин, получаешь карточку-упражнение на 60 секунд. Всё происходит прямо в мессенджере, который у тебя уже есть."
+      question: "How does this work in Telegram?",
+      answer: "I'm fine is a Telegram Mini App. Open the bot, go through a simple check-in, get a 60-second exercise card. Everything happens right in the messenger you already have."
     },
     {
-      question: "Сколько времени это занимает?",
-      answer: "1-3 минуты в день. Чек-ин занимает 30 секунд, карточка-упражнение — 60 секунд. Можешь делать больше, если хочешь, но и минимум уже даёт результат."
+      question: "How much time does this take?",
+      answer: "1-3 minutes a day. Check-in takes 30 seconds, exercise card — 60 seconds. You can do more if you want, but even the minimum gives results."
     },
     {
-      question: "Что если мне нужна серьёзная помощь?",
-      answer: "I'm fine — это поддержка, а не лечение. Если ты чувствуешь, что тебе нужна профессиональная помощь, мы всегда рекомендуем обратиться к психологу или психиатру. Твоё здоровье важнее всего."
+      question: "What if I need serious help?",
+      answer: "I'm fine is support, not treatment. If you feel you need professional help, we always recommend contacting a psychologist or psychiatrist. Your health is more important than anything."
     }
   ];
 
@@ -39,10 +39,10 @@ export const FAQSection = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            Вопросы и <span className="text-gradient">ответы</span>
+            Questions and <span className="text-gradient">answers</span>
           </h2>
           <p className="section-subtitle">
-            Всё, что нужно знать о I'm fine
+            Everything you need to know about I'm fine
           </p>
         </div>
         
