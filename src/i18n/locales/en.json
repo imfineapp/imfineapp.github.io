@@ -70,8 +70,8 @@
     "badge": {
       "title": "AES-256 Encryption",
       "rows": {
-        "personalData": { "label": "Personal data", "value": "Encrypted" },
-        "answers": { "label": "Answers to questions", "value": "Local" },
+        "personalData": { "label": "Personal data", "value": "Not collected" },
+        "answers": { "label": "Answers to questions", "value": "Encrypted" },
         "session": { "label": "Session history", "value": "Anonymous" },
         "security": { "label": "Security level", "value": "Banking" }
       }
@@ -90,7 +90,8 @@
     "startNow": "Start Now",
     "startNowDescription": "Ready to take care of your mental health? Start your journey now.",
     "startButton": "Start in Telegram",
-    "copyright": "© Menhausen {year}. All rights reserved."
+    "copyright": "© Menhausen {year}. All rights reserved.",
+    "allRightsReserved": "All rights reserved."
   },
   "language": { "en": "English", "ru": "Русский" },
   "cookies": {
@@ -119,8 +120,7 @@
       "title": "Information We Collect",
       "content": "We collect minimal information to provide and improve our services:",
       "websiteData": "Website usage data (pages visited, time spent, device information)",
-      "appData": "Anonymous app usage data (no personal identifiers)",
-      "analyticsData": "Aggregated analytics data through Google Analytics"
+      "appData": "Anonymous app usage data (no personal identifiers)"
     },
     "dataUsage": {
       "title": "How We Use Your Information",
@@ -132,7 +132,6 @@
     "dataSharing": {
       "title": "Information Sharing",
       "content": "We do not sell or share your personal information, except:",
-      "googleAnalytics": "With Google Analytics for website analytics (anonymized data only)",
       "legal": "When required by law or legal process",
       "business": "In case of business transfer or merger"
     },

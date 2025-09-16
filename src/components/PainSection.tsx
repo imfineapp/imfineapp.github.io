@@ -9,7 +9,12 @@ export const PainSection = () => {
     "Anxiety": Frown,
     "Burnout": Flame,
     "Emptiness": CircleDot,
-    "Anger": Angry
+    "Anger": Angry,
+    // Russian translations
+    "Тревога": Frown,
+    "Выгорание": Flame,
+    "Пустота": CircleDot,
+    "Гнев": Angry
   };
 
   return (

@@ -38,7 +38,6 @@ export const CookieBanner = () => {
     localStorage.setItem('cookie-consent', JSON.stringify(consent));
     setAnalyticsEnabled(true);
     setShowBanner(false);
-    enableAnalytics();
   };
 
   const acceptNecessary = () => {
@@ -50,7 +49,6 @@ export const CookieBanner = () => {
     localStorage.setItem('cookie-consent', JSON.stringify(consent));
     setAnalyticsEnabled(false);
     setShowBanner(false);
-    disableAnalytics();
   };
 
   const savePreferences = () => {
@@ -62,31 +60,8 @@ export const CookieBanner = () => {
     localStorage.setItem('cookie-consent', JSON.stringify(consent));
     setShowBanner(false);
     setShowSettings(false);
-    
-    if (analyticsEnabled) {
-      enableAnalytics();
-    } else {
-      disableAnalytics();
-    }
   };
 
-  const enableAnalytics = () => {
-    // Enable Google Analytics
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'granted'
-      });
-    }
-  };
-
-  const disableAnalytics = () => {
-    // Disable Google Analytics
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'denied'
-      });
-    }
-  };
 
   if (!showBanner) return null;
 

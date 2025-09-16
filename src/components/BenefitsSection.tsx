@@ -11,7 +11,14 @@ export const BenefitsSection = () => {
     "Masculine style and tone": Dumbbell,
     "Badges, progress, hero's journey": Target,
     "Data encryption": Shield,
-    "Always with you": Smartphone
+    "Always with you": Smartphone,
+    // Russian translations
+    "Без логина, без следов": Lock,
+    "Основан на доказательных практиках": Brain,
+    "Мужской стиль и тон": Dumbbell,
+    "Значки, прогресс, путь героя": Target,
+    "Шифрование данных": Shield,
+    "Всегда с тобой": Smartphone
   };
 
   return (
