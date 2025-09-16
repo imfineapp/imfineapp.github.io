@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'kreon': ['Kreon', 'serif'],
+				'roboto-slab': ['Roboto Slab', 'serif'],
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
@@ -123,5 +123,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [import("tailwindcss-animate")],
 } satisfies Config;

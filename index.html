@@ -3,13 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menhousen — Anonymous self-help for men</title>
+    <title>Menhausen — Anonymous self-help for men</title>
     <meta name="description" content="Telegram app for men 25-45. Deal with stress, anxiety and burnout anonymously. No registration required, based on scientific methods." />
-    <meta name="author" content="Menhousen Team" />
+    <meta name="author" content="Menhausen Team" />
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W5PLT46B');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CDHZ16V7W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Set default consent state to denied
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+      
+      gtag('config', 'G-2CDHZ16V7W', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
+    </script>
+    <!-- End Google Analytics -->
 
     <!-- Favicons and Icons -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
@@ -19,14 +42,14 @@
     <link rel="manifest" href="/site.webmanifest" />
     
     <!-- PWA Icons -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="Menhousen — You don't have to cope alone" />
+    <meta property="og:title" content="Menhausen — You don't have to cope alone" />
     <meta property="og:description" content="Anonymous digital self-help tool for men. 60-second CBT-based cards in Telegram." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://menhausen.com/menhausen_app_oj_image.png" />
@@ -34,6 +57,57 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@menhousen_app" />
     <meta name="twitter:image" content="https://menhausen.com/menhausen_app_oj_image.png" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://menhausen.com/#organization",
+          "name": "Menhausen",
+          "url": "https://menhausen.com/",
+          "logo": { "@type": "ImageObject", "url": "https://menhausen.com/menhausen_app_oj_image.png" },
+          "sameAs": ["https://t.me/menhausen_app"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://menhausen.com/#website",
+          "url": "https://menhausen.com/",
+          "name": "Menhausen — Anonymous self-help for men",
+          "publisher": { "@id": "https://menhausen.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://menhausen.com/#webpage",
+          "url": "https://menhausen.com/",
+          "name": "Menhausen — You don't have to cope alone",
+          "description": "Anonymous digital self-help tool for men. 60-second CBT-based cards in Telegram.",
+          "isPartOf": { "@id": "https://menhausen.com/#website" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Menhausen",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "url": "https://t.me/menhausen_app"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Is this therapy?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is evidence-based self-help. Menhausen is a tool for independent work with emotions, based on proven psychological methods. We do not replace professional medical help." } },
+            { "@type": "Question", "name": "Is this safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Encryption and anonymity are built into the product at all levels. We use AES-256 encryption, don't collect personal data and don't require registration. Your privacy is our priority." } },
+            { "@type": "Question", "name": "Is this only for men?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the product is created taking into account male psychology and features. But we are open to everyone who is ready to be honest with themselves and work on their emotional state." } },
+            { "@type": "Question", "name": "How does this work in Telegram?", "acceptedAnswer": { "@type": "Answer", "text": "Menhausen is a Telegram Mini App. Open the bot, go through a simple check-in, get a 60-second exercise card. Everything happens right in the messenger you already have." } },
+            { "@type": "Question", "name": "How much time does this take?", "acceptedAnswer": { "@type": "Answer", "text": "1-3 minutes a day. Check-in takes 30 seconds, exercise card — 60 seconds. You can do more if you want, but even the minimum gives results." } },
+            { "@type": "Question", "name": "What if I need serious help?", "acceptedAnswer": { "@type": "Answer", "text": "Menhausen is support, not treatment. If you feel you need professional help, we always recommend contacting a psychologist or psychiatrist. Your health is more important than anything." } }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>

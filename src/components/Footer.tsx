@@ -1,92 +1,78 @@
 
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+  
   const handleTelegramStart = () => {
     window.open('https://t.me/menhausen_app', '_blank');
   };
 
-  const handleChannelOpen = () => {
-    window.open('https://t.me/menhausen_app', '_blank');
-  };
-
   return (
-    <footer className="section-padding py-20 border-t border-border bg-gradient-to-t from-card/20 to-transparent">
+    <footer className="section-padding py-16 md:py-24 border-t border-border" itemScope itemType="https://schema.org/Organization">
       <div className="container-max">
-        {/* CTA Section */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to take the first step?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-10 font-medium">
-            Start right now. Free, anonymous, no commitments.
-          </p>
-          <Button 
-            onClick={handleTelegramStart}
-            size="lg"
-            className="btn-primary text-xl px-12 py-6 glow-effect"
-          >
-            Start in Telegram
-          </Button>
-        </div>
-        
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-4 mb-6">
-              <div>
-                <img 
-                  src="/lovable-uploads/857b8c8f-110f-4f7b-8d5a-977e09328344.png" 
-                  alt="Menhousen logo" 
-                  className="w-8 h-8"
-                />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">Menhousen</h3>
-                <p className="text-sm text-muted-foreground font-medium">Anonymous self-help for men</p>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="space-y-6">
+            <div>
+            <img 
+              src="/Menhausen_logo.svg" 
+              alt="Menhausen logo" 
+              className="w-32 h-auto"
+              itemProp="logo"
+            />
             </div>
-            <p className="text-muted-foreground leading-relaxed max-w-md font-medium">
-              Anonymous digital self-help tool for men. 
-              Scientific methods, modern technology, complete confidentiality.
+            <p className="text-muted-foreground" itemProp="description">
+              {t('hero.description')}
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 text-lg text-primary">Product</h4>
-            <ul className="space-y-3 text-muted-foreground font-medium">
-              <li><button onClick={handleTelegramStart} className="hover:text-primary transition-colors">Start in Telegram</button></li>
-              <li><button onClick={handleChannelOpen} className="hover:text-primary transition-colors">Telegram channel</button></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Support</a></li>
+            <h3 className="text-lg font-bold mb-6">{t('footer.product')}</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.howItWorks')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.features')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.pricing')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.faq')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 text-lg text-primary">Documents</h4>
-            <ul className="space-y-3 text-muted-foreground font-medium">
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Terms of use</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Public offer</a></li>
+            <h3 className="text-lg font-bold mb-6">{t('footer.legal')}</h3>
+            <ul className="space-y-4">
+              <li><Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.termsOfService')}</Link></li>
+              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.privacyPolicy')}</Link></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.cookiePolicy')}</a></li>
             </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold mb-6">{t('footer.startNow')}</h3>
+            <p className="text-muted-foreground mb-6">
+              {t('footer.startNowDescription')}
+            </p>
+            <Button 
+              onClick={handleTelegramStart}
+              className="btn-primary glow-effect"
+            >
+              {t('footer.startButton')}
+            </Button>
           </div>
         </div>
         
-        {/* Disclaimer */}
-        <div className="border-t border-border pt-10">
-          <div className="bg-card/50 p-8 rounded-2xl mb-8">
-            <p className="text-center font-medium text-muted-foreground">
-              <strong className="text-foreground">Important:</strong> Menhousen is not a medical service and does not replace professional psychological or psychiatric help. 
-              For serious mental health problems, contact specialists.
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
+          <div>
+            <p className="text-muted-foreground text-sm">
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <p className="text-muted-foreground font-medium">
-              © 2025 Menhousen. All rights reserved.
-            </p>
-            <div className="flex space-x-8 text-muted-foreground font-medium">
-              <span>Powered by Menhousen Team</span>
-            </div>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="https://t.me/menhausen_app" className="text-muted-foreground hover:text-primary transition-colors" itemProp="sameAs">
+              <span className="sr-only">Telegram</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+            </a>
           </div>
         </div>
       </div>

@@ -1,32 +1,19 @@
+import { useTranslation } from "react-i18next";
 
 export const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      text: "At first it seemed weird. But then it helped.",
-      author: "Alex, 34 years old",
-      role: "IT Manager"
-    },
-    {
-      text: "I just started doing one card a day. And it became easier.",
-      author: "Michael, 28 years old", 
-      role: "Entrepreneur"
-    },
-    {
-      text: "I didn't need to say anything. It's like someone gave me a voice.",
-      author: "David, 41 years old",
-      role: "Civil Servant"
-    }
-  ];
+  const { t } = useTranslation();
+
+  const testimonials = t('testimonials.items', { returnObjects: true }) as Array<{ text: string; author: string; role: string }>;
 
   return (
     <section className="section-padding py-16 md:py-24">
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            What <span className="text-gradient">users say</span>
+            {t('testimonials.title')}
           </h2>
           <p className="section-subtitle">
-            Real reviews from men who took the first step
+            {t('testimonials.subtitle')}
           </p>
         </div>
         

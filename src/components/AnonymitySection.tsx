@@ -1,15 +1,18 @@
 
 import { Lock, Globe, User } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const AnonymitySection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="section-padding py-16 md:py-24">
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="section-title">
-            <span className="text-gradient">We don't know who you are.</span>
+            <span className="text-gradient">{t('anonymity.title.line1')}</span>
             <br />
-            And that's your strength.
+            {t('anonymity.title.line2')}
           </h2>
         </div>
         
@@ -21,9 +24,9 @@ export const AnonymitySection = () => {
                   <Lock className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Client-side encryption</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t('anonymity.cards.clientSide.title')}</h3>
                   <p className="text-muted-foreground">
-                    Your answers are encrypted on your device. We don't see them. Ever.
+                    {t('anonymity.cards.clientSide.text')}
                   </p>
                 </div>
               </div>
@@ -33,9 +36,9 @@ export const AnonymitySection = () => {
                   <Globe className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Web3 and TON</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t('anonymity.cards.web3.title')}</h3>
                   <p className="text-muted-foreground">
-                    TON wallet support. You can log in without Telegram ID.
+                    {t('anonymity.cards.web3.text')}
                   </p>
                 </div>
               </div>
@@ -45,9 +48,9 @@ export const AnonymitySection = () => {
                   <User className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Complete anonymity</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t('anonymity.cards.anonymous.title')}</h3>
                   <p className="text-muted-foreground">
-                    No logins, passwords, emails. Just you and your path to yourself.
+                    {t('anonymity.cards.anonymous.text')}
                   </p>
                 </div>
               </div>
@@ -59,25 +62,25 @@ export const AnonymitySection = () => {
               <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Lock className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">AES-256 Encryption</h3>
+              <h3 className="text-2xl font-bold mb-4">{t('anonymity.badge.title')}</h3>
             </div>
             
             <div className="space-y-4 text-sm">
               <div className="flex justify-between items-center py-2 border-b border-border">
-                <span className="text-muted-foreground">Personal data</span>
-                <span className="text-primary font-semibold">Encrypted</span>
+                <span className="text-muted-foreground">{t('anonymity.badge.rows.personalData.label')}</span>
+                <span className="text-primary font-semibold">{t('anonymity.badge.rows.personalData.value')}</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-border">
-                <span className="text-muted-foreground">Answers to questions</span>
-                <span className="text-primary font-semibold">Local</span>
+                <span className="text-muted-foreground">{t('anonymity.badge.rows.answers.label')}</span>
+                <span className="text-primary font-semibold">{t('anonymity.badge.rows.answers.value')}</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-border">
-                <span className="text-muted-foreground">Session history</span>
-                <span className="text-primary font-semibold">Anonymous</span>
+                <span className="text-muted-foreground">{t('anonymity.badge.rows.session.label')}</span>
+                <span className="text-primary font-semibold">{t('anonymity.badge.rows.session.value')}</span>
               </div>
               <div className="flex justify-between items-center py-2">
-                <span className="text-muted-foreground">Security level</span>
-                <span className="text-primary font-semibold">Banking</span>
+                <span className="text-muted-foreground">{t('anonymity.badge.rows.security.label')}</span>
+                <span className="text-primary font-semibold">{t('anonymity.badge.rows.security.value')}</span>
               </div>
             </div>
           </div>

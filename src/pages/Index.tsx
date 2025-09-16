@@ -11,15 +11,19 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground" itemScope itemType="https://schema.org/WebPage">
+      <meta itemProp="name" content="Menhousen — You don't have to cope alone" />
+      <meta itemProp="description" content="Anonymous digital self-help tool for men. 60-second CBT-based cards in Telegram." />
       <Header />
-      <HeroSection />
-      <PainSection />
-      <HowItWorksSection />
-      <BenefitsSection />
-      <TestimonialsSection />
-      <AnonymitySection />
-      <FAQSection />
+      <main>
+        <HeroSection />
+        <PainSection />
+        <HowItWorksSection />
+        <BenefitsSection />
+        <TestimonialsSection />
+        <AnonymitySection />
+        <FAQSection />
+      </main>
       <Footer />
     </div>
   );

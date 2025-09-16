@@ -89,7 +89,7 @@ export function updateFaviconLinks(cacheBust: boolean = false): void {
  * Monitor for changes in icon files and update accordingly
  */
 export function startIconMonitoring(intervalMs: number = 60000): () => void {
-  let lastCheck: { [key: string]: boolean } = {};
+  const lastCheck: { [key: string]: boolean } = {};
   
   const checkForChanges = async () => {
     const currentIcons = await checkAllIcons();

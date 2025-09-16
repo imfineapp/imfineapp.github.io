@@ -1,0 +1,258 @@
+{
+  "header": {
+    "startInTelegram": "Start in Telegram"
+  },
+  "hero": {
+    "title": "You don't have to cope alone",
+    "description": "Anonymous digital self-help tool for men. 60-second cards based on scientific methods. Right in Telegram, no registration required.",
+    "startButton": "Start in Telegram",
+    "features": "Free • Anonymous • No registration"
+  },
+  "pain": {
+    "title": "Are you holding up? Always?",
+    "items": [
+      { "title": "Anxiety", "description": "It's hard for me, but I can't talk about it" },
+      { "title": "Burnout", "description": "I can't cope, but I don't want to look weak" },
+      { "title": "Emptiness", "description": "I have no strength, I don't know what's wrong with me" },
+      { "title": "Anger", "description": "I'm angry at everything, and it interferes with my home and work" }
+    ],
+    "conclusion": "This is not weakness. This is a signal. This is a reason to press the button."
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Three simple steps to better well-being",
+    "steps": [
+      { "title": "Tell us how you feel", "description": "Simple check-in: choose your current state from several options" },
+      { "title": "Get a card on the topic", "description": "60-second exercise: breathing, reflection or cognitive technique" },
+      { "title": "Complete and get support", "description": "Badge for completion, option to continue or try more" }
+    ]
+  },
+  "benefits": {
+    "title": "Why Menhausen",
+    "subtitle": "Created specifically for men who value privacy and results",
+    "items": [
+      { "title": "No login, no trace", "description": "Works directly in Telegram. No accounts, no emails" },
+      { "title": "Based on evidence-based practices", "description": "CBT, ACT, MBCT, positive psychology — scientifically proven methods" },
+      { "title": "Masculine style and tone", "description": "No sugarcoating. Direct, honest, to the point. Man to man" },
+      { "title": "Badges, progress, hero's journey", "description": "See your progress, get recognition for every step forward" },
+      { "title": "Data encryption", "description": "AES-256, Web3 technologies. Your data is protected at bank level" },
+      { "title": "Always with you", "description": "In your pocket, in Telegram. Help available 24/7, when you need it" }
+    ]
+  },
+  "faq": {
+    "title": "Questions and answers",
+    "subtitle": "Everything you need to know about Menhausen",
+    "items": [
+      { "question": "Is this therapy?", "answer": "No. This is evidence-based self-help. Menhausen is a tool for independent work with emotions, based on proven psychological methods. We do not replace professional medical help." },
+      { "question": "Is this safe?", "answer": "Yes. Encryption and anonymity are built into the product at all levels. We use AES-256 encryption, don't collect personal data and don't require registration. Your privacy is our priority." },
+      { "question": "Is this only for men?", "answer": "Yes, the product is created taking into account male psychology and features. But we are open to everyone who is ready to be honest with themselves and work on their emotional state." },
+      { "question": "How does this work in Telegram?", "answer": "Menhausen is a Telegram Mini App. Open the bot, go through a simple check-in, get a 60-second exercise card. Everything happens right in the messenger you already have." },
+      { "question": "How much time does this take?", "answer": "1-3 minutes a day. Check-in takes 30 seconds, exercise card — 60 seconds. You can do more if you want, but even the minimum gives results." },
+      { "question": "What if I need serious help?", "answer": "Menhausen is support, not treatment. If you feel you need professional help, we always recommend contacting a psychologist or psychiatrist. Your health is more important than anything." }
+    ]
+  },
+  "testimonials": {
+    "title": "What users say",
+    "subtitle": "Real reviews from men who took the first step",
+    "items": [
+      { "text": "At first it seemed weird. But then it helped.", "author": "Alex, 34 years old", "role": "IT Manager" },
+      { "text": "I just started doing one card a day. And it became easier.", "author": "Michael, 28 years old", "role": "Entrepreneur" },
+      { "text": "I didn't need to say anything. It's like someone gave me a voice.", "author": "David, 41 years old", "role": "Civil Servant" }
+    ]
+  },
+  "anonymity": {
+    "title": { "line1": "We don't know who you are.", "line2": "And that's your strength." },
+    "cards": {
+      "clientSide": { "title": "Client-side encryption", "text": "Your answers are encrypted on your device. We don't see them. Ever." },
+      "web3": { "title": "Web3 and TON", "text": "TON wallet support. You can log in without Telegram ID." },
+      "anonymous": { "title": "Complete anonymity", "text": "No logins, passwords, emails. Just you and your path to yourself." }
+    },
+    "badge": {
+      "title": "AES-256 Encryption",
+      "rows": {
+        "personalData": { "label": "Personal data", "value": "Encrypted" },
+        "answers": { "label": "Answers to questions", "value": "Local" },
+        "session": { "label": "Session history", "value": "Anonymous" },
+        "security": { "label": "Security level", "value": "Banking" }
+      }
+    }
+  },
+  "footer": {
+    "product": "Product",
+    "howItWorks": "How it works",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "legal": "Legal",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "startNow": "Start Now",
+    "startNowDescription": "Ready to take care of your mental health? Start your journey now.",
+    "startButton": "Start in Telegram",
+    "copyright": "© Menhausen {year}. All rights reserved."
+  },
+  "language": { "en": "English", "ru": "Русский" },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to improve your experience and analyze site usage. You can choose which cookies to accept.",
+    "acceptAll": "Accept All",
+    "necessaryOnly": "Necessary Only",
+    "settings": "Settings",
+    "settingsDescription": "Manage your cookie preferences",
+    "necessaryTitle": "Necessary Cookies",
+    "necessaryDescription": "Required for basic site functionality",
+    "analyticsTitle": "Analytics Cookies",
+    "analyticsDescription": "Help us understand how you use our site",
+    "cancel": "Cancel",
+    "savePreferences": "Save Preferences"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "backToHome": "Back to Home",
+    "lastUpdated": "Last updated: December 2024",
+    "introduction": {
+      "title": "Introduction",
+      "content": "Menhausen is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our website and Telegram application."
+    },
+    "dataCollection": {
+      "title": "Information We Collect",
+      "content": "We collect minimal information to provide and improve our services:",
+      "websiteData": "Website usage data (pages visited, time spent, device information)",
+      "appData": "Anonymous app usage data (no personal identifiers)",
+      "analyticsData": "Aggregated analytics data through Google Analytics"
+    },
+    "dataUsage": {
+      "title": "How We Use Your Information",
+      "content": "We use collected information to:",
+      "analytics": "Analyze website performance and user behavior",
+      "improvement": "Improve our services and user experience",
+      "security": "Ensure security and prevent abuse"
+    },
+    "dataSharing": {
+      "title": "Information Sharing",
+      "content": "We do not sell or share your personal information, except:",
+      "googleAnalytics": "With Google Analytics for website analytics (anonymized data only)",
+      "legal": "When required by law or legal process",
+      "business": "In case of business transfer or merger"
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "content": "We implement appropriate security measures:",
+      "encryption": "AES-256 encryption for sensitive data",
+      "access": "Limited access to authorized personnel only",
+      "monitoring": "Regular security monitoring and updates"
+    },
+    "userRights": {
+      "title": "Your Rights",
+      "content": "You have the right to:",
+      "access": "Access your personal data",
+      "rectification": "Correct inaccurate data",
+      "erasure": "Request deletion of your data",
+      "portability": "Receive your data in a portable format",
+      "objection": "Object to processing of your data"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "We use cookies to enhance your experience:",
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "Essential for website functionality, cannot be disabled"
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand website usage, can be disabled"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have questions about this Privacy Policy:",
+      "email": "Email",
+      "telegram": "Telegram"
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "content": "We may update this Privacy Policy periodically. We will notify you of any material changes by posting the new policy on this page."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "backToHome": "Back to Home",
+    "lastUpdated": "Last updated: December 2024",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "content": "By accessing and using Menhausen, you accept and agree to be bound by the terms and provision of this agreement."
+    },
+    "serviceDescription": {
+      "title": "Service Description",
+      "content": "Menhausen is an anonymous digital self-help tool for men that provides:",
+      "features": {
+        "selfHelp": "Evidence-based self-help exercises and techniques",
+        "anonymity": "Complete anonymity and privacy protection",
+        "telegram": "Integration with Telegram messaging platform",
+        "scientific": "Methods based on proven psychological approaches"
+      }
+    },
+    "userEligibility": {
+      "title": "User Eligibility",
+      "content": "To use our service, you must:",
+      "age": "Be at least 18 years old",
+      "legal": "Have the legal capacity to enter into this agreement",
+      "telegram": "Have access to Telegram messaging platform"
+    },
+    "userResponsibilities": {
+      "title": "User Responsibilities",
+      "content": "You agree to:",
+      "honest": "Provide honest responses in self-help exercises",
+      "legal": "Use the service in compliance with applicable laws",
+      "medical": "Seek professional help when needed",
+      "privacy": "Respect the privacy of other users"
+    },
+    "serviceLimitations": {
+      "title": "Service Limitations",
+      "content": "Important limitations:",
+      "notTherapy": "This is not a substitute for professional therapy",
+      "notMedical": "This is not medical advice or treatment",
+      "selfHelp": "This is a self-help tool, not professional counseling",
+      "emergency": "Not suitable for emergency mental health situations"
+    },
+    "privacyAndData": {
+      "title": "Privacy and Data",
+      "content": "Our commitment to privacy:",
+      "anonymity": "We maintain your anonymity at all times",
+      "encryption": "Your data is encrypted using AES-256",
+      "noCollection": "We do not collect personal identifying information",
+      "analytics": "We use anonymized analytics for service improvement"
+    },
+    "disclaimers": {
+      "title": "Disclaimers",
+      "content": "Important disclaimers:",
+      "noWarranty": "Service provided 'as is' without warranties",
+      "noGuarantee": "No guarantee of specific results or outcomes",
+      "emergency": "Not suitable for emergency mental health situations",
+      "professional": "Always consult professionals for serious mental health issues"
+    },
+    "limitationOfLiability": {
+      "title": "Limitation of Liability",
+      "content": "To the maximum extent permitted by law, Menhausen shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service."
+    },
+    "termination": {
+      "title": "Termination",
+      "content": "We may terminate or suspend your access to the service at any time, with or without cause, with or without notice, for any reason whatsoever."
+    },
+    "governingLaw": {
+      "title": "Governing Law",
+      "content": "These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "content": "For questions about these Terms of Service:",
+      "email": "Email",
+      "telegram": "Telegram"
+    },
+    "changes": {
+      "title": "Changes to Terms",
+      "content": "We reserve the right to modify these terms at any time. We will notify users of any material changes by posting the new terms on this page."
+    }
+  }
+}

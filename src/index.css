@@ -13,7 +13,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-kreon;
+    @apply font-roboto-slab;
   }
 
   html {
@@ -47,7 +47,7 @@
   }
   
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight font-kreon;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight font-roboto-slab;
   }
   
   .section-subtitle {
