@@ -7,7 +7,7 @@ export const Footer = () => {
   const { t } = useTranslation();
   
   const handleTelegramStart = () => {
-    window.open('https://t.me/menhausen_app', '_blank');
+    window.open('https://t.me/menhausen_app_bot/app', '_blank');
   };
 
   return (
