@@ -1,0 +1,308 @@
+# Create a multi-page website for the product **Menhausen** — an anonymous stress-management Telegram Mini App for men (25–45).  
+Your task: generate structure, layout, UX, content, SEO-optimized texts, and UI design for the entire site.
+
+---
+
+## 🔥 GENERAL PRODUCT INFORMATION
+**Menhausen** — Telegram Mini App for anonymous mental health support for men (25–45).  
+Focus areas: **stress management, anxiety reduction, burnout prevention**, self-help techniques (CBT, ACT, MBCT), practical **stress cards**.
+
+Core principles:
+- Anonymous. No registration.
+- Short daily practices (3–7 minutes).
+- Practical cards: questions + micro-actions.
+- Modern, masculine, minimalistic UI.
+
+---
+
+# 🎯 WEBSITE GOAL
+Create a **conversion-focused, SEO-optimized multi-page website**, which:
+- Attracts organic search traffic (stress management, stress app, stress card).
+- Explains what the app does and why it works.
+- Shows examples of stress cards.
+- Demonstrates anonymity and safety.
+- Converts visitors into Mini App users (Telegram deep link CTA).
+
+---
+
+# 🧱 SITE STRUCTURE (MULTI-PAGE)
+
+Create all pages below:
+
+### 1. **Homepage**
+URL: `/`
+
+Sections:
+1. **Hero**
+   - H1: “Anonymous stress management for men — practical stress cards in Telegram”
+   - Subtext: “Use short, scientifically grounded practices daily — 3–7 minutes. No registration.”
+   - CTA: “Open in Telegram”
+   - Supporting CTA: “See stress cards”
+
+2. **Features / Benefits**
+   - Stress management for men
+   - Anonymous self-help
+   - 3–7 minute practical cards
+   - Based on CBT, ACT, MBCT
+   - Scientific foundations
+
+3. **How it works** (3 steps)
+   1. Open in Telegram → choose a topic (stress, anxiety, burnout)
+   2. Complete 1 stress card (1–3 questions + micro-action)
+   3. Track progress daily
+
+4. **Stress cards preview**
+   Include 3 real examples of cards:
+
+   #### Example card 1 (STRESS-04)
+   - “Какая мысль усиливает стресс?”
+   - “Придумайте 3 альтернативных интерпретации”
+   - Recommendation: “Практикуйте рефрейминг 2 раза в неделю.”
+
+   #### Example card 2 (STRESS-07)
+   - “Какой небольшой эксперимент вы можете провести, чтобы проверить свою мысль?”
+   - “Какие результаты вы ожидаете?”
+   - Recommendation: “Выполните эксперимент в течение недели.”
+
+   #### Example card 3 (STRESS-02)
+   - “Какие телесные сигналы вы замечаете?”
+   - Micro-action: “Запишите напряжение в теле и оцените по шкале 1–10.”
+
+5. **Who is it for**
+   - 25–45 y.o. men
+   - High-stress jobs
+   - Entrepreneurs, IT specialists, managers
+   - Men who avoid therapy due to stigma
+   - Men who value anonymity and quick tools
+
+6. **Why it works**
+   - CBT, ACT, MBCT methods
+   - Micro-actions instead of long meditations
+   - Habit building via daily check-ins
+   - Designed specifically for men
+
+7. **Privacy & Safety**
+   - Anonymous
+   - No personal data collected
+   - AES-256 encryption
+   - Everything stays on the device
+   - No profiling, no ad tracking
+
+8. **Pricing**
+   - Freemium
+   - Free basic cards
+   - Premium: advanced stress modules
+
+9. **Blog preview (3 cards)**
+
+10. **FAQ**
+    Examples:
+    - Is this therapy? (No, it's a self-help tool)
+    - Is it anonymous? (Yes)
+    - How often to use? (Daily 3–7 min)
+
+11. **Footer**
+    - Sitemap
+    - Contacts
+    - Legal
+    - Privacy policy
+
+---
+
+### 2. **Stress Cards Page**
+URL: `/stress-cards`
+
+Purpose: SEO page optimized for **stress card**, **stress cards examples**, **how to use stress cards**.
+
+Sections:
+- H1: “Stress Cards — practical tools for stress management”
+- Explanation: what is a stress card?
+- Why stress cards work (CBT, ACT)
+- 6 full card examples
+- Recommended routines
+- CTA to open Mini App
+
+---
+
+### 3. **Stress Management Page**
+URL: `/stress-management`  
+SEO target: “stress management”, “stress management for men”
+
+Sections:
+- H1: “Stress Management for Men”
+- Causes of stress
+- Male-specific stress patterns
+- 10 techniques
+- Why Menhausen tools work
+- Daily plan template
+- CTA
+
+---
+
+### 4. **Blog**
+URL: `/blog`
+
+Include categories:
+- Stress management
+- Burnout
+- Anxiety
+- Men’s mental health
+- CBT & ACT techniques
+
+Blog index: grid of articles.
+
+---
+
+### 5. **Blog Article Template**
+URL example: `/blog/stress-management-techniques`
+
+Structure:
+- SEO title
+- Subtitle
+- Hero image
+- Main text
+- CTA mid-article
+- Conclusion with CTA
+- FAQ
+- Related posts
+
+---
+
+### 6. **Privacy Page**
+URL: `/privacy`
+
+Include:
+- Anonymity
+- No personal data collection
+- Local storage only
+- AES-256
+- Not medical service disclaimer
+
+---
+
+### 7. **Pricing Page**
+URL: `/pricing`
+
+Include:
+- Free tier
+- Premium modules (Stress, Burnout, Anxiety)
+- What exactly is unlocked
+- CTA
+
+---
+
+### 8. **Stress Test Page**
+URL: `/stress-test`
+
+Sections:
+- Quick 1-minute test
+- 6–8 questions
+- Result ranges
+- Suggested first card
+- CTA to Telegram app
+
+---
+
+# 🎨 DESIGN REQUIREMENTS
+
+### Style:
+- Minimalistic
+- Masculine
+- Clean
+- Blue/graphite palette
+- Soft shadows
+- Rounded corners
+- Modern gradients
+- High contrast for accessibility
+
+### Components:
+- Sticky header
+- Large hero image / illustration
+- Iconography for CBT/ACT features
+- Screenshots of cards (mockups)
+- Telegram UI preview
+
+### Typography:
+- Modern geometric sans-serif
+- Headlines: bold
+- Body: high readability
+- Good spacing
+
+### UX:
+- Clear CTA repeated across sections
+- Smooth scrolling
+- Mobile-first layout
+- Card component for stress card examples
+- Clean blog layout (2–3 columns)
+
+---
+
+# 🧭 SEO REQUIREMENTS
+
+1. **SSR/SSG**  
+Generate all pages as static or server-rendered.
+
+2. **Metadata**
+- Unique Title & Description per page
+- Use keywords:
+  - stress management
+  - stress app
+  - stress card
+  - stress cards for men
+  - anonymous stress app
+
+3. **Schema Markup (JSON-LD)**
+Implement:
+- Organization
+- SoftwareApplication
+- WebSite
+- BreadcrumbList
+- BlogPosting
+
+4. **Internal linking**
+Menu, footer, contextual links inside content.
+
+5. **Open Graph & Twitter Cards**
+
+6. **Site Speed**
+- Minify JS/CSS
+- Use WebP
+- Preload fonts
+
+7. **Sitemap.xml + robots.txt**
+
+8. **Canonical tags**
+
+---
+
+# 🛠 TECHNICAL REQUIREMENTS (OPTIONAL)
+If generating code:
+- Framework: Next.js 14 App Router
+- SSG for blog & main pages
+- CSS: TailwindCSS
+- Responsive
+- Telegram deep links
+- Deployed to Vercel
+
+---
+
+# 🚀 Main CTA (deep link)
+tg://resolve?domain=ImFineBot&start=miniapp
+
+markdown
+Копировать код
+
+# 🔚 Output format
+Generate:
+- Full multi-page website structure  
+- Page layouts  
+- UI mockups  
+- SEO texts for each section  
+- Color palette  
+- Typography  
+- Components  
+- Icons  
+- Illustrations  
+- Images for blog  
+- Wireframes  
+- Final polished design 
