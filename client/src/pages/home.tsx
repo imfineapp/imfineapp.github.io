@@ -31,11 +31,11 @@ export default function Home() {
   return (
     <Layout>
       <SEO 
-        title="Anonymous Stress Management for Men" 
-        description="Practical stress cards, CBT & ACT techniques for men. Anonymous, no registration, 3-7 minute daily practices."
+        title={t('home.seo_title')} 
+        description={t('home.seo_description')}
         canonical="/"
         image={heroImageUrl}
-        keywords="stress management, men's mental health, CBT, ACT, anxiety, burnout, anonymous therapy, stress cards"
+        keywords={t('home.seo_keywords')}
       />
       <StructuredData type="organization" />
       <StructuredData type="website" />
@@ -58,7 +58,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" className="rounded-[12px] px-8 text-[15px] font-bold h-[46px] shadow-[0_0_30px_rgba(225,255,0,0.2)]" asChild>
-                  <a href="tg://resolve?domain=ImFineBot&start=miniapp" target="_blank" rel="noopener noreferrer">
+                  <a href="https://t.me/menhausen_app_bot/app" target="_blank" rel="noopener noreferrer">
                     {t('hero.cta_telegram')}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
@@ -76,7 +76,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay z-10 pointer-events-none"></div>
               <img 
                 src={heroImage} 
-                alt="Abstract visualization of calm and structure" 
+                alt={t('common.alt_hero_image')} 
                 className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
@@ -177,7 +177,7 @@ export default function Home() {
                 ))}
               </div>
               <Button className="mt-10" size="lg" asChild>
-                <a href="tg://resolve?domain=ImFineBot&start=miniapp">{t('how_it_works.cta')}</a>
+                <a href="https://t.me/menhausen_app_bot/app">{t('how_it_works.cta')}</a>
               </Button>
             </div>
             <div className="bg-card rounded-[16px] p-8 md:p-12 text-white relative overflow-hidden border border-border">
@@ -317,7 +317,7 @@ export default function Home() {
             {t('cta_final.description')}
           </p>
           <Button size="lg" variant="secondary" className="h-16 px-10 text-[15px] rounded-[12px] shadow-2xl bg-black text-white hover:bg-black/80" asChild>
-            <a href="tg://resolve?domain=ImFineBot&start=miniapp">
+            <a href="https://t.me/menhausen_app_bot/app">
               {t('cta_final.button')}
             </a>
           </Button>

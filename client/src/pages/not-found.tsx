@@ -2,8 +2,11 @@ import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { AlertCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function NotFound() {
+  const { t } = useTranslation();
+  
   return (
     <Layout>
       <div className="min-h-[60vh] w-full flex items-center justify-center">
@@ -14,14 +17,14 @@ export default function NotFound() {
             </div>
           </div>
           
-          <h1 className="text-4xl font-bold text-foreground">Page Not Found</h1>
+          <h1 className="text-4xl font-bold text-foreground">{t('not_found.title')}</h1>
           
           <p className="text-lg text-muted-foreground">
-            The page you are looking for doesn't exist or has been moved.
+            {t('not_found.description')}
           </p>
 
           <Button size="lg" asChild>
-            <Link href="/">Return Home</Link>
+            <Link href="/">{t('not_found.return_home')}</Link>
           </Button>
         </div>
       </div>

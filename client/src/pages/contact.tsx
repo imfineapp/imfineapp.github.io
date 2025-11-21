@@ -11,9 +11,9 @@ export default function Contact() {
     <Layout>
       <SEO 
         title={t('contact.title')} 
-        description="Contact Menhausen support team. We are here to help with any questions about our anonymous stress management app."
+        description={t('contact.seo_description')}
         canonical="/contact"
-        keywords="contact, support, help, men's mental health support"
+        keywords={t('contact.seo_keywords')}
       />
       
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-4xl">
@@ -50,7 +50,7 @@ export default function Contact() {
             </a>
             <Button variant="outline" size="sm" asChild className="mt-auto">
               <a href="https://t.me/MenhausenSupport" target="_blank" rel="noopener noreferrer">
-                Chat now
+                {t('contact.chat_now')}
               </a>
             </Button>
           </div>

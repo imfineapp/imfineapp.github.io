@@ -3,86 +3,87 @@ import { SEO } from "@/components/seo";
 import { StressCard } from "@/components/ui/stress-card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 
 export default function StressCards() {
+  const { t } = useTranslation();
   const cards = [
     {
       id: "STRESS-01",
-      title: "The 5-4-3-2-1 Grounding",
+      title: t('stress_cards.cards.grounding.title'),
       questions: [
-        "Name 5 things you can see.",
-        "Name 4 things you can feel.",
-        "Name 3 things you can hear."
+        t('stress_cards.cards.grounding.q1'),
+        t('stress_cards.cards.grounding.q2'),
+        t('stress_cards.cards.grounding.q3')
       ],
-      recommendation: "Use this immediately when feeling overwhelmed."
+      recommendation: t('stress_cards.cards.grounding.action')
     },
     {
       id: "STRESS-04",
-      title: "Reframing Negative Thoughts",
+      title: t('examples.cards.reframing.title'),
       questions: [
-        "What specific thought is increasing your stress right now?",
-        "Come up with 3 alternative interpretations of this situation."
+        t('examples.cards.reframing.q1'),
+        t('examples.cards.reframing.q2')
       ],
-      recommendation: "Practice reframing 2 times a week."
+      recommendation: t('examples.cards.reframing.action')
     },
     {
       id: "STRESS-07",
-      title: "Testing Reality",
+      title: t('examples.cards.testing.title'),
       questions: [
-        "What small experiment can you run to test if this thought is true?",
-        "What results do you expect vs what actually happens?"
+        t('examples.cards.testing.q1'),
+        t('examples.cards.testing.q2')
       ],
-      recommendation: "Run this experiment within 24 hours."
+      recommendation: t('examples.cards.testing.action')
     },
     {
       id: "STRESS-02",
-      title: "Somatic Awareness",
+      title: t('examples.cards.somatic.title'),
       questions: [
-        "What body signals are you noticing right now?",
-        "Where is the tension located?"
+        t('examples.cards.somatic.q1'),
+        t('examples.cards.somatic.q2')
       ],
-      recommendation: "Rate your tension 1-10 and write it down."
+      recommendation: t('examples.cards.somatic.action')
     },
     {
       id: "ANXIETY-03",
-      title: "Worst Case Scenario",
+      title: t('stress_cards.cards.worst_case.title'),
       questions: [
-        "What is the absolute worst thing that could happen?",
-        "How would you cope if it did happen?",
-        "How likely is it really?"
+        t('stress_cards.cards.worst_case.q1'),
+        t('stress_cards.cards.worst_case.q2'),
+        t('stress_cards.cards.worst_case.q3')
       ],
-      recommendation: "Write down your coping plan."
+      recommendation: t('stress_cards.cards.worst_case.action')
     },
     {
       id: "BURNOUT-01",
-      title: "Energy Audit",
+      title: t('stress_cards.cards.energy_audit.title'),
       questions: [
-        "List 3 things that drained you today.",
-        "List 3 things that gave you energy.",
-        "How can you increase the energy givers tomorrow?"
+        t('stress_cards.cards.energy_audit.q1'),
+        t('stress_cards.cards.energy_audit.q2'),
+        t('stress_cards.cards.energy_audit.q3')
       ],
-      recommendation: "Schedule one energy giver for tomorrow morning."
+      recommendation: t('stress_cards.cards.energy_audit.action')
     }
   ];
 
   return (
     <Layout>
       <SEO 
-        title="Stress Cards Examples - Practical Tools for Men" 
-        description="Browse our library of stress cards. Practical, CBT-based questions to manage anxiety, stress, and burnout in 5 minutes or less."
+        title={t('stress_cards.seo_title')} 
+        description={t('stress_cards.seo_description')}
         canonical="/stress-cards"
-        keywords="stress cards, CBT techniques, anxiety management, stress management tools, men's mental health"
+        keywords={t('stress_cards.seo_keywords')}
       />
       
       <div className="bg-muted/30 py-16">
         <div className="container mx-auto px-4 sm:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Stress Cards Library</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('stress_cards.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            A "Stress Card" is a micro-tool designed to shift your cognitive state. 
-            It combines a provocative question with a concrete action.
+            {t('stress_cards.subtitle')}
           </p>
           <Button size="lg" asChild>
-            <a href="tg://resolve?domain=ImFineBot&start=miniapp">Open Library in Telegram</a>
+            <a href="https://t.me/menhausen_app_bot/app">{t('stress_cards.cta')}</a>
           </Button>
         </div>
       </div>
@@ -97,18 +98,18 @@ export default function StressCards() {
         </div>
 
         <div className="mt-20 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">How to use Stress Cards effectively</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('stress_cards.how_to_use_title')}</h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              Stress cards work because they interrupt automatic thinking patterns. When you are stressed, your brain is in a "tunnel vision" mode.
+              {t('stress_cards.how_to_use_p1')}
             </p>
             <p>
-              By forcing you to answer a specific question (e.g., "What is the evidence for this thought?"), the card engages your prefrontal cortex—the logical part of your brain—and dampens the emotional response of the amygdala.
+              {t('stress_cards.how_to_use_p2')}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-foreground">
-              <li><strong>Do one card at a time.</strong> Don't rush.</li>
-              <li><strong>Write down the answers.</strong> Writing externalizes the thought.</li>
-              <li><strong>Commit to the micro-action.</strong> Insight without action is just entertainment.</li>
+              <li><strong>{t('stress_cards.how_to_use_li1')}</strong></li>
+              <li><strong>{t('stress_cards.how_to_use_li2')}</strong></li>
+              <li><strong>{t('stress_cards.how_to_use_li3')}</strong></li>
             </ul>
           </div>
         </div>

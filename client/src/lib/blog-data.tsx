@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import blog1 from "@assets/generated_images/Calm_water_surface_for_anxiety_blog_post_34484ece.png";
 import blog2 from "@assets/generated_images/Abstract_order_from_chaos_for_stress_management_page_8136dc7e.png";
+import i18n from "@/lib/i18n";
 
 export interface BlogPost {
   slug: string;
@@ -14,255 +15,276 @@ export interface BlogPost {
   readTime?: string;
 }
 
-const blogPosts: BlogPost[] = [
-  {
-    slug: "stress-management-techniques",
-    title: "5 Scientific Techniques to Lower Cortisol Immediately",
-    description: "Learn effective techniques to manage stress instantly. Box breathing, physiological sighs, and cold exposure can reset your nervous system.",
-    excerpt: "Box breathing is just the beginning. Learn how physiological sighs and cold exposure can reset your nervous system.",
-    category: "Stress Management",
-    date: "Nov 18, 2025",
-    image: blog2,
-    readTime: "5 min read",
-    content: (
+function getBlogPostContent(slug: string): ReactNode {
+  const t = (key: string) => i18n.t(key);
+  
+  if (slug === "stress-management-techniques") {
+    return (
       <>
         <p className="lead">
-          Stress isn't just "in your head." It's a physiological cascade of hormones, primarily cortisol and adrenaline. To stop stress, you have to speak the body's language.
+          {t('blog_data.stress_management_techniques.lead')}
         </p>
         
-        <h2>1. The Physiological Sigh</h2>
+        <h2>{t('blog_data.stress_management_techniques.h2_1')}</h2>
         <p>
-          Discovered by neuroscientists, this breathing pattern is the fastest known way to lower arousal in real-time.
+          {t('blog_data.stress_management_techniques.p1')}
         </p>
         <ul>
-          <li>Inhale deeply through the nose.</li>
-          <li>Take a second, shorter inhale on top of it (to fully inflate alveoli).</li>
-          <li>Exhale slowly and fully through the mouth.</li>
-          <li>Repeat 1-3 times.</li>
+          <li>{t('blog_data.stress_management_techniques.li1_1')}</li>
+          <li>{t('blog_data.stress_management_techniques.li1_2')}</li>
+          <li>{t('blog_data.stress_management_techniques.li1_3')}</li>
+          <li>{t('blog_data.stress_management_techniques.li1_4')}</li>
         </ul>
 
-        <h2>2. Visual Panorama</h2>
+        <h2>{t('blog_data.stress_management_techniques.h2_2')}</h2>
         <p>
-          When we are stressed, our vision narrows (tunnel vision). This is a vestigial predator response. By consciously widening your gaze to see the periphery (panoramic vision), you signal to your brain that you are safe.
+          {t('blog_data.stress_management_techniques.p2')}
         </p>
 
         <div className="bg-muted/50 p-8 rounded-xl border border-border my-8 not-prose">
-          <h3 className="text-xl font-bold mb-4">Need a guide?</h3>
+          <h3 className="text-xl font-bold mb-4">{t('blog_data.stress_management_techniques.guide_title')}</h3>
           <p className="mb-6 text-muted-foreground">
-            Menhausen has a guided 2-minute "Panic Reset" card that walks you through these steps.
+            {t('blog_data.stress_management_techniques.guide_desc')}
           </p>
-          <a href="tg://resolve?domain=ImFineBot&start=miniapp" className="inline-block px-6 py-3 bg-primary text-black rounded-lg font-bold hover:bg-primary/90 transition-colors">
-            Try Panic Reset in App
+          <a href="https://t.me/menhausen_app_bot/app" className="inline-block px-6 py-3 bg-primary text-black rounded-lg font-bold hover:bg-primary/90 transition-colors">
+            {t('blog_data.stress_management_techniques.guide_cta')}
           </a>
         </div>
 
-        <h2>3. Cold Exposure</h2>
+        <h2>{t('blog_data.stress_management_techniques.h2_3')}</h2>
         <p>
-          Splashing cold water on your face triggers the "mammalian dive reflex," which instantly lowers heart rate. It's crude, but effective.
+          {t('blog_data.stress_management_techniques.p3')}
         </p>
 
-        <h2>4. Box Breathing</h2>
+        <h2>{t('blog_data.stress_management_techniques.h2_4')}</h2>
         <p>
-          The classic 4-4-4-4 pattern: inhale for 4 counts, hold for 4, exhale for 4, hold for 4. This technique is used by Navy SEALs to maintain composure under extreme pressure.
+          {t('blog_data.stress_management_techniques.p4')}
         </p>
 
-        <h2>5. Progressive Muscle Relaxation</h2>
+        <h2>{t('blog_data.stress_management_techniques.h2_5')}</h2>
         <p>
-          Tense and release muscle groups systematically. Start with your toes and work your way up. This physical release signals your nervous system that the threat has passed.
+          {t('blog_data.stress_management_techniques.p5')}
         </p>
 
-        <h2>Conclusion</h2>
+        <h2>{t('blog_data.stress_management_techniques.conclusion_title')}</h2>
         <p>
-          You cannot "think" your way out of a stress response. You must "act" your way out. These tools are your first line of defense.
+          {t('blog_data.stress_management_techniques.conclusion_p')}
         </p>
       </>
-    )
-  },
-  {
-    slug: "burnout-signs-men",
-    title: "The Silent Signs of Burnout in High-Performing Men",
-    description: "Burnout doesn't always look like exhaustion. Sometimes it looks like cynicism, detachment, and a loss of efficacy. Learn to recognize the silent signs.",
-    excerpt: "It doesn't always look like exhaustion. Sometimes it looks like cynicism, detachment, and a loss of efficacy.",
-    category: "Burnout",
-    date: "Nov 15, 2025",
-    image: blog1,
-    readTime: "6 min read",
-    content: (
+    );
+  }
+  
+  if (slug === "burnout-signs-men") {
+    return (
       <>
         <p className="lead">
-          Burnout is not just being tired. It's a state of emotional, physical, and mental exhaustion caused by excessive and prolonged stress. For high-performing men, the signs are often subtle and easy to dismiss.
+          {t('blog_data.burnout_signs_men.lead')}
         </p>
 
-        <h2>The Three Dimensions of Burnout</h2>
+        <h2>{t('blog_data.burnout_signs_men.h2_1')}</h2>
         <p>
-          According to research, burnout has three core components:
+          {t('blog_data.burnout_signs_men.p1')}
         </p>
         <ol>
-          <li><strong>Exhaustion:</strong> Physical and emotional depletion</li>
-          <li><strong>Cynicism:</strong> Detachment and negative attitudes toward work and life</li>
-          <li><strong>Inefficacy:</strong> Reduced personal accomplishment and productivity</li>
+          <li><strong>{t('blog_data.burnout_signs_men.li1_1')}</strong></li>
+          <li><strong>{t('blog_data.burnout_signs_men.li1_2')}</strong></li>
+          <li><strong>{t('blog_data.burnout_signs_men.li1_3')}</strong></li>
         </ol>
 
-        <h2>Silent Signs in Men</h2>
+        <h2>{t('blog_data.burnout_signs_men.h2_2')}</h2>
         <p>
-          Men often express burnout differently than women. Watch for these subtle indicators:
+          {t('blog_data.burnout_signs_men.p2')}
         </p>
         <ul>
-          <li>Increased irritability over small things</li>
-          <li>Withdrawal from social activities you used to enjoy</li>
-          <li>Difficulty making decisions that used to be easy</li>
-          <li>Feeling like you're going through the motions</li>
-          <li>Physical symptoms: headaches, digestive issues, sleep problems</li>
-          <li>Using substances (alcohol, caffeine) more than usual to cope</li>
+          <li>{t('blog_data.burnout_signs_men.li2_1')}</li>
+          <li>{t('blog_data.burnout_signs_men.li2_2')}</li>
+          <li>{t('blog_data.burnout_signs_men.li2_3')}</li>
+          <li>{t('blog_data.burnout_signs_men.li2_4')}</li>
+          <li>{t('blog_data.burnout_signs_men.li2_5')}</li>
+          <li>{t('blog_data.burnout_signs_men.li2_6')}</li>
         </ul>
 
-        <h2>Why High Performers Are at Risk</h2>
+        <h2>{t('blog_data.burnout_signs_men.h2_3')}</h2>
         <p>
-          High-performing men often have:
+          {t('blog_data.burnout_signs_men.p3')}
         </p>
         <ul>
-          <li>Perfectionist tendencies</li>
-          <li>Difficulty saying no</li>
-          <li>Identity tied to achievement</li>
-          <li>Neglect of self-care</li>
+          <li>{t('blog_data.burnout_signs_men.li3_1')}</li>
+          <li>{t('blog_data.burnout_signs_men.li3_2')}</li>
+          <li>{t('blog_data.burnout_signs_men.li3_3')}</li>
+          <li>{t('blog_data.burnout_signs_men.li3_4')}</li>
         </ul>
         <p>
-          These traits make them more susceptible to burnout because they push through warning signs.
+          {t('blog_data.burnout_signs_men.p4')}
         </p>
 
-        <h2>Early Intervention</h2>
+        <h2>{t('blog_data.burnout_signs_men.h2_4')}</h2>
         <p>
-          The earlier you recognize burnout, the easier it is to recover. Start with small changes:
+          {t('blog_data.burnout_signs_men.p5')}
         </p>
         <ul>
-          <li>Set boundaries around work hours</li>
-          <li>Schedule regular breaks throughout the day</li>
-          <li>Reconnect with hobbies and interests outside work</li>
-          <li>Practice stress management techniques daily</li>
+          <li>{t('blog_data.burnout_signs_men.li4_1')}</li>
+          <li>{t('blog_data.burnout_signs_men.li4_2')}</li>
+          <li>{t('blog_data.burnout_signs_men.li4_3')}</li>
+          <li>{t('blog_data.burnout_signs_men.li4_4')}</li>
         </ul>
 
-        <h2>Conclusion</h2>
+        <h2>{t('blog_data.burnout_signs_men.conclusion_title')}</h2>
         <p>
-          Burnout is not a sign of weakness. It's a sign that your system is overloaded. Recognizing the silent signs early can prevent a full breakdown and help you maintain your performance sustainably.
+          {t('blog_data.burnout_signs_men.conclusion_p')}
         </p>
       </>
-    )
-  },
-  {
-    slug: "anxiety-vs-stress",
-    title: "Anxiety vs. Stress: Understanding the Difference",
-    description: "Stress is a reaction to a threat. Anxiety is a reaction to the stress. Here is how to tell them apart and treat them differently.",
-    excerpt: "Stress is a reaction to a threat. Anxiety is a reaction to the stress. Here is how to tell them apart and treat them differently.",
-    category: "Anxiety",
-    date: "Nov 10, 2025",
-    image: blog2,
-    readTime: "7 min read",
-    content: (
+    );
+  }
+  
+  if (slug === "anxiety-vs-stress") {
+    return (
       <>
         <p className="lead">
-          Many men use "stress" and "anxiety" interchangeably, but they're different experiences that require different approaches. Understanding the distinction is crucial for effective management.
+          {t('blog_data.anxiety_vs_stress.lead')}
         </p>
 
-        <h2>What is Stress?</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.h2_1')}</h2>
         <p>
-          Stress is your body's response to an external pressure or demand. It has a clear cause and typically subsides when the stressor is removed or resolved.
+          {t('blog_data.anxiety_vs_stress.p1')}
         </p>
-        <p><strong>Characteristics of stress:</strong></p>
+        <p><strong>{t('blog_data.anxiety_vs_stress.stress_char_title')}</strong></p>
         <ul>
-          <li>Has an identifiable trigger (deadline, conflict, financial pressure)</li>
-          <li>Is time-limited (ends when the situation is resolved)</li>
-          <li>Can be motivating in small doses</li>
-          <li>Physical symptoms: increased heart rate, tension, alertness</li>
+          <li>{t('blog_data.anxiety_vs_stress.stress_char1')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.stress_char2')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.stress_char3')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.stress_char4')}</li>
         </ul>
 
-        <h2>What is Anxiety?</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.h2_2')}</h2>
         <p>
-          Anxiety is a persistent feeling of worry, fear, or unease that may not have a clear cause. It's often a reaction to stress that continues even after the stressor is gone.
+          {t('blog_data.anxiety_vs_stress.p2')}
         </p>
-        <p><strong>Characteristics of anxiety:</strong></p>
+        <p><strong>{t('blog_data.anxiety_vs_stress.anxiety_char_title')}</strong></p>
         <ul>
-          <li>May lack a clear trigger</li>
-          <li>Persists beyond the original stressor</li>
-          <li>Can interfere with daily functioning</li>
-          <li>Physical symptoms: racing thoughts, restlessness, difficulty concentrating, sleep problems</li>
+          <li>{t('blog_data.anxiety_vs_stress.anxiety_char1')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.anxiety_char2')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.anxiety_char3')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.anxiety_char4')}</li>
         </ul>
 
-        <h2>Key Differences</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.h2_3')}</h2>
         <table className="w-full my-8 border-collapse">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left p-4">Aspect</th>
-              <th className="text-left p-4">Stress</th>
-              <th className="text-left p-4">Anxiety</th>
+              <th className="text-left p-4">{t('blog_data.anxiety_vs_stress.table_aspect')}</th>
+              <th className="text-left p-4">{t('blog_data.anxiety_vs_stress.table_stress')}</th>
+              <th className="text-left p-4">{t('blog_data.anxiety_vs_stress.table_anxiety')}</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-border/50">
-              <td className="p-4">Source</td>
-              <td className="p-4">External (work, relationships, events)</td>
-              <td className="p-4">Internal (worries, fears, thoughts)</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_source')}</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_source_stress')}</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_source_anxiety')}</td>
             </tr>
             <tr className="border-b border-border/50">
-              <td className="p-4">Duration</td>
-              <td className="p-4">Short-term, situation-specific</td>
-              <td className="p-4">Long-term, persistent</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_duration')}</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_duration_stress')}</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_duration_anxiety')}</td>
             </tr>
             <tr className="border-b border-border/50">
-              <td className="p-4">Focus</td>
-              <td className="p-4">On the present situation</td>
-              <td className="p-4">On future threats or "what ifs"</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_focus')}</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_focus_stress')}</td>
+              <td className="p-4">{t('blog_data.anxiety_vs_stress.table_focus_anxiety')}</td>
             </tr>
           </tbody>
         </table>
 
-        <h2>Managing Stress</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.h2_4')}</h2>
         <p>
-          Since stress has a clear cause, management focuses on:
+          {t('blog_data.anxiety_vs_stress.p3')}
         </p>
         <ul>
-          <li>Problem-solving the stressor</li>
-          <li>Time management and prioritization</li>
-          <li>Physical activity to release tension</li>
-          <li>Relaxation techniques (breathing, meditation)</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_stress1')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_stress2')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_stress3')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_stress4')}</li>
         </ul>
 
-        <h2>Managing Anxiety</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.h2_5')}</h2>
         <p>
-          Anxiety management requires different strategies:
+          {t('blog_data.anxiety_vs_stress.p4')}
         </p>
         <ul>
-          <li>Cognitive techniques to challenge anxious thoughts</li>
-          <li>Exposure therapy for specific fears</li>
-          <li>Mindfulness to stay present</li>
-          <li>Lifestyle changes (sleep, diet, exercise)</li>
-          <li>Professional support if anxiety is severe</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_anxiety1')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_anxiety2')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_anxiety3')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_anxiety4')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.manage_anxiety5')}</li>
         </ul>
 
-        <h2>When to Seek Help</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.h2_6')}</h2>
         <p>
-          Consider professional help if:
+          {t('blog_data.anxiety_vs_stress.p5')}
         </p>
         <ul>
-          <li>Symptoms persist for more than a few weeks</li>
-          <li>Anxiety or stress interfere with work or relationships</li>
-          <li>You're using substances to cope</li>
-          <li>You have thoughts of self-harm</li>
+          <li>{t('blog_data.anxiety_vs_stress.help1')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.help2')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.help3')}</li>
+          <li>{t('blog_data.anxiety_vs_stress.help4')}</li>
         </ul>
 
-        <h2>Conclusion</h2>
+        <h2>{t('blog_data.anxiety_vs_stress.conclusion_title')}</h2>
         <p>
-          Both stress and anxiety are normal human experiences, but they require different management approaches. Understanding which one you're experiencing is the first step toward effective treatment.
+          {t('blog_data.anxiety_vs_stress.conclusion_p')}
         </p>
       </>
-    )
+    );
   }
-];
+  
+  return null;
+}
+
+function getBlogPosts(): BlogPost[] {
+  const t = (key: string) => i18n.t(key);
+  
+  return [
+    {
+      slug: "stress-management-techniques",
+      title: t('blog_data.stress_management_techniques.title'),
+      description: t('blog_data.stress_management_techniques.description'),
+      excerpt: t('blog_data.stress_management_techniques.excerpt'),
+      category: t('blog_data.stress_management_techniques.category'),
+      date: t('blog_data.stress_management_techniques.date'),
+      image: blog2,
+      readTime: t('blog_data.stress_management_techniques.readTime'),
+      content: getBlogPostContent("stress-management-techniques")
+    },
+    {
+      slug: "burnout-signs-men",
+      title: t('blog_data.burnout_signs_men.title'),
+      description: t('blog_data.burnout_signs_men.description'),
+      excerpt: t('blog_data.burnout_signs_men.excerpt'),
+      category: t('blog_data.burnout_signs_men.category'),
+      date: t('blog_data.burnout_signs_men.date'),
+      image: blog1,
+      readTime: t('blog_data.burnout_signs_men.readTime'),
+      content: getBlogPostContent("burnout-signs-men")
+    },
+    {
+      slug: "anxiety-vs-stress",
+      title: t('blog_data.anxiety_vs_stress.title'),
+      description: t('blog_data.anxiety_vs_stress.description'),
+      excerpt: t('blog_data.anxiety_vs_stress.excerpt'),
+      category: t('blog_data.anxiety_vs_stress.category'),
+      date: t('blog_data.anxiety_vs_stress.date'),
+      image: blog2,
+      readTime: t('blog_data.anxiety_vs_stress.readTime'),
+      content: getBlogPostContent("anxiety-vs-stress")
+    }
+  ];
+}
 
 export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+  return getBlogPosts().find(post => post.slug === slug);
 }
 
 export function getAllBlogPosts(): BlogPost[] {
-  return blogPosts;
+  return getBlogPosts();
 }
-

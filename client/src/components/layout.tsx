@@ -50,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <Button variant="default" size="default" className="rounded-[12px] px-6 shadow-[0_0_20px_rgba(225,255,0,0.15)]" asChild>
-              <a href="tg://resolve?domain=ImFineBot&start=miniapp" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/menhausen_app_bot/app" target="_blank" rel="noopener noreferrer">
                 {t('nav.open_telegram')}
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
@@ -79,7 +79,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     </Link>
                   ))}
                   <Button className="mt-4 w-full bg-primary text-black hover:bg-[#D1EF00]" asChild>
-                    <a href="tg://resolve?domain=ImFineBot&start=miniapp" target="_blank" rel="noopener noreferrer">
+                    <a href="https://t.me/menhausen_app_bot/app" target="_blank" rel="noopener noreferrer">
                       {t('nav.open_app')}
                     </a>
                   </Button>
@@ -115,7 +115,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <li><Link href="/stress-cards" className="hover:text-primary transition-colors">{t('nav.stress_cards')}</Link></li>
                 <li><Link href="/stress-management" className="hover:text-primary transition-colors">{t('nav.methodology')}</Link></li>
                 <li><Link href="/pricing" className="hover:text-primary transition-colors">{t('nav.pricing')}</Link></li>
-                <li><a href="tg://resolve?domain=ImFineBot&start=miniapp" className="hover:text-primary transition-colors">Telegram Bot</a></li>
+                <li><a href="https://t.me/menhausen_app_bot/app" className="hover:text-primary transition-colors">{t('footer.telegram_bot')}</a></li>
               </ul>
             </div>
 

@@ -3,23 +3,26 @@ import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { getAllBlogPosts } from "@/lib/blog-data";
+import { useTranslation } from "react-i18next";
 
 export default function Blog() {
+  const { t } = useTranslation();
   const posts = getAllBlogPosts();
 
   return (
     <Layout>
       <SEO 
-        title="Men's Mental Health Blog - Menhausen" 
-        description="Articles on stress management, burnout prevention, and anxiety specifically for men."
+        title={t('blog.seo_title')} 
+        description={t('blog.seo_description')}
         canonical="/blog"
+        keywords={t('blog.seo_keywords')}
       />
       
       <div className="bg-secondary text-secondary-foreground py-16">
         <div className="container mx-auto px-4 sm:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">The Journal</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">{t('blog.title')}</h1>
           <p className="text-xl text-white/70 max-w-2xl">
-            Insights on psychology, neuroscience, and performance. Written for men who want to optimize their minds.
+            {t('blog.subtitle')}
           </p>
         </div>
       </div>
@@ -48,7 +51,7 @@ export default function Blog() {
                     {post.excerpt}
                   </p>
                   <span className="text-primary font-bold text-sm inline-flex items-center">
-                    Read Article
+                    {t('common.read_article')}
                   </span>
                 </div>
               </div>

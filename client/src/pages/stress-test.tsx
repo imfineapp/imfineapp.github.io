@@ -5,8 +5,10 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ArrowRight, RefreshCcw } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function StressTest() {
+  const { t } = useTranslation();
   const [started, setStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [scores, setScores] = useState<number[]>([]);
@@ -37,9 +39,9 @@ export default function StressTest() {
   const percentage = Math.round((totalScore / maxScore) * 100);
 
   const getResult = () => {
-    if (percentage < 30) return { title: "Low Stress", desc: "You seem to be managing well. Keep up your healthy habits.", color: "text-green-500" };
-    if (percentage < 60) return { title: "Moderate Stress", desc: "You are feeling the pressure. It's a good time to start preventative practices.", color: "text-yellow-500" };
-    return { title: "High Stress", desc: "You are in the danger zone. Immediate action is recommended to prevent burnout.", color: "text-red-500" };
+    if (percentage < 30) return { title: t('stress_test.result_low_title'), desc: t('stress_test.result_low_desc'), color: "text-green-500" };
+    if (percentage < 60) return { title: t('stress_test.result_moderate_title'), desc: t('stress_test.result_moderate_desc'), color: "text-yellow-500" };
+    return { title: t('stress_test.result_high_title'), desc: t('stress_test.result_high_desc'), color: "text-red-500" };
   };
 
   const reset = () => {
@@ -52,28 +54,27 @@ export default function StressTest() {
   return (
     <Layout>
       <SEO 
-        title="1-Minute Stress Test" 
-        description="Quick anonymous stress assessment for men. 6 questions to evaluate your current stress levels."
+        title={t('stress_test.seo_title')} 
+        description={t('stress_test.seo_description')}
         canonical="/stress-test"
-        keywords="stress test, stress assessment, stress level, men's mental health test"
+        keywords={t('stress_test.seo_keywords')}
       />
       
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-2xl">
         {!started ? (
           <div className="text-center space-y-8">
-            <h1 className="text-4xl md:text-5xl font-bold">Stress Level Check</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">{t('stress_test.title')}</h1>
             <p className="text-xl text-muted-foreground">
-              6 questions. 1 minute. Anonymous results.
-              Find out where you stand on the stress spectrum.
+              {t('stress_test.subtitle')}
             </p>
             <Button size="lg" onClick={() => setStarted(true)} className="text-lg px-12 h-14 rounded-full shadow-xl shadow-primary/20">
-              Start Test
+              {t('stress_test.start_test')}
             </Button>
           </div>
         ) : !finished ? (
           <div className="space-y-8 animate-in fade-in duration-500">
              <div className="flex justify-between text-sm font-medium text-muted-foreground mb-2">
-                <span>Question {currentQuestion + 1} of {questions.length}</span>
+                <span>{t('stress_test.question_progress', { current: currentQuestion + 1, total: questions.length })}</span>
                 <span>{Math.round(((currentQuestion) / questions.length) * 100)}%</span>
              </div>
              <Progress value={(currentQuestion / questions.length) * 100} className="h-2" />
@@ -85,10 +86,10 @@ export default function StressTest() {
                  </h2>
                  <div className="grid grid-cols-1 gap-4">
                    {[
-                     { label: "Never", score: 0 },
-                     { label: "Sometimes", score: 1 },
-                     { label: "Often", score: 2 },
-                     { label: "Always", score: 3 }
+                     { label: t('stress_test.never'), score: 0 },
+                     { label: t('stress_test.sometimes'), score: 1 },
+                     { label: t('stress_test.often'), score: 2 },
+                     { label: t('stress_test.always'), score: 3 }
                    ].map((option) => (
                      <Button 
                        key={option.label} 
@@ -105,7 +106,7 @@ export default function StressTest() {
           </div>
         ) : (
           <div className="text-center space-y-8 animate-in zoom-in-95 duration-500">
-            <h2 className="text-2xl font-bold text-muted-foreground">Your Result</h2>
+            <h2 className="text-2xl font-bold text-muted-foreground">{t('stress_test.result_title')}</h2>
             <div className="py-8">
                <div className={`text-5xl md:text-6xl font-black mb-4 ${getResult().color}`}>
                  {getResult().title}
@@ -114,15 +115,15 @@ export default function StressTest() {
             </div>
             
             <div className="bg-muted/50 p-8 rounded-2xl border border-border/50">
-              <h3 className="font-bold mb-4">Recommended Action</h3>
-              <p className="mb-6">Based on your score, we recommend starting with the <strong>"Reframing Negative Thoughts"</strong> card.</p>
+              <h3 className="font-bold mb-4">{t('stress_test.recommended_action_title')}</h3>
+              <p className="mb-6">{t('stress_test.recommended_action_desc')}</p>
               <Button size="lg" className="w-full md:w-auto" asChild>
-                 <a href="tg://resolve?domain=ImFineBot&start=miniapp">Open Recommended Card</a>
+                 <a href="https://t.me/menhausen_app_bot/app">{t('stress_test.recommended_action_cta')}</a>
               </Button>
             </div>
 
             <Button variant="ghost" onClick={reset} className="mt-8">
-              <RefreshCcw className="w-4 h-4 mr-2" /> Retake Test
+              <RefreshCcw className="w-4 h-4 mr-2" /> {t('stress_test.retake_test')}
             </Button>
           </div>
         )}

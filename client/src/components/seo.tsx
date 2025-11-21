@@ -61,7 +61,8 @@ export function SEO({
   const availableLangs = ["en", "ru"];
 
   useEffect(() => {
-    const fullTitle = `${title} | Menhausen`;
+    const brandName = i18n.t('seo.brand_name');
+    const fullTitle = `${title} | ${brandName}`;
     document.title = fullTitle;
     
     // Base meta description

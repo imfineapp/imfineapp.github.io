@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Link, useRoute, Redirect } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { getBlogPost } from "@/lib/blog-data";
+import { useTranslation } from "react-i18next";
 
 export default function BlogPost() {
+  const { t } = useTranslation();
   const [match, params] = useRoute("/blog/:slug");
   const slug = params?.slug;
   const post = slug ? getBlogPost(slug) : undefined;
@@ -44,7 +46,7 @@ export default function BlogPost() {
       <article className="py-16">
         <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
           <Link href="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Journal
+            <ArrowLeft className="w-4 h-4 mr-2" /> {t('blog.back_to_journal')}
           </Link>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
