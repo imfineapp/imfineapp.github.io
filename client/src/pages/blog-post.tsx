@@ -19,7 +19,7 @@ export default function BlogPost() {
 
   const imageUrl = typeof post.image === "string" 
     ? post.image 
-    : (post.image as any)?.src || "/favicon.png";
+    : (post.image as any)?.src || "/favicon.ico";
   
   return (
     <Layout>

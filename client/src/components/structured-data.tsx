@@ -26,7 +26,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           "@type": "Organization",
           "name": "Menhausen",
           "url": SITE_URL,
-          "logo": `${SITE_URL}/favicon.png`,
+          "logo": `${SITE_URL}/favicon.ico`,
           "description": "Anonymous stress management for men. Practical stress cards, CBT & ACT techniques.",
           "sameAs": []
         };
@@ -37,7 +37,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           const article = data.article;
           const imageUrl = typeof article.image === "string" 
             ? article.image 
-            : (article.image as any)?.src || `${SITE_URL}/favicon.png`;
+            : (article.image as any)?.src || `${SITE_URL}/favicon.ico`;
           
           jsonLd = {
             "@context": "https://schema.org",
@@ -56,7 +56,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
               "name": "Menhausen",
               "logo": {
                 "@type": "ImageObject",
-                "url": `${SITE_URL}/favicon.png`
+                "url": `${SITE_URL}/favicon.ico`
               }
             },
             "mainEntityOfPage": {

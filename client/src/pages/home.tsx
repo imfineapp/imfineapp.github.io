@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const { t } = useTranslation();
-  const heroImageUrl = typeof heroImage === "string" ? heroImage : (heroImage as any)?.src || "/favicon.png";
+  const heroImageUrl = typeof heroImage === "string" ? heroImage : (heroImage as any)?.src || "/favicon.ico";
 
   const faqItems = [
     {

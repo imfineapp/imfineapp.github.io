@@ -94,7 +94,7 @@ export function SEO({
     const ogImage = getOrCreateMetaTag("og:image") as HTMLMetaElement;
     const imageUrl = image 
       ? (image.startsWith("http") ? image : `${SITE_URL}${image}`)
-      : `${SITE_URL}/favicon.png`;
+      : `${SITE_URL}/favicon.ico`;
     ogImage.setAttribute("content", imageUrl);
 
     // Twitter Card tags
