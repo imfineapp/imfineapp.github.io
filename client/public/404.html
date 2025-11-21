@@ -12,10 +12,19 @@
     <meta property="og:site_name" content="Menhausen" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#e1ff00" />
+    <script>
+      // GitHub Pages SPA redirect
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var newPath = path + search + hash;
+      if (newPath !== '/404.html') {
+        window.history.replaceState(null, null, newPath);
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
