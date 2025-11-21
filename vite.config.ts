@@ -1,54 +1,61 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
-import type { ViteDevServer } from "vite";
-import type { IncomingMessage, ServerResponse } from "http";
+import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-    // Add headers to prevent caching of favicons and icons in development
-    headers: mode === 'development' ? {
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    } : {},
-  },
+export default defineConfig({
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
-    // Custom plugin to add cache-busting headers for icon files
-    {
-      name: 'icon-cache-buster',
-      configureServer(server: ViteDevServer) {
-        server.middlewares.use('/favicon', (req: IncomingMessage, res: ServerResponse, next: () => void) => {
-          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-          res.setHeader('Pragma', 'no-cache');
-          res.setHeader('Expires', '0');
-          next();
-        });
-        
-        server.middlewares.use((req: IncomingMessage, res: ServerResponse, next: () => void) => {
-          // Apply no-cache headers to all icon files
-          if (req.url && /\.(ico|png|svg|webmanifest)$/.test(req.url)) {
-            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-            res.setHeader('Pragma', 'no-cache');
-            res.setHeader('Expires', '0');
-          }
-          next();
-        });
-      },
-    },
-  ].filter(Boolean),
+    runtimeErrorOverlay(),
+    tailwindcss(),
+    ...(process.env.NODE_ENV !== "production" &&
+    process.env.REPL_ID !== undefined
+      ? [
+          await import("@replit/vite-plugin-cartographer").then((m) =>
+            m.cartographer(),
+          ),
+          await import("@replit/vite-plugin-dev-banner").then((m) =>
+            m.devBanner(),
+          ),
+        ]
+      : []),
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(import.meta.dirname, "client", "src"),
+      "@shared": path.resolve(import.meta.dirname, "shared"),
+      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  // Optimize icon handling
-  assetsInclude: ['**/*.ico', '**/*.webmanifest'],
-}));
+  css: {
+    postcss: {
+      plugins: [],
+    },
+  },
+  root: path.resolve(import.meta.dirname, "client"),
+  base: '/',
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    emptyOutDir: true,
+  },
+  esbuild: {
+    jsx: "automatic",
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".ts": "tsx",
+        ".tsx": "tsx",
+      },
+    },
+  },
+  server: {
+    host: "0.0.0.0",
+    allowedHosts: true,
+    fs: {
+      strict: true,
+      deny: ["**/.*"],
+    },
+  },
+});

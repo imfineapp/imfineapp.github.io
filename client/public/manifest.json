@@ -1,0 +1,28 @@
+{
+  "name": "Menhausen - Anonymous Stress Management for Men",
+  "short_name": "Menhausen",
+  "description": "Practical stress cards, CBT & ACT techniques for men. Anonymous, no registration, 3-7 minute daily practices.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#e1ff00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle", "medical"],
+  "lang": "en",
+  "dir": "ltr"
+}
+

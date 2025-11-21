@@ -1,0 +1,12 @@
+Основные гайдлайны
+Цвета: держим тёмный фон bg-bg-primary (#111111), карточки через bg-bg-card с states hover/active, тексты text-primary/secondary/tertiary (белый → серый градиент), акцент — неоновый bg-brand-primary (#E1FF00) с hover #D1EF00; бордеры border-border-primary/-secondary и акцент border-border-accent. Все цвета подключаем только через токены, никаких hex в JSX.
+design-tokens.mdLines 32-84
+- `bg-brand-primary` / `text-brand-primary` - Основной желтый (#e1ff00)- `bg-brand-primary-hover` / `text-brand-primary-hover` - Желтый при наведении (#d1ef00)- `bg-brand-primary-muted` / `text-brand-primary-muted` - Приглушенный желтый (#b8b800)...- `bg-bg-primary` - Основной фон (#111111)- `bg-bg-card` / `hover:bg-bg-card-hover` / `bg-bg-card-active` - слои карточек
+Элементы: primary CTA — фиксированная кнопка 350×46 px, radius 12 px, PT Sans Bold 15 px, absolute bottom 35 px с safe-area отступами; secondary — тот же каркас c прозрачным фоном и бордером. Инпуты 46 px высотой, padding 16 px, бордер 1 px; карточки radius 12 px (малые) /16 px (контейнеры), spacing 16 px вертикально, flex/grid layout вместо fixed позиций.
+Типографика: заголовки на Roboto Slab (H1 clamp 24–32 px, H2 20–28 px, H3 18–24 px, leading 0.8), база на PT Sans (Body clamp 14–18 px, Caption 12–14 px, Small 10–12 px, Button 15 px/500). Используем готовые классы typography-h1/h2/..., text-h1/..., font-heading, font-sans; не задаём text-[Npx] вручную.
+typography-system.mdLines 10-83
+.typography-h1 // Roboto Slab, clamp(24px,5vw,32px), line-height 0.8.typography-h2 // Roboto Slab, clamp(20px,4vw,28px), line-height 0.8.typography-body // PT Sans, clamp(14px,2.5vw,18px), line-height 1.5.typography-button // PT Sans, 15px, font-weight 500
+Иконки и визуальные библиотеки: Radix UI (accordion, dialog, select, т.д.) обеспечивает паттерны взаимодействия; Lucide Icons (lucide-react) — основной набор иконок; для сложных графических паттернов используем Tailwind 4 + motion.js для микровзаимодействий, sonner для тостов, recharts/reaviz для данных.
+package.jsonLines 55-80
+"@radix-ui/react-dialog": "^1.1.15","@radix-ui/react-select": "^2.2.6","lucide-react": "^0.263.1","motion": "^10.16.2","sonner": "^1.5.0"
+Быстрые правила: mobile-first (max content 393 px), безопасные touch-зоны 44 px, clamp-типографика, spacing 4/8/16/24 px, активные состояния и фокус везде, scripts/find-hardcoded-values.js для контроля токенов.
