@@ -15,12 +15,12 @@ export default function StressTest() {
   const [finished, setFinished] = useState(false);
 
   const questions = [
-    "I feel overwhelmed by my responsibilities.",
-    "I have trouble sleeping due to racing thoughts.",
-    "I feel irritable or angry over small things.",
-    "I find it hard to relax even when I have time off.",
-    "I feel like I'm losing control of my life.",
-    "I have physical symptoms like headaches or tension."
+    t('stress_test.question1'),
+    t('stress_test.question2'),
+    t('stress_test.question3'),
+    t('stress_test.question4'),
+    t('stress_test.question5'),
+    t('stress_test.question6')
   ];
 
   const handleAnswer = (score: number) => {

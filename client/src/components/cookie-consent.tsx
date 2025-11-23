@@ -41,10 +41,10 @@ export function CookieConsent() {
           </p>
         </div>
         <div className="flex items-center gap-3 w-full md:w-auto">
-          <Button variant="ghost" size="sm" onClick={decline} className="text-muted-foreground hover:text-foreground">
+          <Button variant="ghost" size="default" onClick={decline} className="text-muted-foreground hover:text-foreground min-h-[44px]">
             {t('cookie_consent.decline')}
           </Button>
-          <Button size="default" onClick={accept} className="bg-primary text-black hover:bg-primary/90 px-8">
+          <Button size="default" onClick={accept} className="bg-primary text-black hover:bg-primary/90 px-8 min-h-[44px]">
             {t('cookie_consent.accept')}
           </Button>
         </div>

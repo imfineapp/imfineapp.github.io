@@ -1,15 +1,71 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, Shield, ExternalLink } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, ExternalLink } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useTranslation } from "react-i18next";
+import { AnchorIcon } from "@/components/anchor-icon";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+  const isProgrammaticNavigation = useRef(false);
+  const previousLocation = useRef(location);
+
+  // Включаем нативное восстановление прокрутки браузера
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'auto';
+    }
+  }, []);
+
+  // Отслеживаем popstate события (навигация назад/вперед)
+  useEffect(() => {
+    const handlePopState = () => {
+      isProgrammaticNavigation.current = false;
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Прокрутка страницы вверх только при программной навигации
+  useEffect(() => {
+    // Пропускаем прокрутку при первой загрузке или если навигация была через браузер
+    if (previousLocation.current === location) {
+      return;
+    }
+
+    // Прокручиваем вверх только при программной навигации
+    if (isProgrammaticNavigation.current) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    previousLocation.current = location;
+    // Сбрасываем флаг после обработки
+    isProgrammaticNavigation.current = false;
+  }, [location]);
+
+  // Обработчик кликов на ссылках для отслеживания программной навигации
+  useEffect(() => {
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a[href]') as HTMLAnchorElement;
+      
+      if (link && link.href && !link.target && !link.hasAttribute('download')) {
+        const url = new URL(link.href);
+        // Проверяем, что это внутренняя ссылка
+        if (url.origin === window.location.origin) {
+          isProgrammaticNavigation.current = true;
+        }
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick, true);
+    return () => document.removeEventListener('click', handleLinkClick, true);
+  }, []);
 
   const navLinks = [
     { href: "/", label: t('nav.home') },
@@ -26,8 +82,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-primary hover:text-primary/90 transition-colors">
-              <Shield className="h-6 w-6 fill-primary/20" />
+            <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-white hover:text-white/90 transition-colors">
+              <AnchorIcon className="h-6 w-6" />
               Menhausen
             </Link>
           </div>
@@ -62,11 +118,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <LanguageSwitcher />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
+                <Button variant="ghost" size="icon" className="h-11 w-11 min-h-[44px] min-w-[44px]">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-card border-border">
+                <SheetTitle className="sr-only">Navigation</SheetTitle>
+                <SheetDescription className="sr-only">Main navigation menu</SheetDescription>
                 <nav className="flex flex-col gap-4 mt-8">
                   {navLinks.map((link) => (
                     <Link 
@@ -100,8 +158,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-primary mb-4">
-                <Shield className="h-8 w-8 fill-primary/20" />
+              <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-white mb-4">
+                <AnchorIcon className="h-8 w-8" />
                 Menhausen
               </Link>
               <p className="text-muted-foreground/70 max-w-md leading-relaxed">
@@ -112,19 +170,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-bold text-white mb-4 font-heading">{t('footer.product')}</h4>
               <ul className="space-y-2 text-sm text-muted-foreground/70">
-                <li><Link href="/stress-cards" className="hover:text-primary transition-colors">{t('nav.stress_cards')}</Link></li>
-                <li><Link href="/stress-management" className="hover:text-primary transition-colors">{t('nav.methodology')}</Link></li>
-                <li><Link href="/pricing" className="hover:text-primary transition-colors">{t('nav.pricing')}</Link></li>
-                <li><a href="https://t.me/menhausen_app_bot/app" className="hover:text-primary transition-colors">{t('footer.telegram_bot')}</a></li>
+                <li><Link href="/stress-cards" className="block py-1 hover:text-primary transition-colors">{t('nav.stress_cards')}</Link></li>
+                <li><Link href="/stress-management" className="block py-1 hover:text-primary transition-colors">{t('nav.methodology')}</Link></li>
+                <li><Link href="/pricing" className="block py-1 hover:text-primary transition-colors">{t('nav.pricing')}</Link></li>
+                <li><a href="https://t.me/menhausen_app_bot/app" className="block py-1 hover:text-primary transition-colors">{t('footer.telegram_bot')}</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold text-white mb-4 font-heading">{t('footer.legal')}</h4>
               <ul className="space-y-2 text-sm text-muted-foreground/70">
-                <li><Link href="/privacy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link></li>
-                <li><Link href="/terms" className="hover:text-primary transition-colors">{t('footer.terms')}</Link></li>
-                <li><Link href="/contact" className="hover:text-primary transition-colors">{t('footer.contact')}</Link></li>
+                <li><Link href="/privacy" className="block py-1 hover:text-primary transition-colors">{t('footer.privacy')}</Link></li>
+                <li><Link href="/terms" className="block py-1 hover:text-primary transition-colors">{t('footer.terms')}</Link></li>
+                <li><Link href="/contact" className="block py-1 hover:text-primary transition-colors">{t('footer.contact')}</Link></li>
               </ul>
             </div>
           </div>

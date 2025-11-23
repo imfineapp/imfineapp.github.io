@@ -37,8 +37,10 @@ export default function Blog() {
                     src={post.image} 
                     alt={post.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                    />
-                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-foreground uppercase tracking-wider">
+                   <div className="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full text-xs font-bold text-black uppercase tracking-wider">
                      {post.category}
                    </div>
                 </div>

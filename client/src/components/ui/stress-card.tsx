@@ -34,7 +34,7 @@ export function StressCard({ id, title, questions, recommendation, duration = "3
         <div className="space-y-3">
           {questions.map((q, i) => (
             <div key={i} className="p-3 rounded-lg bg-white/5 border border-transparent group-hover:border-primary/10 transition-colors">
-              <p className="text-sm font-medium text-foreground/80 font-sans">{q}</p>
+              <p className="text-base md:text-sm font-medium text-foreground/80 font-sans">{q}</p>
             </div>
           ))}
         </div>

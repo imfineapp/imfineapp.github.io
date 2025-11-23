@@ -8,10 +8,29 @@ import { Shield, Lock, Brain, ArrowRight, CheckCircle2, Clock, Zap } from "lucid
 import heroImage from "@assets/generated_images/Dark_blue_and_graphite_abstract_geometric_shapes_for_hero_background_66e4b19a.png";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 export default function Home() {
   const { t } = useTranslation();
   const heroImageUrl = typeof heroImage === "string" ? heroImage : (heroImage as any)?.src || "/favicon.ico";
+
+  // Preload hero image for better LCP
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = heroImageUrl;
+    link.setAttribute("fetchpriority", "high");
+    document.head.appendChild(link);
+
+    return () => {
+      // Cleanup: remove preload link when component unmounts
+      const existingLink = document.querySelector(`link[rel="preload"][href="${heroImageUrl}"]`);
+      if (existingLink) {
+        existingLink.remove();
+      }
+    };
+  }, [heroImageUrl]);
 
   const faqItems = [
     {
@@ -78,6 +97,9 @@ export default function Home() {
                 src={heroImage} 
                 alt={t('common.alt_hero_image')} 
                 className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
+                loading="eager"
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -135,7 +157,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
               t('topics.list.relationships'),
               t('topics.list.self_esteem'),

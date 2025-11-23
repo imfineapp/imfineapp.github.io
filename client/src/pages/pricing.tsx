@@ -26,7 +26,7 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Free Tier */}
-          <div className="border border-border rounded-3xl p-8 bg-white shadow-sm relative overflow-hidden">
+          <div className="border border-border rounded-3xl p-8 bg-muted shadow-sm relative overflow-hidden">
             <div className="mb-8">
               <h3 className="text-2xl font-bold mb-2">{t('pricing.basic_title')}</h3>
               <p className="text-muted-foreground">{t('pricing.basic_desc')}</p>

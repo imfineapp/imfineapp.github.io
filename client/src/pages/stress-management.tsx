@@ -16,11 +16,13 @@ export default function StressManagement() {
         keywords={t('stress_management.seo_keywords')}
       />
       
-      <div className="relative h-[400px] w-full overflow-hidden bg-secondary">
+      <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden bg-secondary">
         <img 
           src={stressImage} 
           alt={t('common.alt_stress_management')} 
           className="w-full h-full object-cover opacity-40"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
@@ -94,7 +96,7 @@ export default function StressManagement() {
         </div>
 
         <div className="lg:col-span-4 space-y-8">
-          <div className="bg-secondary text-secondary-foreground p-8 rounded-2xl sticky top-24">
+          <div className="bg-secondary text-secondary-foreground p-8 rounded-2xl md:sticky md:top-24">
             <h3 className="text-2xl font-bold text-white mb-4">{t('stress_management.sidebar_title')}</h3>
             <p className="text-white/70 mb-6">
               {t('stress_management.sidebar_desc')}
