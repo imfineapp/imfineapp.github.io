@@ -91,9 +91,7 @@ export default function StressCards() {
       <div className="container mx-auto px-4 sm:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card) => (
-            <div key={card.id} className="h-80">
-              <StressCard {...card} />
-            </div>
+            <StressCard key={card.id} {...card} />
           ))}
         </div>
 

@@ -78,6 +78,8 @@ export default function Home() {
                 src={heroImage} 
                 alt={t('common.alt_hero_image')} 
                 className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -135,7 +137,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
               t('topics.list.relationships'),
               t('topics.list.self_esteem'),
