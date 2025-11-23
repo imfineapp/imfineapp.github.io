@@ -21,7 +21,8 @@ export default function StressManagement() {
           src={stressImage} 
           alt={t('common.alt_stress_management')} 
           className="w-full h-full object-cover opacity-40"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">

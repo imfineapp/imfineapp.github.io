@@ -70,7 +70,8 @@ export default function BlogPost() {
               src={typeof post.image === "string" ? post.image : (post.image as any)?.src || post.image} 
               alt={post.title} 
               className="w-full h-auto" 
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
 

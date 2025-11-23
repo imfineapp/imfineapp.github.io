@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Menu, X, ExternalLink } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -11,11 +11,61 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+  const isProgrammaticNavigation = useRef(false);
+  const previousLocation = useRef(location);
 
-  // Прокрутка страницы вверх при смене маршрута
+  // Включаем нативное восстановление прокрутки браузера
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'auto';
+    }
+  }, []);
+
+  // Отслеживаем popstate события (навигация назад/вперед)
+  useEffect(() => {
+    const handlePopState = () => {
+      isProgrammaticNavigation.current = false;
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Прокрутка страницы вверх только при программной навигации
+  useEffect(() => {
+    // Пропускаем прокрутку при первой загрузке или если навигация была через браузер
+    if (previousLocation.current === location) {
+      return;
+    }
+
+    // Прокручиваем вверх только при программной навигации
+    if (isProgrammaticNavigation.current) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    previousLocation.current = location;
+    // Сбрасываем флаг после обработки
+    isProgrammaticNavigation.current = false;
   }, [location]);
+
+  // Обработчик кликов на ссылках для отслеживания программной навигации
+  useEffect(() => {
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a[href]') as HTMLAnchorElement;
+      
+      if (link && link.href && !link.target && !link.hasAttribute('download')) {
+        const url = new URL(link.href);
+        // Проверяем, что это внутренняя ссылка
+        if (url.origin === window.location.origin) {
+          isProgrammaticNavigation.current = true;
+        }
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick, true);
+    return () => document.removeEventListener('click', handleLinkClick, true);
+  }, []);
 
   const navLinks = [
     { href: "/", label: t('nav.home') },
