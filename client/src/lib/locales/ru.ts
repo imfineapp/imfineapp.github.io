@@ -18,7 +18,7 @@ export const ru = {
     terms: "Условия использования",
     contact: "Контакты",
     telegram_bot: "Telegram Бот",
-    indie_hackers: "Indie Hackers",
+    telegram_channel: "Канал в Telegram",
     linkedin: "LinkedIn",
     x: "X (Twitter)",
     rights: "© {{year}} Menhausen. Все права защищены. Не является медицинской услугой."

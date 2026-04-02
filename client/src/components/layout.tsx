@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, ExternalLink, Linkedin, Twitter } from "lucide-react";
+import { Menu, X, ExternalLink, Send, Linkedin, Twitter } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -191,17 +191,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-2 text-sm text-muted-foreground/70">
                 <li>
                   <a
-                    href="https://www.indiehackers.com/product/menhausen"
+                    href="https://t.me/menhausen_app_en"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 py-1 hover:text-primary transition-colors"
                   >
-                    <img
-                      src="/indiehackers-favicon-32.png"
-                      alt="Indie Hackers"
-                      className="h-4 w-4 rounded-sm"
-                    />
-                    {t('footer.indie_hackers')}
+                    <Send className="h-4 w-4" />
+                    {t('footer.telegram_channel')}
                   </a>
                 </li>
                 <li>

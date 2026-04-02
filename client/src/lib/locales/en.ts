@@ -18,7 +18,7 @@ export const en = {
     terms: "Terms of Service",
     contact: "Contact",
     telegram_bot: "Telegram Bot",
-    indie_hackers: "Indie Hackers",
+    telegram_channel: "Telegram channel",
     linkedin: "LinkedIn",
     x: "X (Twitter)",
     rights: "© {{year}} Menhausen. All rights reserved. Not a medical service."
