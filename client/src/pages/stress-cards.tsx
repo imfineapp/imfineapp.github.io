@@ -73,7 +73,6 @@ export default function StressCards() {
         title={t('stress_cards.seo_title')} 
         description={t('stress_cards.seo_description')}
         canonical="/stress-cards"
-        keywords={t('stress_cards.seo_keywords')}
       />
       
       <div className="bg-muted/30 py-16">

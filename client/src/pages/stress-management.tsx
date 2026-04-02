@@ -13,7 +13,6 @@ export default function StressManagement() {
         title={t('stress_management.seo_title')} 
         description={t('stress_management.seo_description')}
         canonical="/stress-management"
-        keywords={t('stress_management.seo_keywords')}
       />
       
       <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden bg-secondary">

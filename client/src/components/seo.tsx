@@ -8,11 +8,18 @@ interface SEOProps {
   canonical?: string;
   image?: string;
   type?: string;
-  keywords?: string;
   author?: string;
 }
 
-const SITE_URL = typeof window !== "undefined" ? window.location.origin : "";
+/** Self-referential canonical query: only `lang` (i18n), no UTM or other tracking. */
+function canonicalSearchSuffix(): string {
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get("lang");
+  if (lang === "en" || lang === "ru") {
+    return `?lang=${encodeURIComponent(lang)}`;
+  }
+  return "";
+}
 
 function getOrCreateMetaTag(property: string, attribute: "name" | "property" = "property"): HTMLElement {
   const selector = attribute === "property" 
@@ -42,18 +49,12 @@ function getOrCreateLinkTag(rel: string): HTMLLinkElement {
   return link;
 }
 
-function removeMetaTags(selector: string) {
-  const tags = document.querySelectorAll(selector);
-  tags.forEach(tag => tag.remove());
-}
-
 export function SEO({ 
   title, 
   description, 
   canonical, 
   image,
   type = "website",
-  keywords,
   author
 }: SEOProps) {
   const [location] = useLocation();
@@ -61,9 +62,11 @@ export function SEO({
   const availableLangs = ["en", "ru"];
 
   useEffect(() => {
+    const origin = window.location.origin;
     const brandName = i18n.t('seo.brand_name');
     const fullTitle = `${title} | ${brandName}`;
     document.title = fullTitle;
+    document.querySelector('meta[name="keywords"]')?.remove();
     
     // Base meta description
     if (description) {
@@ -71,8 +74,9 @@ export function SEO({
       metaDescription.setAttribute("content", description);
     }
 
-    // Canonical URL
-    const canonicalUrl = canonical || `${SITE_URL}${location}`;
+    // Absolute canonical URL (path from prop or router) + lang when present in address bar
+    const path = canonical ?? location;
+    const canonicalUrl = `${origin}${path}${canonicalSearchSuffix()}`;
     const linkCanonical = getOrCreateLinkTag("canonical");
     linkCanonical.setAttribute("href", canonicalUrl);
 
@@ -93,8 +97,8 @@ export function SEO({
 
     const ogImage = getOrCreateMetaTag("og:image") as HTMLMetaElement;
     const imageUrl = image 
-      ? (image.startsWith("http") ? image : `${SITE_URL}${image}`)
-      : `${SITE_URL}/favicon.ico`;
+      ? (image.startsWith("http") ? image : `${origin}${image}`)
+      : `${origin}/favicon.ico`;
     ogImage.setAttribute("content", imageUrl);
 
     // Twitter Card tags
@@ -111,12 +115,6 @@ export function SEO({
 
     const twitterImage = getOrCreateMetaTag("twitter:image", "name") as HTMLMetaElement;
     twitterImage.setAttribute("content", imageUrl);
-
-    // Additional meta tags
-    if (keywords) {
-      const metaKeywords = getOrCreateMetaTag("keywords", "name") as HTMLMetaElement;
-      metaKeywords.setAttribute("content", keywords);
-    }
 
     if (author) {
       const metaAuthor = getOrCreateMetaTag("author", "name") as HTMLMetaElement;
@@ -140,9 +138,8 @@ export function SEO({
       hreflangLink.setAttribute("rel", "alternate");
       hreflangLink.setAttribute("hreflang", lang);
       // Build URL with language parameter
-      const baseUrl = SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
       const separator = location.includes("?") ? "&" : "?";
-      hreflangLink.setAttribute("href", `${baseUrl}${location}${separator}lang=${lang}`);
+      hreflangLink.setAttribute("href", `${origin}${location}${separator}lang=${lang}`);
       document.head.appendChild(hreflangLink);
     });
 
@@ -150,7 +147,7 @@ export function SEO({
     const defaultHreflang = document.createElement("link");
     defaultHreflang.setAttribute("rel", "alternate");
     defaultHreflang.setAttribute("hreflang", "x-default");
-    defaultHreflang.setAttribute("href", `${SITE_URL}${location}`);
+    defaultHreflang.setAttribute("href", `${origin}${location}`);
     document.head.appendChild(defaultHreflang);
 
     // Cleanup function
@@ -158,7 +155,7 @@ export function SEO({
       // Note: We don't remove meta tags on cleanup to avoid flickering
       // They will be updated on next render
     };
-  }, [title, description, canonical, image, type, keywords, author, location, currentLang]);
+  }, [title, description, canonical, image, type, author, location, currentLang]);
 
   return null;
 }

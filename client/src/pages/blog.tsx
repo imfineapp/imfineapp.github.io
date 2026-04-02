@@ -15,7 +15,6 @@ export default function Blog() {
         title={t('blog.seo_title')} 
         description={t('blog.seo_description')}
         canonical="/blog"
-        keywords={t('blog.seo_keywords')}
       />
       
       <div className="bg-secondary text-secondary-foreground py-16">

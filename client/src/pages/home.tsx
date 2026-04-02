@@ -54,7 +54,6 @@ export default function Home() {
         description={t('home.seo_description')}
         canonical="/"
         image={heroImageUrl}
-        keywords={t('home.seo_keywords')}
       />
       <StructuredData type="organization" />
       <StructuredData type="website" />
@@ -96,6 +95,9 @@ export default function Home() {
               <img 
                 src={heroImage} 
                 alt={t('common.alt_hero_image')} 
+                title={t('common.alt_hero_image')}
+                width={1024}
+                height={1024}
                 className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
                 loading="eager"
                 fetchPriority="high"
@@ -192,7 +194,7 @@ export default function Home() {
                   <div key={i} className="flex gap-6 group">
                     <span className="text-4xl font-black text-border group-hover:text-primary transition-colors font-heading">{item.step}</span>
                     <div>
-                      <h4 className="text-xl font-bold mb-2 font-heading">{item.title}</h4>
+                      <h3 className="text-xl font-bold mb-2 font-heading">{item.title}</h3>
                       <p className="text-muted-foreground font-sans">{item.desc}</p>
                     </div>
                   </div>
