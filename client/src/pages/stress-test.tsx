@@ -57,7 +57,6 @@ export default function StressTest() {
         title={t('stress_test.seo_title')} 
         description={t('stress_test.seo_description')}
         canonical="/stress-test"
-        keywords={t('stress_test.seo_keywords')}
       />
       
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-2xl">

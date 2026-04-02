@@ -83,7 +83,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-white hover:text-white/90 transition-colors">
-              <AnchorIcon className="h-6 w-6" />
+              <AnchorIcon className="h-6 w-6" loading="eager" />
               Menhausen
             </Link>
           </div>
@@ -159,7 +159,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-white mb-4">
-                <AnchorIcon className="h-8 w-8" />
+                <AnchorIcon className="h-8 w-8" loading="lazy" />
                 Menhausen
               </Link>
               <p className="text-muted-foreground/70 max-w-md leading-relaxed">
@@ -168,7 +168,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
             
             <div>
-              <h4 className="font-bold text-white mb-4 font-heading">{t('footer.product')}</h4>
+              <h3 className="font-bold text-white mb-4 font-heading">{t('footer.product')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground/70">
                 <li><Link href="/stress-cards" className="block py-1 hover:text-primary transition-colors">{t('nav.stress_cards')}</Link></li>
                 <li><Link href="/stress-management" className="block py-1 hover:text-primary transition-colors">{t('nav.methodology')}</Link></li>
@@ -178,7 +178,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4 font-heading">{t('footer.legal')}</h4>
+              <h3 className="font-bold text-white mb-4 font-heading">{t('footer.legal')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground/70">
                 <li><Link href="/privacy" className="block py-1 hover:text-primary transition-colors">{t('footer.privacy')}</Link></li>
                 <li><Link href="/terms" className="block py-1 hover:text-primary transition-colors">{t('footer.terms')}</Link></li>
@@ -187,7 +187,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4 font-heading">{t('footer.social')}</h4>
+              <h3 className="font-bold text-white mb-4 font-heading">{t('footer.social')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground/70">
                 <li>
                   <a

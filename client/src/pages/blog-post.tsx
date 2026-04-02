@@ -29,7 +29,6 @@ export default function BlogPost() {
         canonical={`/blog/${post.slug}`}
         image={imageUrl}
         type="article"
-        keywords={`${post.category}, men's mental health, stress management, ${post.title}`}
       />
       <StructuredData type="article" data={{ article: post }} />
       <StructuredData 

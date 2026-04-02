@@ -13,7 +13,6 @@ export default function Pricing() {
         title={t('pricing.seo_title')} 
         description={t('pricing.seo_description')}
         canonical="/pricing"
-        keywords={t('pricing.seo_keywords')}
       />
       
       <div className="py-20 container mx-auto px-4 sm:px-8">

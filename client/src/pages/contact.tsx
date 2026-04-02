@@ -13,7 +13,6 @@ export default function Contact() {
         title={t('contact.title')} 
         description={t('contact.seo_description')}
         canonical="/contact"
-        keywords={t('contact.seo_keywords')}
       />
       
       <div className="container mx-auto px-4 sm:px-8 py-20 max-w-4xl">
