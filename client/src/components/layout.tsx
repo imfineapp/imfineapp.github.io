@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X, ExternalLink, Send, Linkedin, Twitter } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -156,7 +156,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="bg-card py-12 text-muted-foreground border-t border-border">
         <div className="container mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-white mb-4">
                 <AnchorIcon className="h-8 w-8" />
@@ -183,6 +183,45 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <li><Link href="/privacy" className="block py-1 hover:text-primary transition-colors">{t('footer.privacy')}</Link></li>
                 <li><Link href="/terms" className="block py-1 hover:text-primary transition-colors">{t('footer.terms')}</Link></li>
                 <li><Link href="/contact" className="block py-1 hover:text-primary transition-colors">{t('footer.contact')}</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-white mb-4 font-heading">{t('footer.social')}</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground/70">
+                <li>
+                  <a
+                    href="https://t.me/menhausen_app_en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 py-1 hover:text-primary transition-colors"
+                  >
+                    <Send className="h-4 w-4" />
+                    {t('footer.telegram_channel')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/menhausen/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 py-1 hover:text-primary transition-colors"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    {t('footer.linkedin')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/MenhausenApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 py-1 hover:text-primary transition-colors"
+                  >
+                    <Twitter className="h-4 w-4" />
+                    {t('footer.x')}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
