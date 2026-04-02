@@ -13,10 +13,14 @@ export const en = {
     description: "Anonymous stress management for men. Practical tools, scientific methods (CBT, ACT), and privacy-first design. No registration required.",
     product: "Product",
     legal: "Legal",
+    social: "Social Media",
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     contact: "Contact",
     telegram_bot: "Telegram Bot",
+    indie_hackers: "Indie Hackers",
+    linkedin: "LinkedIn",
+    x: "X (Twitter)",
     rights: "© {{year}} Menhausen. All rights reserved. Not a medical service."
   },
   hero: {
