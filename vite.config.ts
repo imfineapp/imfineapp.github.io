@@ -179,15 +179,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
-  esbuild: {
-    jsx: "automatic",
-  },
   optimizeDeps: {
-    esbuildOptions: {
-      loader: {
-        ".ts": "tsx",
-        ".tsx": "tsx",
-      },
+    rolldownOptions: {
+      plugins: [],
     },
   },
   server: {
