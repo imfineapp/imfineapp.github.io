@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { useAttribution, generateTelegramLink } from '@/hooks/useAttribution';
+import { generateTelegramLink } from '@/lib/telegram-link';
+import { useAttribution } from '@/hooks/useAttribution';
 import { getSourceLabel } from '@/lib/attribution';
-import { Loader2 } from 'lucide-react';
 
 interface TelegramCTAProps {
   botUsername?: string;
