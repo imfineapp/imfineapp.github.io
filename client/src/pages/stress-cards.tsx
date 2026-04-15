@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { StressCard } from "@/components/ui/stress-card";
 import { Button } from "@/components/ui/button";
+import { TelegramCTA } from "@/components/telegram-cta";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 
@@ -81,9 +82,7 @@ export default function StressCards() {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             {t('stress_cards.subtitle')}
           </p>
-          <Button size="lg" asChild>
-            <a href="https://t.me/menhausen_app_bot/app">{t('stress_cards.cta')}</a>
-          </Button>
+          <TelegramCTA size="lg">{t('stress_cards.cta')}</TelegramCTA>
         </div>
       </div>
 

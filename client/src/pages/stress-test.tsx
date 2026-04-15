@@ -1,10 +1,11 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
+import { TelegramCTA } from "@/components/telegram-cta";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { ArrowRight, RefreshCcw } from "lucide-react";
+import { RefreshCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function StressTest() {
@@ -116,9 +117,7 @@ export default function StressTest() {
             <div className="bg-muted/50 p-8 rounded-2xl border border-border/50">
               <h3 className="font-bold mb-4">{t('stress_test.recommended_action_title')}</h3>
               <p className="mb-6">{t('stress_test.recommended_action_desc')}</p>
-              <Button size="lg" className="w-full md:w-auto" asChild>
-                 <a href="https://t.me/menhausen_app_bot/app">{t('stress_test.recommended_action_cta')}</a>
-              </Button>
+              <TelegramCTA size="lg" className="w-full md:w-auto">{t('stress_test.recommended_action_cta')}</TelegramCTA>
             </div>
 
             <Button variant="ghost" onClick={reset} className="mt-8">

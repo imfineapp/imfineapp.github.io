@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { TelegramCTA } from "@/components/telegram-cta";
 import { useTranslation } from "react-i18next";
 import { AnchorIcon } from "@/components/anchor-icon";
 
@@ -105,12 +106,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
-            <Button variant="default" size="default" className="rounded-[12px] px-6 shadow-[0_0_20px_rgba(225,255,0,0.15)]" asChild>
-              <a href="https://t.me/menhausen_app_bot/app" target="_blank" rel="noopener noreferrer">
-                {t('nav.open_telegram')}
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <TelegramCTA variant="default" size="default" className="rounded-[12px] px-6 shadow-[0_0_20px_rgba(225,255,0,0.15)]">
+              {t('nav.open_telegram')}
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </TelegramCTA>
           </div>
 
           {/* Mobile Nav */}
@@ -136,11 +135,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       {link.label}
                     </Link>
                   ))}
-                  <Button className="mt-4 w-full bg-primary text-black hover:bg-[#D1EF00]" asChild>
-                    <a href="https://t.me/menhausen_app_bot/app" target="_blank" rel="noopener noreferrer">
+                  <div className="mt-4">
+                    <TelegramCTA variant="default" className="w-full bg-primary text-black hover:bg-[#D1EF00]">
                       {t('nav.open_app')}
-                    </a>
-                  </Button>
+                    </TelegramCTA>
+                  </div>
                 </nav>
               </SheetContent>
             </Sheet>
