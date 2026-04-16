@@ -49,6 +49,22 @@ interface Attribution {
 | `client/src/hooks/useAttribution.ts` | UTM capture + storage hook |
 | `client/src/lib/telegram-link.ts` | Deep link encoder |
 | `client/src/components/telegram-cta.tsx` | Reusable CTA button |
+| `client/src/lib/analytics.ts` | GA4 + YM tracking helpers |
+
+## GA4 + Yandex Metrika SPA Integration ✅
+
+### Step 6: Analytics Tracking (`client/src/lib/analytics.ts`) ✅
+
+- [x] `trackPageView()` - sends page view to GA4 + YM
+- [x] `trackEvent(name, params)` - custom events
+- [x] `setUserId(id)` - user identification
+- [x] Type declarations for `window.ym` and `window.gtag`
+
+### Step 7: SPA Page View Tracking (`client/src/App.tsx`) ✅
+
+- [x] Added `AnalyticsTracker` component
+- [x] Uses `useLocation` from wouter to detect route changes
+- [x] Calls `trackPageView()` on every navigation
 
 ## Implementation Steps
 
@@ -68,12 +84,13 @@ interface Attribution {
 - [x] 30-day TTL enforcement
 - [x] Return `{ attribution, updateAttribution }`
 
-### Step 3: Telegram Link Generator (`client/src/hooks/useAttribution.ts`) ✅
+### Step 3: Telegram Link Generator (`client/src/lib/telegram-link.ts`) ✅
 
 - [x] `generateTelegramLink(attribution, botUsername)` 
 - [x] Compress attribution to safe payload
-- [x] Handle overflow (>64 bytes): truncate, drop optional fields
-- [x] Build URL: `https://t.me/{bot}/app?start={payload}`
+- [x] Handle overflow (>512 chars): truncate optional fields
+- [x] Build URL: `https://t.me/{bot}/app?startapp={payload}`
+- [x] Default bot: `menhausen_app_bot`
 
 ### Step 4: CTA Component (`client/src/components/telegram-cta.tsx`) ✅
 

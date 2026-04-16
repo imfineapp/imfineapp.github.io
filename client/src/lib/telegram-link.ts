@@ -1,6 +1,6 @@
 import { Attribution, encodeAttribution } from './attribution';
 
-const MAX_PAYLOAD_BYTES = 64;
+const MAX_PAYLOAD_CHARS = 512;
 
 export function generateTelegramLink(
   attribution: Attribution | null,
@@ -15,45 +15,44 @@ export function generateTelegramLink(
 
   const payload = encodeURIComponent(encodeAttribution(attribution));
 
-  if (payload.length > MAX_PAYLOAD_BYTES) {
+  if (payload.length > MAX_PAYLOAD_CHARS) {
     const truncated = truncateAttribution(attribution);
     const newPayload = encodeURIComponent(encodeAttribution(truncated));
-    return `${baseUrl}?start=${newPayload}`;
+    return `${baseUrl}?startapp=${newPayload}`;
   }
 
-  return `${baseUrl}?start=${payload}`;
+  return `${baseUrl}?startapp=${payload}`;
 }
 
 function truncateAttribution(attr: Attribution): Attribution {
-  const base = `{"v":1,"t":${attr.t}`;
-  const baseLength = base.length + 5;
+  const result: Attribution = {
+    v: 1,
+    t: attr.t,
+    s: attr.s,
+    m: attr.m,
+    c: attr.c,
+    r: attr.r,
+  };
 
-  let availableBytes = MAX_PAYLOAD_BYTES - baseLength;
-  
-  const result: Partial<Attribution> = { v: 1, t: attr.t };
-
-  if (attr.s && availableBytes > 0) {
-    const field = `,"s":"${attr.s}"`;
-    if (availableBytes >= field.length) {
-      result.s = attr.s;
-      availableBytes -= field.length;
-    }
+  const encoded = encodeURIComponent(encodeAttribution(result));
+  if (encoded.length <= MAX_PAYLOAD_CHARS) {
+    return result;
   }
 
-  if (attr.m && availableBytes > 0) {
-    const field = `,"m":"${attr.m}"`;
-    if (availableBytes >= field.length) {
-      result.m = attr.m;
-      availableBytes -= field.length;
-    }
+  delete result.r;
+  if (encodeURIComponent(encodeAttribution(result)).length <= MAX_PAYLOAD_CHARS) {
+    return result;
   }
 
-  if (attr.c && availableBytes > 3) {
-    const truncated = attr.c.substring(0, Math.min(attr.c.length, availableBytes - 4));
-    if (truncated.length > 0) {
-      result.c = truncated;
-    }
+  delete result.c;
+  if (encodeURIComponent(encodeAttribution(result)).length <= MAX_PAYLOAD_CHARS) {
+    return result;
   }
 
-  return result as Attribution;
+  delete result.m;
+  if (encodeURIComponent(encodeAttribution(result)).length <= MAX_PAYLOAD_CHARS) {
+    return result;
+  }
+
+  return { v: 1, t: attr.t };
 }
