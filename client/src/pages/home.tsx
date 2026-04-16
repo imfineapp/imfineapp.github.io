@@ -3,6 +3,7 @@ import { SEO } from "@/components/seo";
 import { StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
 import { StressCard } from "@/components/ui/stress-card";
+import { TelegramCTA } from "@/components/telegram-cta";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Lock, Brain, ArrowRight, CheckCircle2, Clock, Zap } from "lucide-react";
 import heroImage from "@assets/generated_images/Dark_blue_and_graphite_abstract_geometric_shapes_for_hero_background_66e4b19a.png";
@@ -75,12 +76,10 @@ export default function Home() {
                 {t('hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="rounded-[12px] px-8 text-[15px] font-bold h-[46px] shadow-[0_0_30px_rgba(225,255,0,0.2)]" asChild>
-                  <a href="https://t.me/menhausen_app_bot/app" target="_blank" rel="noopener noreferrer">
-                    {t('hero.cta_telegram')}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </Button>
+                <TelegramCTA size="lg" className="rounded-[12px] px-8 text-[15px] font-bold h-[46px] shadow-[0_0_30px_rgba(225,255,0,0.2)]">
+                  {t('hero.cta_telegram')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </TelegramCTA>
                 <Button variant="outline" size="lg" className="rounded-[12px] px-8 h-[46px] bg-transparent border-border text-white hover:bg-white/5" asChild>
                   <Link href="/stress-cards">{t('hero.cta_examples')}</Link>
                 </Button>
@@ -200,9 +199,9 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Button className="mt-10" size="lg" asChild>
-                <a href="https://t.me/menhausen_app_bot/app">{t('how_it_works.cta')}</a>
-              </Button>
+              <div className="mt-10">
+                <TelegramCTA size="lg">{t('how_it_works.cta')}</TelegramCTA>
+              </div>
             </div>
             <div className="bg-card rounded-[16px] p-8 md:p-12 text-white relative overflow-hidden border border-border">
                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
@@ -340,11 +339,9 @@ export default function Home() {
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-sans font-medium text-black/80">
             {t('cta_final.description')}
           </p>
-          <Button size="lg" variant="secondary" className="h-16 px-10 text-[15px] rounded-[12px] shadow-2xl bg-black text-white hover:bg-black/80" asChild>
-            <a href="https://t.me/menhausen_app_bot/app">
-              {t('cta_final.button')}
-            </a>
-          </Button>
+          <TelegramCTA size="lg" className="h-16 px-10 text-[15px] rounded-[12px] shadow-2xl">
+            {t('cta_final.button')}
+          </TelegramCTA>
         </div>
       </section>
     </Layout>

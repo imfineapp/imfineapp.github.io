@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
+import { TelegramCTA } from "@/components/telegram-cta";
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -48,9 +49,9 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <Button variant="outline" className="w-full h-12 text-lg" asChild>
-              <a href="https://t.me/menhausen_app_bot/app">{t('pricing.basic_cta')}</a>
-            </Button>
+            <div className="w-full">
+              <TelegramCTA variant="outline" className="w-full h-12 text-lg">{t('pricing.basic_cta')}</TelegramCTA>
+            </div>
           </div>
 
           {/* Premium Tier */}
@@ -81,9 +82,9 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <Button size="lg" className="w-full h-12 text-lg shadow-lg shadow-primary/25" asChild>
-              <a href="https://t.me/menhausen_app_bot/app">{t('pricing.premium_cta')}</a>
-            </Button>
+            <div className="w-full">
+              <TelegramCTA size="lg" className="w-full h-12 text-lg shadow-lg shadow-primary/25">{t('pricing.premium_cta')}</TelegramCTA>
+            </div>
             <p className="text-center text-xs text-white/40 mt-4">{t('pricing.premium_note')}</p>
           </div>
         </div>

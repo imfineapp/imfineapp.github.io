@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
+import { TelegramCTA } from "@/components/telegram-cta";
 import stressImage from "@assets/generated_images/Abstract_order_from_chaos_for_stress_management_page_8136dc7e.png";
 import { useTranslation } from "react-i18next";
 
@@ -100,9 +101,9 @@ export default function StressManagement() {
             <p className="text-white/70 mb-6">
               {t('stress_management.sidebar_desc')}
             </p>
-            <Button size="lg" className="w-full mb-4" asChild>
-              <a href="https://t.me/menhausen_app_bot/app">{t('stress_management.sidebar_cta')}</a>
-            </Button>
+            <div className="mb-4">
+              <TelegramCTA size="lg" className="w-full">{t('stress_management.sidebar_cta')}</TelegramCTA>
+            </div>
             <p className="text-xs text-center text-white/40">{t('stress_management.sidebar_note')}</p>
           </div>
         </div>
