@@ -16,6 +16,12 @@ import Privacy from "@/pages/privacy";
 import Pricing from "@/pages/pricing";
 import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
+import Techniques from "@/pages/techniques";
+import TechniqueDetail from "@/pages/technique-detail";
+import Comparisons from "@/pages/comparisons";
+import CompareDetail from "@/pages/compare";
+import Professions from "@/pages/professions";
+import ProfessionDetail from "@/pages/profession";
 import NotFound from "@/pages/not-found";
 
 function AnalyticsTracker() {
@@ -41,6 +47,12 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/contact" component={Contact} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/techniques" component={Techniques} />
+      <Route path="/techniques/:slug" component={TechniqueDetail} />
+      <Route path="/compare" component={Comparisons} />
+      <Route path="/compare/:slug" component={CompareDetail} />
+      <Route path="/professions" component={Professions} />
+      <Route path="/professions/:slug" component={ProfessionDetail} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,0 +1,59 @@
+# Menhausen - Anonymous Stress Management for Men
+
+## Product Overview
+Menhausen is an anonymous stress management app for men that provides practical stress cards using CBT (Cognitive Behavioral Therapy) and ACT (Acceptance and Commitment Therapy) techniques. Built primarily for Telegram with privacy-first approach.
+
+## Key Value Proposition
+- 100% anonymous stress management (no registration required)
+- Evidence-based techniques from CBT & ACT psychology
+- Practical stress cards for common men's issues
+- AES-256 encryption for maximum privacy
+
+## Target Audience
+- Men aged 25-45 dealing with stress, burnout, anxiety
+- Professionals seeking anonymous mental health tools
+- Users who prefer privacy over account registration
+
+## Topics Covered
+- Relationships and interpersonal stress
+- Self-esteem and confidence
+- Anger management
+- Depression support
+- Grief and loss processing
+- Work stress and burnout
+- Anxiety management
+
+## Pricing
+
+### Free Plan
+- Price: Free
+- Features: 10 stress cards, unlimited anonymous use, CBT techniques
+
+### Premium Plan  
+- Price: $9.99/month (billed annually)
+- Features: Unlimited stress cards, ACT techniques, advanced features, priority support
+
+## How It Works
+1. Open Telegram bot - no download required
+2. Receive daily stress cards with practical questions
+3. Answer reflective questions to process emotions
+4. Get actionable techniques for stress management
+
+## Technical Details
+- Platform: Telegram-based (no app install needed)
+- Privacy: AES-256 encryption, no data collection
+- Anonymous: No registration, no PII stored
+
+## Brand Voice
+- Supportive, masculine but not toxic
+- Practical over theoretical
+- Privacy-focused
+- Science-backed (CBT, ACT evidence)
+
+## Competitors
+- Calm, Headspace (generic meditation apps)
+- BetterHelp (requires registration)
+- Noom (focused on diet/weight)
+
+## Updates
+Last updated: April 2026

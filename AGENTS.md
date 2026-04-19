@@ -1,42 +1,53 @@
-# AGENTS.md
+# Menhausen - Product Marketing Context
 
-## Developer Commands
+## What We Do
 
-```bash
-npm run dev        # Express server + frontend proxy (port 5000)
-npm run dev:client # Frontend only (port 5000)
-npm run build      # Vite build + esbuild server (output: dist/)
-npm run check     # TypeScript validation
-npm run db:push   # Drizzle database push
-npm run deploy    # Build client for deployment
-```
+Menhausen is an anonymous stress management app for men that provides practical stress cards using CBT (Cognitive Behavioral Therapy) and ACT (Acceptance and Commitment Therapy) techniques. Users access the app via Telegram with no registration required, no app download, and complete anonymity.
 
-## Architecture
+## Target Customer
 
-- **Frontend entry:** `client/src/main.tsx` → `client/src/App.tsx`
-- **Server entry:** `server/index.ts`
-- **Routes:** wouter (see `App.tsx`)
-- **Database:** Drizzle ORM with Neon PostgreSQL
+- **Who**: Men aged 25-45 who are professionals, entrepreneurs, or busy workers dealing with stress, burnout, anxiety
+- **Pain Points**:
+  - Traditional meditation apps feel "fluffy" or don't resonate
+  - Therapy is expensive and requires sharing personal data
+  - No time for long meditation sessions
+  - Want practical tools, not "inner child" work
+  - Privacy concerns with mental health apps
+- **Goals**:
+  - Reduce stress quickly (3-7 minutes)
+  - Get actionable techniques that work
+  - Maintain complete anonymity
+  - Avoid therapy talk or clinical feel
 
-## TypeScript Paths
+## Value Proposition
 
-```
-@/*         → client/src/*
-@shared/*   → shared/*
-@/components, @/lib, @/hooks → client/src/*
-```
+- **Core Benefit**: Practical, anonymous stress management in 3-7 minute sessions via Telegram
+- **Key Differentiators**:
+  - 100% anonymous (no account, no email, no data collection)
+  - Telegram-based (no app download required)
+  - CBT & ACT evidence-based techniques (not generic meditation)
+  - Built specifically for men (masculine, practical approach)
+  - Free basic plan available
+- **Proof Points**:
+  - AES-256 encryption
+  - 3-7 minute sessions (fits busy schedules)
+  - 8 stress topics covered (relationships, anger, burnout, anxiety, etc.)
+  - 6 evidence-based techniques (cognitive reframing, somatic anchoring, etc.)
 
-## Ports
+## Competition
 
-- Dev server: **5000** (not typical 3000/5173)
-- Frontend-only: 5000
+- **Competitors**: Calm, Headspace, BetterHelp, Waking Up, Noom
+- **How We're Different**:
+  - vs Calm/Headspace: We're targeted at men, not generic; no account needed
+  - vs BetterHelp: We're free (basic), anonymous, and practical vs therapy
+  - vs Waking Up: We're focused on actionable techniques, not philosophical depth
+  - vs Noom: We're specifically for stress, not weight loss; much cheaper
 
-## Deployment
+## Business Context
 
-Push to `master` branch triggers GitHub Pages deploy (see `.github/workflows/deploy.yml`). Output in `dist/`.
-
-## Style
-
-- Shadcn/UI (new-york style) with Tailwind CSS v4
-- Lucide icons
-- i18next for en/ru translations
+- **Pricing**:
+  - Free: $0 forever (10+ basic stress cards, daily check-in)
+  - Premium: $4.99/month (advanced modules, audio guides, unlimited history)
+- **Sales Motion**: Self-serve, Telegram-native
+- **Key Metrics**: Telegram bot users, daily active users, conversion to premium
+- **Platform**: Telegram (primary), Web landing pages (SEO)
