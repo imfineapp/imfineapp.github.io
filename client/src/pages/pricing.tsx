@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Check } from "lucide-react";
@@ -15,6 +16,7 @@ export default function Pricing() {
         description={t('pricing.seo_description')}
         canonical="/pricing"
       />
+      <StructuredData type="product" />
       
       <div className="py-20 container mx-auto px-4 sm:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">

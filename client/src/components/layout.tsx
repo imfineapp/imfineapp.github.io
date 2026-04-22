@@ -71,6 +71,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: t('nav.home') },
     { href: "/stress-cards", label: t('nav.stress_cards') },
+    { href: "/techniques", label: t('nav.techniques') },
+    { href: "/compare", label: t('nav.compare') },
+    { href: "/professions", label: t('nav.professions') },
     { href: "/stress-management", label: t('nav.methodology') },
     { href: "/stress-test", label: t('nav.stress_test') },
     { href: "/blog", label: t('nav.blog') },
@@ -170,6 +173,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-bold text-white mb-4 font-heading">{t('footer.product')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground/70">
                 <li><Link href="/stress-cards" className="block py-1 hover:text-primary transition-colors">{t('nav.stress_cards')}</Link></li>
+                <li><Link href="/techniques" className="block py-1 hover:text-primary transition-colors">{t('nav.techniques')}</Link></li>
+                <li><Link href="/compare" className="block py-1 hover:text-primary transition-colors">{t('nav.compare')}</Link></li>
                 <li><Link href="/stress-management" className="block py-1 hover:text-primary transition-colors">{t('nav.methodology')}</Link></li>
                 <li><Link href="/pricing" className="block py-1 hover:text-primary transition-colors">{t('nav.pricing')}</Link></li>
                 <li><a href="https://t.me/menhausen_app_bot/app" className="block py-1 hover:text-primary transition-colors">{t('footer.telegram_bot')}</a></li>

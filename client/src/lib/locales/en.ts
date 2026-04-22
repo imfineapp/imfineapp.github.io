@@ -2,6 +2,9 @@ export const en = {
   nav: {
     home: "Home",
     stress_cards: "Stress Cards",
+    techniques: "Techniques",
+    professions: "For Profession",
+    compare: "Compare",
     methodology: "Methodology",
     stress_test: "Stress Test",
     blog: "Blog",
@@ -379,6 +382,564 @@ export const en = {
     seo_title: "Pricing - Menhausen",
     seo_description: "Simple, transparent pricing. Start for free. Upgrade for advanced stress management modules.",
     seo_keywords: "pricing, subscription, premium, stress management pricing, men's mental health cost"
+  },
+  techniques: {
+    seo_title: "Evidence-Based Stress Management Techniques - CBT & ACT",
+    seo_description: "Learn proven CBT, ACT, and mindfulness techniques for stress management. Practical exercises to reduce anxiety, burnout, and improve mental resilience.",
+    hero: {
+      title: "Techniques That Work",
+      description: "Scientifically-backed methods from CBT, ACT, and mindfulness psychology. Each technique is designed for busy men who want practical tools, not theory.",
+      cta: "Start Practice in Telegram"
+    },
+    learn_more: "Learn technique",
+    benefits: "Key Benefits",
+    how_it_works: "How It Works",
+    reflective_questions: "Reflective Questions",
+    related_topics: "Related Topics",
+    practice_now: "Practice This Technique",
+    cta_description: "Apply this technique with guided questions in our Telegram bot. Completely anonymous.",
+    start_practice: "Start Practice",
+    back_to_techniques: "Back to Techniques",
+    cta: {
+      title: "Ready to Start?",
+      description: "Try these techniques with guided practice in our Telegram bot. Completely free to start.",
+      button: "Start in Telegram"
+    },
+    when_choose_other: "When to Choose Alternatives"
+  },
+  comparisons: {
+    seo_title: "Compare Stress Management Apps",
+    seo_description: "Compare Menhausen with Calm, BetterHelp, Headspace and other stress management apps. Find the best anonymous solution for men's mental health.",
+    hero: {
+      title: "How We Compare",
+      description: "See how Menhausen stacks up against the competition. We believe in transparency so you can make the right choice for your mental health.",
+      cta: "Start in Telegram"
+    },
+    see_comparison: "See comparison",
+    why: {
+      title: "Why Menhausen Stands Out",
+      description: "Here's what makes Menhausen different from traditional meditation and therapy apps.",
+      feature1: "100% anonymous - no account required",
+      feature2: "Free basic plan available",
+      feature3: "CBT & ACT evidence-based techniques",
+      feature4: "Telegram-based - no app download"
+    },
+    quick_verdict: "Quick Verdict",
+    menhausen_better_for: "Menhausen is better if you want:",
+    head_to_head: "Head-to-Head Comparison",
+    menhausen_advantages: "Menhausen Advantages",
+    when_choose_other: "When to Choose Alternatives",
+    try_menhausen: "Try Menhausen Free",
+    cta_description: "Start with our free plan. No account, no commitment.",
+    start_free: "Start Free",
+    back: "Back to Comparisons",
+    table: {
+      feature: "Feature",
+      price: "Price",
+      free: "Free",
+      anonymous: "Anonymous",
+      no_account: "No Account Required",
+      cbt_act: "CBT/ACT Techniques",
+      telegram: "Telegram-based",
+      men_focus: "Men-specific Focus",
+      varies: "Varies"
+    }
+  },
+  comparisons_data: {
+    calm: {
+      name: "Calm",
+      description: "The #1 app for Sleep, Meditation and Relaxation",
+      tagline: "The #1 app for Sleep, Meditation and Relaxation",
+      pricing: "$14.99/month or $69.99/year",
+      pros: [
+        "Massive library of sleep stories",
+        "Celebrity-led meditations",
+        "Strong brand recognition",
+        "High production quality"
+      ],
+      cons: [
+        "No focus on specific demographics",
+        "Generic stress content, not tailored",
+        "Requires account creation",
+        "Subscription required for full access"
+      ],
+      keyDifferences: [
+        "Menhausen is 100% anonymous (no account needed)",
+        "Menhausen targets men's specific stressors",
+        "Menhausen uses Telegram (no app download)",
+        "Menhausen focuses on actionable CBT/ACT techniques"
+      ],
+      bestFor: ["General relaxation", "Sleep improvement", "Beginners to meditation"]
+    },
+    betterhelp: {
+      name: "BetterHelp",
+      description: "Professional therapy, accessible anytime, anywhere",
+      tagline: "Professional therapy, accessible anytime, anywhere",
+      pricing: "$60-80/week (billed monthly)",
+      pros: [
+        "Licensed therapists",
+        "Regular video sessions",
+        "Prescription services in some states",
+        "Structured therapy format"
+      ],
+      cons: [
+        "Requires personal information",
+        "Expensive long-term",
+        "Not truly anonymous",
+        "Scheduling required"
+      ],
+      keyDifferences: [
+        "Menhausen is completely free (basic plan)",
+        "Menhausen is anonymous - no therapy talk",
+        "Menhausen is instant access - no scheduling",
+        "Menhausen uses practical techniques, not talk therapy"
+      ],
+      bestFor: ["Those seeking traditional therapy", "People comfortable sharing data", "Long-term therapeutic support"]
+    },
+    headspace: {
+      name: "Headspace",
+      description: "Mindfulness for every moment",
+      tagline: "Mindfulness for every moment",
+      pricing: "$12.99/month or $69.99/year",
+      pros: [
+        "Fun, animated presentations",
+        "Strong gamification",
+        "Partnerships with employers",
+        "Wide content library"
+      ],
+      cons: [
+        "Often feels juvenile",
+        "Not tailored to men's needs",
+        "Account required",
+        "Higher price point for limited features"
+      ],
+      keyDifferences: [
+        "Menhausen targets adult men specifically",
+        "Menhausen uses evidence-based CBT/ACT",
+        "Menhausen is free to start",
+        "Menhausen requires no app download"
+      ],
+      bestFor: ["Beginners to meditation", "Those who prefer gamified learning", "People who want fun animations"]
+    },
+    waking_up: {
+      name: "Waking Up",
+      description: "A new way to meditate",
+      tagline: "A new way to meditate",
+      pricing: "$12.99/month or $99.99/year",
+      pros: [
+        "Philosophical depth",
+        "No fluff or corporate vibe",
+        "Sam Harris's involvement",
+        "Thoughtful explanations"
+      ],
+      cons: [
+        "Monthly subscription required",
+        "No focus on practical tools",
+        "Not tailored to men specifically",
+        "Less structured than CBT approaches"
+      ],
+      keyDifferences: [
+        "Menhausen provides actionable techniques",
+        "Menhausen focuses on men's specific issues",
+        "Menhausen is free (basic)",
+        "Menhausen uses structured CBT/ACT methodology"
+      ],
+      bestFor: ["Philosophically-minded people", "Sam Harris fans", "Those wanting deeper meaning"]
+    },
+    noom: {
+      name: "Noom",
+      description: "Psychology-backed weight loss",
+      tagline: "Psychology-backed weight loss",
+      pricing: "$199/month",
+      pros: [
+        "Psychology-based approach",
+        "Food tracking included",
+        "Coaching included",
+        "Structured program"
+      ],
+      cons: [
+        "Focused on weight loss, not stress",
+        "Very expensive",
+        "Requires significant time commitment",
+        "Food logging is mandatory"
+      ],
+      keyDifferences: [
+        "Menhausen is free for stress management",
+        "Menhausen is specifically for stress, not weight",
+        "Menhausen requires no food logging",
+        "Menhausen is quick - 3-7 minute sessions"
+      ],
+      bestFor: ["Those focused on weight loss", "People who want coaching", "Those with significant time to commit"]
+    }
+  },
+  techniques_data: {
+    cognitive_reframing: {
+      name: "Cognitive Reframing",
+      description: "A CBT technique that helps you identify negative thought patterns and replace them with more balanced, realistic perspectives.",
+      benefits: [
+        "Reduce anxious and depressive thoughts",
+        "Gain objective perspective on situations",
+        "Build mental resilience",
+        "Improve decision-making under pressure"
+      ],
+      howItWorks: [
+        "Identify the negative thought triggering your stress",
+        "Examine the evidence for and against this thought",
+        "Generate 3 alternative interpretations",
+        "Choose the most balanced perspective"
+      ],
+      questions: [
+        "What specific thought is increasing your stress right now?",
+        "What evidence supports this thought? What evidence contradicts it?",
+        "Come up with 3 alternative interpretations of this situation.",
+        "What would you tell a friend in this same situation?"
+      ]
+    },
+    somatic_anchoring: {
+      name: "Somatic Anchoring",
+      description: "A body-based technique that uses physical sensations to ground yourself in the present moment.",
+      benefits: [
+        "Quickly calm acute stress or anxiety",
+        "Ground yourself in overwhelming situations",
+        "Build awareness of mind-body connection",
+        "Create personal anchors for calm states"
+      ],
+      howItWorks: [
+        "Notice your current physical sensations",
+        "Focus on points of contact (feet on floor, body in chair)",
+        "Name what you see, hear, and feel in your body",
+        "Press fingertips together and breathe deeply"
+      ],
+      questions: [
+        "What sensations do you notice in your body right now?",
+        "Where do you feel stress manifesting physically?",
+        "What does your body need right now?",
+        "Can you name 5 things you can see, 4 you can hear?"
+      ]
+    },
+    values_clarification: {
+      name: "Values Clarification",
+      description: "An ACT technique that helps you identify what truly matters to you.",
+      benefits: [
+        "Gain clarity on life direction",
+        "Reduce stress from value conflicts",
+        "Make decisions with confidence",
+        "Build a life aligned with your authentic self"
+      ],
+      howItWorks: [
+        "Imagine your ideal life in 10 years",
+        "Identify what achievements would matter then",
+        "Ask: what would I want people to remember about me?",
+        "Choose your top 5 core values"
+      ],
+      questions: [
+        "If you could not fail, what would you attempt?",
+        "What do you want your life to stand for?",
+        "When do you feel most alive and authentic?",
+        "What would you do if you knew you couldn't fail?"
+      ]
+    },
+    behavioral_activation: {
+      name: "Behavioral Activation",
+      description: "A proven technique for breaking the depression-stress cycle through action.",
+      benefits: [
+        "Break free from avoidance loops",
+        "Boost mood through action",
+        "Restore routine and structure",
+        "Build momentum and motivation"
+      ],
+      howItWorks: [
+        "List activities that used to bring you joy",
+        "Rate each on a scale of mastery and pleasure",
+        "Schedule one small activity daily",
+        "Track mood before and after"
+      ],
+      questions: [
+        "What activities used to make you feel good?",
+        "What's one small thing you could do today that aligns with your values?",
+        "What have you been avoiding lately?",
+        "What would your ideal day look like?"
+      ]
+    },
+    acceptance_practice: {
+      name: "Acceptance Practice",
+      description: "An ACT technique that teaches you to make room for difficult emotions.",
+      benefits: [
+        "Reduce struggle with difficult emotions",
+        "Build emotional resilience",
+        "Decrease avoidance behaviors",
+        "Increase psychological flexibility"
+      ],
+      howItWorks: [
+        "Notice the emotion without trying to change it",
+        "Name the emotion and where you feel it in your body",
+        "Remind yourself: emotions are temporary",
+        "Ask: what can I do right now that's in my control?"
+      ],
+      questions: [
+        "What emotion is present right now, and where do you feel it?",
+        "Can you allow this feeling to be here without fighting it?",
+        "What would happen if you stopped resisting this emotion?",
+        "What's one thing within your control right now?"
+      ]
+    },
+    defusion_technique: {
+      name: "Thought Defusion",
+      description: "Learn to separate yourself from your thoughts.",
+      benefits: [
+        "Reduce the impact of negative thought spirals",
+        "Gain distance from rumination",
+        "Stop taking thoughts so literally",
+        "Build observational awareness of mental activity"
+      ],
+      howItWorks: [
+        "Notice a stressful thought passing through",
+        "Add 'I notice I'm having the thought that...'",
+        "Sing the thought to a tune (breaks its power)",
+        "Imagine thoughts as leaves floating down a stream"
+      ],
+      questions: [
+        "What thought keeps replaying in your mind?",
+        "If this thought was music, what genre would it be?",
+        "Are you having the thought, or is the thought having you?",
+        "What would you think if you weren't the thinker?"
+      ]
+    }
+  },
+  professions: {
+    seo_title: "Stress Management by Profession",
+    seo_description: "Targeted stress management techniques for software developers, entrepreneurs, executives, and other professionals.",
+    hero: {
+      title: "Stress Management by Profession",
+      description: "Every profession has unique stressors. Get tailored techniques that address the specific challenges of your work.",
+      cta: "Get Started"
+    },
+    learn_stress_management: "Learn stress management",
+    stress_factors: "Common Stress Factors",
+    common_challenges: "Common Challenges",
+    recommended_techniques: "Recommended Techniques",
+    practical_tips: "Practical Tips You Can Use Today",
+    related_professions: "Related Professions",
+    start_practice: "Start Your Practice",
+    cta: {
+      title: "Ready to Start?",
+      description: "Apply these techniques with guided practice in Telegram. Completely free to start.",
+      button: "Get Started"
+    },
+    cta_description: "Apply these techniques with guided practice in Telegram. Completely free to start.",
+    get_started: "Get Started",
+    back: "Back to Professions",
+    subtitle: "Stress management"
+  },
+  professions_data: {
+    software_developer: {
+      name: "Software Developer",
+      description: "High-pressure deadlines, complex problem-solving, and constant learning demands create unique stress patterns for developers. Burnout from imposter syndrome and sedentary work is common.",
+      stress_factors: [
+        "Imposter syndrome and constant technology updates",
+        "Sedentary lifestyle and screen fatigue",
+        "Tight deadlines and technical debt pressure",
+        "Remote work isolation"
+      ],
+      challenges: [
+        "Finding time for self-care between code reviews",
+        "Managing burnout from continuous learning",
+        "Dealing with perfectionism in code",
+        "Work-life boundary issues"
+      ],
+      techniques: [
+        "Cognitive reframing for perfectionism",
+        "Somatic anchoring for deadline anxiety",
+        "Behavioral activation for social connection"
+      ],
+      tips: [
+        "Use the Pomodoro technique with stress breaks",
+        "Schedule walks between coding sessions",
+        "Practice code reviews without self-criticism"
+      ]
+    },
+    entrepreneur: {
+      name: "Entrepreneur",
+      description: "Founders face relentless pressure from investors, employees, and market demands. The responsibility of everyone's livelihoods creates chronic stress that's often hidden.",
+      stress_factors: [
+        "Financial uncertainty and investor pressure",
+        "Employee responsibility and payroll",
+        "Decision fatigue from constant demands",
+        "Isolation at the top"
+      ],
+      challenges: [
+        "Difficulty disconnecting from the business",
+        "Managing failure and rejection",
+        "Building a support network",
+        "Maintaining physical health"
+      ],
+      techniques: [
+        "Values clarification for life priorities",
+        "Acceptance practice for uncertainty",
+        "Thought defusion for failure fears"
+      ],
+      tips: [
+        "Schedule dedicated non-work hours",
+        "Hire help for non-core tasks",
+        "Build an entrepreneur peer group"
+      ]
+    },
+    executive: {
+      name: "Executive",
+      description: "Leaders carry the weight of organizational decisions, team performance, and stakeholder expectations. The constant need to perform creates high cortisol levels.",
+      stress_factors: [
+        "24/7 responsibility and accessibility",
+        "Difficult people decisions",
+        "Meeting overload and travel fatigue",
+        "Maintaining strategic vision"
+      ],
+      challenges: [
+        "Delegating without micromanaging",
+        "Managing up and down simultaneously",
+        "Making decisions with incomplete data",
+        "Leadership loneliness"
+      ],
+      techniques: [
+        "Somatic anchoring before important meetings",
+        "Cognitive reframing for control issues",
+        "Values clarification for priorities"
+      ],
+      tips: [
+        "Block time for strategic thinking",
+        "Practice being present in conversations",
+        "Build a CEO peer advisory group"
+      ]
+    },
+    remote_worker: {
+      name: "Remote Worker",
+      description: "Working from home blurs boundaries between professional and personal life. The lack of physical separation and social interaction creates unique stressors.",
+      stress_factors: [
+        "Boundary erosion between work and home",
+        "Isolation and lack of casual interaction",
+        "Overworking without natural stopping cues",
+        "Communication friction"
+      ],
+      challenges: [
+        "Creating dedicated workspace",
+        "Staying motivated without supervision",
+        "Maintaining work-life separation",
+        "Building relationships remotely"
+      ],
+      techniques: [
+        "Behavioral activation for routine",
+        "Somatic anchoring for presence",
+        "Acceptance practice for uncertainty"
+      ],
+      tips: [
+        "Create a distinct morning routine",
+        "Use commute替代 (walk, coffee) to separate work",
+        "Schedule virtual co-working sessions"
+      ]
+    },
+    sales_professional: {
+      name: "Sales Professional",
+      description: "Sales roles involve constant rejection, quota pressure, and emotional labor. The rollercoaster of wins and losses creates emotional volatility.",
+      stress_factors: [
+        "Rejection and 'no' fatigue",
+        "Quota pressure and commission anxiety",
+        "Emotional labor of positivity",
+        "Unpredictable income"
+      ],
+      challenges: [
+        "Not taking rejection personally",
+        "Managing pipeline anxiety",
+        "Maintaining motivation through slumps",
+        "Work-life balance with flexible hours"
+      ],
+      techniques: [
+        "Cognitive reframing for rejection",
+        "Thought defusion for negative self-talk",
+        "Values clarification for long-term goals"
+      ],
+      tips: [
+        "Focus on help, not sales",
+        "Celebrate small wins daily",
+        "Separate identity from numbers"
+      ]
+    },
+    healthcare_professional: {
+      name: "Healthcare Professional",
+      description: "Doctors, nurses, and medical staff face life-and-death decisions, emotional trauma, and shift work. Compassion fatigue and burnout are endemic to the profession.",
+      stress_factors: [
+        "Life-and-death decision making",
+        "Shift work and irregular hours",
+        "Emotional trauma exposure",
+        "Systemic healthcare pressures"
+      ],
+      challenges: [
+        "Processing difficult patient outcomes",
+        "Setting boundaries with patients",
+        "Managing exhaustion from long shifts",
+        "Staying emotionally present"
+      ],
+      techniques: [
+        "Somatic grounding after difficult cases",
+        "Acceptance practice for what you can't control",
+        "Behavioral activation for self-care"
+      ],
+      tips: [
+        "Use transition rituals between work and home",
+        "Debrief difficult cases with peers",
+        "Prioritize sleep hygiene"
+      ]
+    },
+    freelancer: {
+      name: "Freelancer",
+      description: "Independent workers juggle multiple clients, handle all business functions, and deal with feast-or-famine income cycles. Independence comes with isolation.",
+      stress_factors: [
+        "Income volatility and uncertainty",
+        "Client management and scope creep",
+        "No benefits or job security",
+        "Social isolation"
+      ],
+      challenges: [
+        "Setting rates and negotiating",
+        "Finding new clients consistently",
+        "Self-motivation without oversight",
+        "Handling difficult clients"
+      ],
+      techniques: [
+        "Values clarification for ideal work",
+        "Cognitive reframing for rejection",
+        "Behavioral activation for business development"
+      ],
+      tips: [
+        "Maintain a client diversification target",
+        "Create systems for outreach",
+        "Build asynchronous communication habits"
+      ]
+    },
+    tradesperson: {
+      name: "Tradesperson",
+      description: "Electricians, plumbers, carpenters, and construction workers face physical demands, injury risk, and seasonal income fluctuations. Mental health is often overlooked.",
+      stress_factors: [
+        "Physical exhaustion and injury risk",
+        "Seasonal or economic downturns",
+        "Lack of mental health awareness",
+        "Client relationship management"
+      ],
+      challenges: [
+        "Stigma around mental health in trades",
+        "Physical recovery and self-care",
+        "Managing business aspects",
+        "Work-life with physical demands"
+      ],
+      techniques: [
+        "Somatic anchoring for physical stress",
+        "Cognitive reframing for self-worth",
+        "Behavioral activation for rest"
+      ],
+      tips: [
+        "Prioritize sleep and recovery",
+        "Talk to fellow tradespeople",
+        "Build emergency financial buffer"
+      ]
+    }
   },
   not_found: {
     title: "Page Not Found",

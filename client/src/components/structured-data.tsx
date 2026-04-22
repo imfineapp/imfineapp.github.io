@@ -3,11 +3,19 @@ import { useLocation } from "wouter";
 import { BlogPost } from "@/lib/blog-data";
 
 interface StructuredDataProps {
-  type: "organization" | "article" | "faq" | "website" | "breadcrumb";
+  type: "organization" | "article" | "faq" | "website" | "breadcrumb" | "product" | "howto" | "itemlist";
   data?: {
     article?: BlogPost;
     faqItems?: Array<{ question: string; answer: string }>;
     breadcrumbs?: Array<{ name: string; url: string }>;
+    howto?: {
+      name: string;
+      description: string;
+      steps: Array<{ "@type": string; name: string; text: string; position?: number }>;
+    };
+    itemList?: {
+      itemListElement: Array<{ "@type": string; name: string; description?: string }>;
+    };
   };
 }
 
@@ -114,6 +122,78 @@ export function StructuredData({ type, data }: StructuredDataProps) {
               "name": crumb.name,
               "item": crumb.url.startsWith("http") ? crumb.url : `${SITE_URL}${crumb.url}`
             }))
+          };
+        }
+        break;
+
+      case "product":
+        jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Menhausen",
+          "description": "Anonymous stress management for men using CBT & ACT techniques",
+          "brand": {
+            "@type": "Brand",
+            "name": "Menhausen"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "description": "Free plan available"
+          },
+          "category": "Health & Wellness"
+        };
+        break;
+
+      case "howto":
+        if (data?.howto) {
+          jsonLd = {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": data.howto.name,
+            "description": data.howto.description,
+            "step": data.howto.steps
+          };
+        } else {
+          jsonLd = {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Manage Stress with Menhausen",
+            "description": "A step-by-step guide to using Menhausen stress cards for stress management",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Open Telegram Bot",
+                "text": "Open the Menhausen Telegram bot to start"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Receive Stress Card",
+                "text": "Receive your daily stress card with practical questions"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Answer Reflective Questions",
+                "text": "Answer the reflective questions to process your emotions"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Apply Technique",
+                "text": "Apply the actionable technique provided for stress management"
+              }
+            ]
+          };
+        }
+        break;
+
+      case "itemlist":
+        if (data?.itemList) {
+          jsonLd = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": data.itemList.itemListElement
           };
         }
         break;

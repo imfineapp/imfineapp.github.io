@@ -1,5 +1,14 @@
 User-agent: *
 Allow: /
 
+# AI Search Bots
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://menhausen.com/sitemap.xml
 
