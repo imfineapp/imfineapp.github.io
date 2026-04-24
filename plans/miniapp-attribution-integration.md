@@ -13,30 +13,18 @@ Landing Page (this repo)
         ▼
    Telegram Bot (separate repo)
         │
-        | Decodes startapp param, passes to MiniApp
+        │ Receives ?startapp= param from Telegram WebApp
+        │ Decodes and transforms to ?attr= for MiniApp
         │ URL: https://your-miniapp.com/?attr=<base64>&user=<telegram_id>
         ▼
-   Telegram MiniApp (THIS REPO) ← You are here
+   Telegram MiniApp (external)
         │
-        │ Extract attribution, init PostHog, track events
+        │ Extract attribution from ?attr= param, init PostHog, track events
         ▼
    PostHog Analytics
 ```
-Landing Page (this repo)
-        │
-        │ URL: https://t.me/menhausen_app_bot/app?start=<base64>
-        ▼
-   Telegram Bot (separate repo)
-        │
-        │ Decodes start param, passes to MiniApp
-        │ URL: https://your-miniapp.com/?attr=<base64>&user=<telegram_id>
-        ▼
-   Telegram MiniApp (THIS REPO) ← You are here
-        │
-        │ Extract attribution, init PostHog, track events
-        ▼
-   PostHog Analytics
-```
+
+**Note:** The parameter name changes from `?startapp=` (Telegram WebApp standard) to `?attr=` (MiniApp contract). The Bot handles this transformation.
 
 ## Your Task
 

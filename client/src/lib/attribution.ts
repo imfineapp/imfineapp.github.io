@@ -46,7 +46,6 @@ function captureReferrer(): string | undefined {
   } catch {
     return undefined;
   }
-  return undefined;
 }
 
 export function getAttribution(): Attribution | null {
