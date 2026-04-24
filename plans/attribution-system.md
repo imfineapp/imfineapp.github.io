@@ -18,13 +18,19 @@
 ## Architecture
 
 ```
-Landing (this repo)          Bot (separate)           MiniApp (separate)
-┌─────────────────┐         ┌──────────────┐         ┌──────────────┐
-│ UTM Capture     │ ──link─▶│ Parse params │ ──URL──▶│ Extract attr │
-│ localStorage    │         │ Validate     │         │ PostHog init │
-│ Deep Link Gen   │         │ Serve URL    │         │ Track events │
-└─────────────────┘         └──────────────┘         └──────────────┘
+Landing (this repo)          Bot (separate)                  MiniApp (separate)
+┌─────────────────┐         ┌──────────────────────┐         ┌──────────────┐
+│ UTM Capture     │ ──link─▶│ Receives ?startapp=  │ ──URL──▶│ Receives     │
+│ localStorage    │         │                      │         │ ?attr=       │
+│ Deep Link Gen   │         │ Transforms and       │         │              │
+│                 │         │ serves ?attr=        │         │ PostHog init │
+└─────────────────┘         └──────────────────────┘         │ Track events │
+                                                             └──────────────┘
 ```
+
+**Parameter Flow:**
+1. **Landing → Telegram:** `https://t.me/bot/app?startapp=<payload>`
+2. **Bot → MiniApp:** `https://miniapp.com/?attr=<payload>&user=<id>`
 
 ## Attribution Schema
 
@@ -110,24 +116,30 @@ interface Attribution {
 
 ## External Contracts
 
-### Bot Repo (separate) - Input
+### Bot Repo (separate) - Input/Output
 
+**Input from Landing (Telegram WebApp):**
 ```
-https://t.me/menhausen_app_bot/app?start=<base64payload>
+https://t.me/menhausen_app_bot/app?startapp=<base64payload>
+```
+
+**Bot transforms to MiniApp URL:**
+```
+https://miniapp.domain/?attr=<base64payload>&user=<telegram_user_id>
 ```
 
 Bot must:
-1. Parse `start` param
+1. Receive `startapp` param from Telegram WebApp
 2. Decode base64 → Attribution object
-3. Pass decoded payload to MiniApp via URL params
+3. Pass decoded payload to MiniApp via `?attr=` URL param
 
 **Example Bot Handler (Grammy):**
 ```typescript
-// Decode the start param
+// Receive startapp param from Telegram WebApp
 const attrPayload = ctx.startParam; // base64 encoded
 const attr = JSON.parse(Buffer.from(attrPayload, 'base64url').toString());
 
-// Serve MiniApp with attribution
+// Serve MiniApp with attribution (note: param name changes from startapp → attr)
 const miniAppUrl = `https://your-miniapp.com/?attr=${attrPayload}&user=${ctx.from.id}`;
 await ctx.reply(`Open app: ${miniAppUrl}`);
 ```
