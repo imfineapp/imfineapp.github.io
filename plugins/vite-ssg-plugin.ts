@@ -2,18 +2,24 @@ import type { Plugin } from "vite";
 import fs from "fs";
 import path from "path";
 
-interface RouteConfig {
-  path: string;
-  template: string;
-  outputPath: string;
-}
-
 interface SeoMeta {
   title: string;
   description: string;
   canonical: string;
   type?: string;
   additionalSchemas?: string[];
+}
+
+const brandName = "Menhausen";
+const siteUrl = "https://menhausen.com";
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 const routeMetaMap: Record<string, SeoMeta> = {
@@ -232,32 +238,31 @@ const routeMetaMap: Record<string, SeoMeta> = {
   },
 };
 
-const brandName = "Menhausen";
-const siteUrl = "https://menhausen.com";
-
 function generateOgTags(meta: SeoMeta): string {
   const imageUrl = `${siteUrl}/favicon.ico`;
+  const escapedTitle = escapeHtml(meta.title);
+  const escapedDescription = escapeHtml(meta.description);
   return `
-    <meta property="og:title" content="${meta.title}" />
-    <meta property="og:description" content="${meta.description}" />
-    <meta property="og:url" content="${meta.canonical}" />
-    <meta property="og:type" content="${meta.type || "website"}" />
-    <meta property="og:site_name" content="${brandName}" />
-    <meta property="og:image" content="${imageUrl}" />
+    <meta property="og:title" content="${escapedTitle}" />
+    <meta property="og:description" content="${escapedDescription}" />
+    <meta property="og:url" content="${escapeHtml(meta.canonical)}" />
+    <meta property="og:type" content="${escapeHtml(meta.type || "website")}" />
+    <meta property="og:site_name" content="${escapeHtml(brandName)}" />
+    <meta property="og:image" content="${escapeHtml(imageUrl)}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${meta.title}" />
-    <meta name="twitter:description" content="${meta.description}" />
-    <meta name="twitter:image" content="${imageUrl}" />
-    <link rel="canonical" href="${meta.canonical}" />`;
+    <meta name="twitter:title" content="${escapedTitle}" />
+    <meta name="twitter:description" content="${escapedDescription}" />
+    <meta name="twitter:image" content="${escapeHtml(imageUrl)}" />
+    <link rel="canonical" href="${escapeHtml(meta.canonical)}" />`;
 }
 
 function generateProductSchema(): string {
   return `"@type": "Product",
-  "name": "${brandName}",
+  "name": "${escapeHtml(brandName)}",
   "description": "Anonymous stress management app for men using CBT & ACT techniques",
   "brand": {
     "@type": "Brand",
-    "name": "${brandName}"
+    "name": "${escapeHtml(brandName)}"
   },
   "offers": {
     "@type": "Offer",
@@ -276,13 +281,13 @@ function generateJsonLd(meta: SeoMeta): string {
     schemas.push(`{
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "${meta.title}",
-  "description": "${meta.description}",
-  "url": "${meta.canonical}",
+  "headline": "${escapeHtml(meta.title)}",
+  "description": "${escapeHtml(meta.description)}",
+  "url": "${escapeHtml(meta.canonical)}",
   "publisher": {
     "@type": "Organization",
-    "name": "${brandName}",
-    "url": "${siteUrl}"
+    "name": "${escapeHtml(brandName)}",
+    "url": "${escapeHtml(siteUrl)}"
   }
 }`);
   }
@@ -291,9 +296,9 @@ function generateJsonLd(meta: SeoMeta): string {
     schemas.push(`{
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "${brandName}",
-  "url": "${siteUrl}",
-  "description": "${meta.description}"
+  "name": "${escapeHtml(brandName)}",
+  "url": "${escapeHtml(siteUrl)}",
+  "description": "${escapeHtml(meta.description)}"
 }`);
   }
 
@@ -308,9 +313,9 @@ function generateJsonLd(meta: SeoMeta): string {
     schemas.push(`{
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "${brandName}",
-  "url": "${siteUrl}",
-  "logo": "${siteUrl}/favicon.ico",
+  "name": "${escapeHtml(brandName)}",
+  "url": "${escapeHtml(siteUrl)}",
+  "logo": "${escapeHtml(siteUrl)}/favicon.ico",
   "description": "Anonymous stress management for men. Practical stress cards, CBT & ACT techniques.",
   "sameAs": ["https://t.me/menhausen_app_bot"]
 }`);
@@ -404,14 +409,6 @@ function injectSeoIntoHtml(html: string, meta: SeoMeta): string {
   }
 
   return modified;
-}
-
-function pathToOutputDir(urlPath: string): string {
-  if (urlPath === "/" || urlPath === "") return "/";
-  const segments = urlPath.split("/").filter(Boolean);
-  if (segments.length === 0) return "/";
-  if (segments.length === 1) return `/${segments[0]}/`;
-  return `/${segments.slice(0, -1).join("/")}/`;
 }
 
 function generateRoutes(): { path: string; outputPath: string }[] {
