@@ -174,14 +174,28 @@ dist/
 
 ## Phase 6: Monitoring Setup (Week 4)
 
-### Step 6.1: Create Drift Baseline
-```bash
-python scripts/drift_baseline.py https://menhausen.com/
-```
+### Step 6.1: Create Drift Baseline ⏸️ PENDING (Network Error)
+- [ ] Run: `python scripts/drift_baseline.py https://menhausen.com/`
+- [ ] Script location: `/Users/leontev/.config/opencode/skills/super-seo-skill/scripts/drift_baseline.py`
+- [ ] Note: Requires Python dependencies (requests, beautifulsoup4)
 
 ### Step 6.2: Document SEO Health Score
-- [ ] Initial score: 35/100
-- [ ] Target after all fixes: 75+/100
+| Category | Initial Score | Target Score |
+|----------|--------------|--------------|
+| Technical SEO | 50% | 85% |
+| Content Quality | 20% | 70% |
+| On-Page SEO | 25% | 85% |
+| Schema/Structured Data | 0% | 80% |
+| Performance (CWV) | N/A | 75% |
+| AI Search Readiness | 30% | 70% |
+| Images | 50% | 75% |
+| **Overall** | **35/100** | **75+/100** |
+
+### Step 6.3: Post-Deploy Verification
+After deploying to GitHub Pages, verify:
+- [ ] `curl -s https://menhausen.com/blog/anxiety-vs-stress/ | grep '<title>'`
+- [ ] Google Search Console shows correct indexing
+- [ ] Social media link previews show correct meta
 
 ---
 
