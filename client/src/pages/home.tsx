@@ -59,7 +59,6 @@ export default function Home() {
       <StructuredData type="organization" />
       <StructuredData type="website" />
       <StructuredData type="product" />
-      <StructuredData type="howto" />
       <StructuredData type="faq" data={{ faqItems }} />
 
       {/* Hero Section */}

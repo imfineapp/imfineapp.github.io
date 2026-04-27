@@ -84,21 +84,30 @@ dist/
 
 ---
 
-## Phase 2: Schema.org Cleanup (Week 2)
+## Phase 2: Schema.org Cleanup (Week 2) ✅ COMPLETED
 
-### Step 2.1: Remove Deprecated HowTo Schema
-- [ ] File: `client/src/components/structured-data.tsx`
-- [ ] Remove case "howto": block (lines ~150-189)
-- [ ] Remove `<StructuredData type="howto" />` from home.tsx
+### Step 2.1: Remove Deprecated HowTo Schema ✅ DONE
+- [x] Removed `case "howto":` from structured-data.tsx
+- [x] Removed `howto` from type union
+- [x] Removed `howto` data interface
+- [x] Removed `<StructuredData type="howto" />` from home.tsx
+- [x] Removed `<StructuredData type="howto" />` from technique-detail.tsx
+- [x] Note: HowTo schema deprecated Sept 2023
 
-### Step 2.2: Add Product Schema to Stress Cards Page
-- [ ] File: `client/src/pages/stress-cards.tsx`
-- [ ] Import StructuredData
-- [ ] Add `<StructuredData type="product" />`
+### Step 2.2: Add Product Schema to Stress Cards Page ✅ DONE
+- [x] Added import for StructuredData to stress-cards.tsx
+- [x] Added `<StructuredData type="product" />`
+- [x] Added ItemList schema for stress cards
 
-### Step 2.3: Add Organization SameAs Links
-- [ ] File: `client/src/components/structured-data.tsx`
-- [ ] Add Telegram bot URL and social links to Organization schema
+### Step 2.3: Add Organization SameAs Links ✅ DONE
+- [x] Added Telegram bot URL (`https://t.me/menhausen_app_bot`) to Organization schema
+- [x] Updated SSG plugin to include sameAs in static JSON-LD
+
+### Additional Schema Improvements
+- [x] Homepage now has: WebSite, Product, Organization JSON-LD
+- [x] Stress-cards has: WebSite, Product JSON-LD
+- [x] Pricing has: WebSite, Product JSON-LD
+- [x] Blog posts have: Article JSON-LD
 
 ---
 

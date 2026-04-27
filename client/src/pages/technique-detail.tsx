@@ -53,29 +53,13 @@ export default function TechniqueDetail() {
   const howItWorks = (t(`techniques_data.${key}.howItWorks`, { returnObjects: true }) as string[]) || [];
   const questions = (t(`techniques_data.${key}.questions`, { returnObjects: true }) as string[]) || [];
 
-  const howtoSteps = howItWorks.map((step, index) => ({
-    "@type": "HowToStep",
-    "name": `Step ${index + 1}`,
-    "text": step,
-    "position": index + 1
-  }));
-
   return (
     <Layout>
-      <SEO 
+      <SEO
         title={`${name} - ${t('techniques.seo_title')}`}
         description={description}
         canonical={`/techniques/${slug}`}
-      />
-      <StructuredData 
-        type="howto" 
-        data={{
-          howto: {
-            name: name,
-            description: description,
-            steps: howtoSteps
-          }
-        }}
+        type="article"
       />
 
       <article className="py-16">

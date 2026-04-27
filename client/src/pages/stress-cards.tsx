@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { StructuredData } from "@/components/structured-data";
 import { StressCard } from "@/components/ui/stress-card";
 import { Button } from "@/components/ui/button";
 import { TelegramCTA } from "@/components/telegram-cta";
@@ -70,11 +71,22 @@ export default function StressCards() {
 
   return (
     <Layout>
-      <SEO 
-        title={t('stress_cards.seo_title')} 
+      <SEO
+        title={t('stress_cards.seo_title')}
         description={t('stress_cards.seo_description')}
         canonical="/stress-cards"
       />
+      <StructuredData type="product" />
+      <StructuredData type="itemlist" data={{
+        itemList: {
+          itemListElement: cards.map((card, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: card.title,
+            url: `https://menhausen.com/stress-cards#${card.id}`
+          }))
+        }
+      }} />
       
       <div className="bg-muted/30 py-16">
         <div className="container mx-auto px-4 sm:px-8 text-center">

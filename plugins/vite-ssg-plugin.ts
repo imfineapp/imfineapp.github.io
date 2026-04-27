@@ -13,6 +13,7 @@ interface SeoMeta {
   description: string;
   canonical: string;
   type?: string;
+  additionalSchemas?: string[];
 }
 
 const routeMetaMap: Record<string, SeoMeta> = {
@@ -21,12 +22,14 @@ const routeMetaMap: Record<string, SeoMeta> = {
     description: "Practical stress management for men using CBT & ACT techniques. No registration, 100% anonymous, 3-7 minute daily practices via Telegram.",
     canonical: "https://menhausen.com/",
     type: "website",
+    additionalSchemas: ["organization", "product"],
   },
   "/stress-cards": {
     title: "Free Stress Cards for Men | Menhausen",
     description: "Browse evidence-based stress cards using CBT & ACT techniques. Cognitive reframing, somatic anchoring & more. Get your daily card via Telegram.",
     canonical: "https://menhausen.com/stress-cards",
     type: "website",
+    additionalSchemas: ["product"],
   },
   "/stress-management": {
     title: "Stress Management for Men | Menhausen",
@@ -51,6 +54,7 @@ const routeMetaMap: Record<string, SeoMeta> = {
     description: "Free forever plan available. Premium: $4.99/month for advanced stress modules, unlimited history, and audio guides. No registration required.",
     canonical: "https://menhausen.com/pricing",
     type: "website",
+    additionalSchemas: ["product"],
   },
   "/techniques": {
     title: "Stress Relief Techniques for Men | Menhausen",
@@ -127,10 +131,29 @@ function generateOgTags(meta: SeoMeta): string {
     <link rel="canonical" href="${meta.canonical}" />`;
 }
 
+function generateProductSchema(): string {
+  return `"@type": "Product",
+  "name": "${brandName}",
+  "description": "Anonymous stress management app for men using CBT & ACT techniques",
+  "brand": {
+    "@type": "Brand",
+    "name": "${brandName}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "description": "Free plan available"
+  },
+  "category": "Health & Wellness"`;
+}
+
 function generateJsonLd(meta: SeoMeta): string {
+  const schemas: string[] = [];
+
   if (meta.type === "article") {
-    return `<script type="application/ld+json">
-{
+    schemas.push(`{
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "${meta.title}",
@@ -141,16 +164,47 @@ function generateJsonLd(meta: SeoMeta): string {
     "name": "${brandName}",
     "url": "${siteUrl}"
   }
-}
-</script>`;
+}`);
   }
-  return `<script type="application/ld+json">
-{
+
+  if (meta.type === "website" || !meta.type) {
+    schemas.push(`{
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "${brandName}",
   "url": "${siteUrl}",
   "description": "${meta.description}"
+}`);
+  }
+
+  if (meta.additionalSchemas?.includes("product")) {
+    schemas.push(`{
+  "@context": "https://schema.org",
+  ${generateProductSchema()}
+}`);
+  }
+
+  if (meta.additionalSchemas?.includes("organization")) {
+    schemas.push(`{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "${brandName}",
+  "url": "${siteUrl}",
+  "logo": "${siteUrl}/favicon.ico",
+  "description": "Anonymous stress management for men. Practical stress cards, CBT & ACT techniques.",
+  "sameAs": ["https://t.me/menhausen_app_bot"]
+}`);
+  }
+
+  if (schemas.length === 1) {
+    return `<script type="application/ld+json">\n${schemas[0]}\n</script>`;
+  }
+
+  return `<script type="application/ld+json">
+{
+  "@graph": [
+    ${schemas.map(s => s.trim()).join(",\n    ")}
+  ]
 }
 </script>`;
 }
