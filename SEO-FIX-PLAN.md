@@ -133,15 +133,23 @@ dist/
 
 ---
 
-## Phase 4: Image Optimization (Week 3)
+## Phase 4: Image Optimization (Week 3) ✅ COMPLETED
 
-### Step 4.1: Create Image Sitemap
-- [ ] File: `client/public/sitemap-images.xml`
-- [ ] List all images with titles
-- [ ] Update robots.txt to include sitemap-images.xml
+### Step 4.1: Create Image Sitemap ✅ DONE
+- [x] File: `client/public/sitemap-images.xml`
+- [x] Lists all site images with titles and captions
+- [x] Images included:
+  - Hero background image (homepage)
+  - Blog post images (3 posts)
 
-### Step 4.2: Add Lazy Loading to Below-Fold Images
-- [ ] Add `loading="lazy"` and `decoding="async"` to below-fold images
+### Step 4.2: Image Loading Strategy ✅ DONE
+- [x] Hero images: `loading="eager"` + `fetchPriority="high"` (correct for LCP)
+- [x] Blog listing images: `loading="lazy"` (below-fold)
+- [x] Blog post images: `loading="eager"` + `fetchPriority="high"` (above-fold)
+- [x] Icon components already have appropriate loading strategies
+
+### Step 4.3: Update robots.txt ✅ DONE
+- [x] Added image sitemap: `Sitemap: https://menhausen.com/sitemap-images.xml`
 
 ---
 

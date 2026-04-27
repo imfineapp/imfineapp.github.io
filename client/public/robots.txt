@@ -11,4 +11,5 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://menhausen.com/sitemap.xml
+Sitemap: https://menhausen.com/sitemap-images.xml
 
