@@ -93,10 +93,10 @@ export default function Home() {
             </div>
             <div className="relative lg:h-[600px] w-full rounded-[16px] overflow-hidden shadow-2xl border border-white/10 bg-card">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay z-10 pointer-events-none"></div>
-              <img 
-                src={heroImage} 
-                alt={t('common.alt_hero_image')} 
-                title={t('common.alt_hero_image')}
+              <img
+                src={heroImage}
+                alt="Menhausen app interface showing stress management card with cognitive reframing technique for burnout relief"
+                title="Menhausen stress management app - cognitive reframing technique"
                 width={1024}
                 height={1024}
                 className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700"
