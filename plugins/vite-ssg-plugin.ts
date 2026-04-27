@@ -1,4 +1,5 @@
 import type { Plugin } from "vite";
+import type { Connect } from "connect";
 import fs from "fs";
 import path from "path";
 
@@ -429,12 +430,74 @@ function generateRoutes(): { path: string; outputPath: string }[] {
   return routes;
 }
 
+function getRouteFromPath(urlPath: string): string {
+  const cleanPath = urlPath.replace(/\?.*$/, "").replace(/\/$/, "") || "/";
+
+  if (cleanPath === "/") return "/";
+
+  if (cleanPath.startsWith("/blog/")) {
+    const slug = cleanPath.replace("/blog/", "");
+    if (routeMetaMap[cleanPath]) return cleanPath;
+    if (routeMetaMap[`/blog/${slug}`]) return `/blog/${slug}`;
+    return "/blog";
+  }
+
+  if (cleanPath.startsWith("/techniques/")) {
+    const slug = cleanPath.replace("/techniques/", "");
+    if (routeMetaMap[cleanPath]) return cleanPath;
+    if (routeMetaMap[`/techniques/${slug}`]) return `/techniques/${slug}`;
+    return "/techniques";
+  }
+
+  if (cleanPath.startsWith("/compare/")) {
+    const slug = cleanPath.replace("/compare/", "");
+    if (routeMetaMap[cleanPath]) return cleanPath;
+    if (routeMetaMap[`/compare/${slug}`]) return `/compare/${slug}`;
+    return "/compare";
+  }
+
+  if (cleanPath.startsWith("/professions/")) {
+    const slug = cleanPath.replace("/professions/", "");
+    if (routeMetaMap[cleanPath]) return cleanPath;
+    if (routeMetaMap[`/professions/${slug}`]) return `/professions/${slug}`;
+    return "/professions";
+  }
+
+  return routeMetaMap[cleanPath] ? cleanPath : "/";
+}
+
 export function ssgPlugin(): Plugin {
   const routes = generateRoutes();
 
   return {
     name: "vite-ssg-plugin",
-    apply: "build",
+
+    configureServer(server: { middlewares: Connect.NextHandleFunction }) {
+      server.middlewares.use(async (req, res, next) => {
+        const url = req.url || "/";
+        const cleanUrl = url.split("?")[0].replace(/\/$/, "") || "/";
+
+        const routePath = getRouteFromPath(cleanUrl);
+        const meta = routeMetaMap[routePath];
+
+        if (meta && !url.includes(".")) {
+          const indexPath = path.join(process.cwd(), "client/index.html");
+          if (fs.existsSync(indexPath)) {
+            let html = fs.readFileSync(indexPath, "utf-8");
+            html = injectSeoIntoHtml(html, meta);
+            res.setHeader("Content-Type", "text/html");
+            res.setHeader("Cache-Control", "no-cache");
+            res.end(html);
+            return;
+          }
+        }
+        next();
+      });
+    },
+
+    transformIndexHtml(html: string, ctx?: { path?: string }) {
+      return html;
+    },
 
     async writeBundle(options, bundle) {
       if (!options.dir) {
