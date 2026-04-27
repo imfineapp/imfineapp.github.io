@@ -110,6 +110,126 @@ const routeMetaMap: Record<string, SeoMeta> = {
     canonical: "https://menhausen.com/blog/anxiety-vs-stress",
     type: "article",
   },
+
+  // Dynamic technique routes
+  "/techniques/cognitive-reframing": {
+    title: "Cognitive Reframing Technique | Menhausen",
+    description: "Learn cognitive reframing - a CBT technique to change negative thought patterns and manage stress effectively.",
+    canonical: "https://menhausen.com/techniques/cognitive-reframing",
+    type: "article",
+  },
+  "/techniques/somatic-anchoring": {
+    title: "Somatic Anchoring Technique | Menhausen",
+    description: "Master somatic anchoring - a mindfulness technique to ground yourself and reduce stress through body awareness.",
+    canonical: "https://menhausen.com/techniques/somatic-anchoring",
+    type: "article",
+  },
+  "/techniques/values-clarification": {
+    title: "Values Clarification Technique | Menhausen",
+    description: "Discover your core values with this ACT technique to align your actions with what truly matters.",
+    canonical: "https://menhausen.com/techniques/values-clarification",
+    type: "article",
+  },
+  "/techniques/behavioral-activation": {
+    title: "Behavioral Activation Technique | Menhausen",
+    description: "Use behavioral activation to overcome avoidance and reduce stress through purposeful action.",
+    canonical: "https://menhausen.com/techniques/behavioral-activation",
+    type: "article",
+  },
+  "/techniques/acceptance-practice": {
+    title: "Acceptance Practice Technique | Menhausen",
+    description: "Learn acceptance practice - an ACT technique to acknowledge difficult emotions without fighting them.",
+    canonical: "https://menhausen.com/techniques/acceptance-practice",
+    type: "article",
+  },
+  "/techniques/defusion-technique": {
+    title: "Defusion Technique | Menhausen",
+    description: "Master cognitive defusion to distance yourself from negative thoughts and reduce their impact.",
+    canonical: "https://menhausen.com/techniques/defusion-technique",
+    type: "article",
+  },
+
+  // Dynamic comparison routes
+  "/compare/calm": {
+    title: "Menhausen vs Calm - Stress Management Comparison",
+    description: "Compare Menhausen with Calm. See why Menhausen is the better choice for men seeking practical, anonymous stress management.",
+    canonical: "https://menhausen.com/compare/calm",
+    type: "website",
+  },
+  "/compare/betterhelp": {
+    title: "Menhausen vs BetterHelp - Stress Management Comparison",
+    description: "Compare Menhausen with BetterHelp. Discover the differences between app-based therapy and practical stress cards.",
+    canonical: "https://menhausen.com/compare/betterhelp",
+    type: "website",
+  },
+  "/compare/headspace": {
+    title: "Menhausen vs Headspace - Stress Management Comparison",
+    description: "Compare Menhausen with Headspace. See how our practical CBT/ACT approach differs from meditation apps.",
+    canonical: "https://menhausen.com/compare/headspace",
+    type: "website",
+  },
+  "/compare/waking-up": {
+    title: "Menhausen vs Waking Up - Stress Management Comparison",
+    description: "Compare Menhausen with Waking Up. Learn which stress management approach works better for busy men.",
+    canonical: "https://menhausen.com/compare/waking-up",
+    type: "website",
+  },
+  "/compare/noom": {
+    title: "Menhausen vs Noom - Stress Management Comparison",
+    description: "Compare Menhausen with Noom. See why Menhausen is specifically designed for stress management, not weight loss.",
+    canonical: "https://menhausen.com/compare/noom",
+    type: "website",
+  },
+
+  // Dynamic profession routes
+  "/professions/software-developer": {
+    title: "Stress Management for Software Developers | Menhausen",
+    description: "Practical stress management techniques specifically for software developers dealing with deadline pressure and code challenges.",
+    canonical: "https://menhausen.com/professions/software-developer",
+    type: "website",
+  },
+  "/professions/entrepreneur": {
+    title: "Stress Management for Entrepreneurs | Menhausen",
+    description: "Stress management strategies for entrepreneurs handling business pressure, uncertainty, and work-life balance.",
+    canonical: "https://menhausen.com/professions/entrepreneur",
+    type: "website",
+  },
+  "/professions/executive": {
+    title: "Stress Management for Executives | Menhausen",
+    description: "Effective stress management techniques for executives and business leaders managing teams and organizations.",
+    canonical: "https://menhausen.com/professions/executive",
+    type: "website",
+  },
+  "/professions/remote-worker": {
+    title: "Stress Management for Remote Workers | Menhausen",
+    description: "Stress management tips for remote workers dealing with isolation, work-life boundaries, and digital fatigue.",
+    canonical: "https://menhausen.com/professions/remote-worker",
+    type: "website",
+  },
+  "/professions/sales-professional": {
+    title: "Stress Management for Sales Professionals | Menhausen",
+    description: "Stress management techniques for sales professionals handling rejection, targets, and client pressure.",
+    canonical: "https://menhausen.com/professions/sales-professional",
+    type: "website",
+  },
+  "/professions/healthcare-professional": {
+    title: "Stress Management for Healthcare Professionals | Menhausen",
+    description: "Stress management for doctors, nurses, and healthcare workers dealing with high-stakes environments.",
+    canonical: "https://menhausen.com/professions/healthcare-professional",
+    type: "website",
+  },
+  "/professions/freelancer": {
+    title: "Stress Management for Freelancers | Menhausen",
+    description: "Stress management strategies for freelancers navigating irregular income and client management.",
+    canonical: "https://menhausen.com/professions/freelancer",
+    type: "website",
+  },
+  "/professions/tradesperson": {
+    title: "Stress Management for Tradespeople | Menhausen",
+    description: "Practical stress management for tradespeople dealing with physical demands and job site pressures.",
+    canonical: "https://menhausen.com/professions/tradesperson",
+    type: "website",
+  },
 };
 
 const brandName = "Menhausen";
