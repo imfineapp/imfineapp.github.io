@@ -104,7 +104,9 @@
     "tailwindcss": "^4.1.14",
     "tsx": "^4.20.5",
     "typescript": "5.6.3",
-    "vite": "^8.0.8"
+    "vite": "^8.0.8",
+    "vite-plugin-ssg": "^0.1.0",
+    "vite-prerender-plugin": "^0.5.13"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"

@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import { copyFileSync } from "fs";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { ssgPlugin } from "./plugins/vite-ssg-plugin";
 
 /**
  * SEO Inspector-style priority (higher = earlier in <head>).
@@ -147,6 +148,7 @@ export default defineConfig({
     runtimeErrorOverlay(),
     tailwindcss(),
     copy404Plugin(),
+    ssgPlugin(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
