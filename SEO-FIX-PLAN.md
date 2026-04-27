@@ -153,14 +153,22 @@ dist/
 
 ---
 
-## Phase 5: Performance (Week 3-4)
+## Phase 5: Performance (Week 3-4) ✅ COMPLETED
 
-### Step 5.1: Font Display Swap
-- [ ] File: `client/index.html`
-- [ ] Implement font-display: swap for Google Fonts
+### Step 5.1: Font Display Swap ✅ DONE
+- [x] File: `client/index.html`
+- [x] Implemented font-display: swap using print media trick
+- [x] Added preload for fonts
+- [x] Fallback noscript for non-JS users
 
-### Step 5.2: Preconnect to External Domains
-- [ ] Add preconnect for Yandex Metrika and Google Tag Manager
+### Step 5.2: Preconnect to External Domains ✅ DONE
+- [x] Added `dns-prefetch` for Google Tag Manager
+- [x] Added `dns-prefetch` for Yandex Metrika
+- [x] Already had preconnect for Google Fonts
+
+### Performance Notes
+- ⚠️ Bundle size warning: JS chunk is 637KB (188KB gzipped)
+- Recommendation: Implement code splitting for future optimization
 
 ---
 
