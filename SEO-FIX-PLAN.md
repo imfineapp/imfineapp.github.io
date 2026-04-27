@@ -37,11 +37,11 @@
 - [x] Reads route metadata from `plugins/vite-ssg-plugin.ts`
 - [x] Injects unique title, description, OG tags, canonical, Twitter Card, JSON-LD
 
-### Step 1.3: Create SEO Route Configuration ✅ DONE
-- [x] File: `client/src/lib/seo-routes.ts`
-- [x] Centralized route metadata for all pages
+### Step 1.3: SEO Route Configuration ✅ DONE
+- [x] Route metadata centralized in `plugins/vite-ssg-plugin.ts`
 - [x] Includes: home, stress-cards, stress-management, stress-test, blog, blog posts, pricing, techniques, compare, professions, privacy, terms, contact
 - [x] Blog posts: stress-management-techniques, burnout-signs-men, anxiety-vs-stress
+- [x] Dynamic routes: 6 techniques, 5 comparisons, 8 professions
 
 ### Step 1.4: Update vite.config.ts ✅ DONE
 - [x] Added import for `ssgPlugin`
