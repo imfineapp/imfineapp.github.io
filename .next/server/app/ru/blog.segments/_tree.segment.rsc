@@ -1,0 +1,4 @@
+:HL["/_next/static/chunks/0s6.176nk.dzu.css","style"]
+:HL["/attached_assets/generated_images/Abstract_order_from_chaos_for_stress_management_page_8136dc7e.png","image"]
+:HL["/attached_assets/generated_images/Calm_water_surface_for_anxiety_blog_post_34484ece.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"lang","param":{"type":"d","key":"ru","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Qq5isAmZxWwFF2DH1kmUf"}

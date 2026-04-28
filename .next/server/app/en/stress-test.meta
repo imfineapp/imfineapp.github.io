@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[lang]/layout,_N_T_/[lang]/stress-test/layout,_N_T_/[lang]/stress-test/page,_N_T_/en/stress-test"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$lang/stress-test/__PAGE__",
+    "/$d$lang/stress-test",
+    "/$d$lang",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "priority": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/[lang]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[lang]/blog",
+      "regex": "^/([^/]+?)/blog(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/blog(?:/)?$"
+    },
+    {
+      "page": "/[lang]/blog/[slug]",
+      "regex": "^/([^/]+?)/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[lang]/compare",
+      "regex": "^/([^/]+?)/compare(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/compare(?:/)?$"
+    },
+    {
+      "page": "/[lang]/compare/[slug]",
+      "regex": "^/([^/]+?)/compare/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/compare/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[lang]/contact",
+      "regex": "^/([^/]+?)/contact(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/contact(?:/)?$"
+    },
+    {
+      "page": "/[lang]/pricing",
+      "regex": "^/([^/]+?)/pricing(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/pricing(?:/)?$"
+    },
+    {
+      "page": "/[lang]/privacy",
+      "regex": "^/([^/]+?)/privacy(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/privacy(?:/)?$"
+    },
+    {
+      "page": "/[lang]/professions",
+      "regex": "^/([^/]+?)/professions(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/professions(?:/)?$"
+    },
+    {
+      "page": "/[lang]/professions/[slug]",
+      "regex": "^/([^/]+?)/professions/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/professions/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[lang]/stress-cards",
+      "regex": "^/([^/]+?)/stress\\-cards(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/stress\\-cards(?:/)?$"
+    },
+    {
+      "page": "/[lang]/stress-test",
+      "regex": "^/([^/]+?)/stress\\-test(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/stress\\-test(?:/)?$"
+    },
+    {
+      "page": "/[lang]/techniques",
+      "regex": "^/([^/]+?)/techniques(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/techniques(?:/)?$"
+    },
+    {
+      "page": "/[lang]/techniques/[slug]",
+      "regex": "^/([^/]+?)/techniques/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/techniques/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[lang]/terms",
+      "regex": "^/([^/]+?)/terms(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/terms(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

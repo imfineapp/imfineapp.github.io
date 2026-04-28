@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[lang]/layout,_N_T_/[lang]/professions/layout,_N_T_/[lang]/professions/[slug]/layout,_N_T_/[lang]/professions/[slug]/page,_N_T_/ru/professions/sales-professional"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$lang/professions/$d$slug/__PAGE__",
+    "/$d$lang/professions/$d$slug",
+    "/$d$lang/professions",
+    "/$d$lang",
+    "/_index",
+    "/_head"
+  ]
+}

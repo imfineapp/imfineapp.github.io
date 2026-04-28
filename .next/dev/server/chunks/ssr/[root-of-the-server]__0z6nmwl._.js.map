@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/leontev/Projects/menhausen/landing/app/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\nimport { headers } from \"next/headers\";\n\nexport default async function RootPage() {\n  const headersList = await headers();\n  const acceptLanguage = headersList.get(\"accept-language\") || \"en\";\n\n  const isRussian = acceptLanguage.includes(\"ru\");\n\n  redirect(isRussian ? \"/ru\" : \"/en\");\n}\n"],"names":["RootPage","headersList","acceptLanguage","get","isRussian","includes"],"mappings":";;;;AAAA;AAAA;AACA;;;AAEe,eAAeA;IAC5B,MAAMC,cAAc,MAAM,IAAA,kKAAO;IACjC,MAAMC,iBAAiBD,YAAYE,GAAG,CAAC,sBAAsB;IAE7D,MAAMC,YAAYF,eAAeG,QAAQ,CAAC;IAE1C,IAAA,yNAAQ,EAACD,YAAY,QAAQ;AAC/B"}}]
+}

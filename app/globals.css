@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #111111;
+    --bg-card: #1C1C1C;
+    --bg-card-hover: #252525;
+    --bg-card-active: #2E2E2E;
+
+    --brand-primary: #E1FF00;
+    --brand-primary-hover: #D1EF00;
+    --brand-primary-muted: #B8B800;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1A1;
+    --text-tertiary: #666666;
+
+    --border-primary: #333333;
+    --border-secondary: #222222;
+    --border-accent: #E1FF00;
+
+    --radius: 0.75rem;
+
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-card);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--brand-primary);
+    --primary-foreground: #111111;
+    --secondary: var(--bg-card-active);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-card);
+    --muted-foreground: var(--text-secondary);
+    --accent: var(--brand-primary);
+    --accent-foreground: #111111;
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: var(--border-primary);
+    --input: var(--border-secondary);
+    --ring: var(--brand-primary);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    line-height: 0.9;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply h-[46px] rounded-[12px] bg-primary text-black font-sans font-bold text-[15px] hover:bg-[#D1EF00] transition-colors flex items-center justify-center px-6;
+  }
+
+  .btn-secondary {
+    @apply h-[46px] rounded-[12px] bg-transparent border border-border text-white font-sans font-bold text-[15px] hover:bg-white/5 transition-colors flex items-center justify-center px-6;
+  }
+
+  .input-field {
+    @apply h-[46px] px-[16px] border border-border rounded-[12px] bg-card text-foreground focus:border-accent focus:outline-none transition-colors;
+  }
+
+  .card-base {
+    @apply bg-card rounded-[12px] p-4 border border-border/50 hover:bg-[#252525] transition-colors;
+  }
+
+  .card-container {
+    @apply bg-card rounded-[16px] p-6 border border-border/50;
+  }
+}
+
+@layer utilities {
+  .typography-h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 0.9;
+  }
+
+  .typography-h2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: clamp(20px, 4vw, 28px);
+    line-height: 0.9;
+  }
+
+  .typography-h3 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: clamp(18px, 3vw, 24px);
+    line-height: 1.0;
+  }
+
+  .typography-body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  .prose h2 {
+    @apply mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply mt-6 mb-3;
+  }
+
+  .prose h4 {
+    @apply mt-4 mb-2;
+  }
+
+  .prose p + h2,
+  .prose ul + h2,
+  .prose ol + h2 {
+    @apply mt-8;
+  }
+
+  .prose p + h3,
+  .prose ul + h3,
+  .prose ol + h3 {
+    @apply mt-6;
+  }
+}

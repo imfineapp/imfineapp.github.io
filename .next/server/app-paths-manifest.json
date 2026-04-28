@@ -1,0 +1,20 @@
+{
+  "/[lang]/blog/[slug]/page": "app/[lang]/blog/[slug]/page.js",
+  "/[lang]/blog/page": "app/[lang]/blog/page.js",
+  "/[lang]/compare/[slug]/page": "app/[lang]/compare/[slug]/page.js",
+  "/[lang]/compare/page": "app/[lang]/compare/page.js",
+  "/[lang]/contact/page": "app/[lang]/contact/page.js",
+  "/[lang]/page": "app/[lang]/page.js",
+  "/[lang]/pricing/page": "app/[lang]/pricing/page.js",
+  "/[lang]/privacy/page": "app/[lang]/privacy/page.js",
+  "/[lang]/professions/[slug]/page": "app/[lang]/professions/[slug]/page.js",
+  "/[lang]/professions/page": "app/[lang]/professions/page.js",
+  "/[lang]/stress-cards/page": "app/[lang]/stress-cards/page.js",
+  "/[lang]/stress-test/page": "app/[lang]/stress-test/page.js",
+  "/[lang]/techniques/[slug]/page": "app/[lang]/techniques/[slug]/page.js",
+  "/[lang]/techniques/page": "app/[lang]/techniques/page.js",
+  "/[lang]/terms/page": "app/[lang]/terms/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
+}

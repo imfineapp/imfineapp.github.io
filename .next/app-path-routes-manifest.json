@@ -1,0 +1,20 @@
+{
+  "/[lang]/blog/[slug]/page": "/[lang]/blog/[slug]",
+  "/[lang]/blog/page": "/[lang]/blog",
+  "/[lang]/compare/[slug]/page": "/[lang]/compare/[slug]",
+  "/[lang]/compare/page": "/[lang]/compare",
+  "/[lang]/contact/page": "/[lang]/contact",
+  "/[lang]/page": "/[lang]",
+  "/[lang]/pricing/page": "/[lang]/pricing",
+  "/[lang]/privacy/page": "/[lang]/privacy",
+  "/[lang]/professions/[slug]/page": "/[lang]/professions/[slug]",
+  "/[lang]/professions/page": "/[lang]/professions",
+  "/[lang]/stress-cards/page": "/[lang]/stress-cards",
+  "/[lang]/stress-test/page": "/[lang]/stress-test",
+  "/[lang]/techniques/[slug]/page": "/[lang]/techniques/[slug]",
+  "/[lang]/techniques/page": "/[lang]/techniques",
+  "/[lang]/terms/page": "/[lang]/terms",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/page": "/"
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/leontev/Projects/menhausen/landing/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\nimport \"./globals.css\";\n\nexport const metadata: Metadata = {\n  title: \"Menhausen - Anonymous Stress Management for Men\",\n  description: \"Practical stress management for men using CBT & ACT techniques. No registration, 100% anonymous, 3-7 minute daily practices via Telegram.\",\n};\n\nexport default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return children;\n}\n"],"names":["metadata","title","description","RootLayout","children"],"mappings":";;;;;;;AAGO,MAAMA,WAAqB;IAChCC,OAAO;IACPC,aAAa;AACf;AAEe,SAASC,WAAW,EACjCC,QAAQ,EAGR;IACA,OAAOA;AACT"}}]
+}

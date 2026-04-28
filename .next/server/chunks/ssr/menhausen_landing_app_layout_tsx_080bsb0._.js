@@ -1,0 +1,3 @@
+module.exports=[16211,a=>{"use strict";a.s(["default",0,function({children:a}){return a},"metadata",0,{title:"Menhausen - Anonymous Stress Management for Men",description:"Practical stress management for men using CBT & ACT techniques. No registration, 100% anonymous, 3-7 minute daily practices via Telegram."}])},91258,a=>{a.n(a.i(16211))}];
+
+//# sourceMappingURL=menhausen_landing_app_layout_tsx_080bsb0._.js.map

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[lang]/layout,_N_T_/[lang]/techniques/layout,_N_T_/[lang]/techniques/[slug]/layout,_N_T_/[lang]/techniques/[slug]/page,_N_T_/ru/techniques/behavioral-activation"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$lang/techniques/$d$slug/__PAGE__",
+    "/$d$lang/techniques/$d$slug",
+    "/$d$lang/techniques",
+    "/$d$lang",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,3 @@
+module.exports=[27231,a=>{"use strict";var b=a.i(12240),c=a.i(86562);a.s(["default",0,function(){return(0,c.useEffect)(()=>{let a="u">typeof navigator&&navigator.language?.toLowerCase().startsWith("ru")?"ru":"en";window.location.href=`/${a}`},[]),(0,b.jsx)("div",{className:"min-h-screen bg-[#111111] flex items-center justify-center",children:(0,b.jsx)("div",{className:"text-white",children:"Redirecting..."})})}])}];
+
+//# sourceMappingURL=menhausen_landing_app_page_tsx_0mjvq2r._.js.map
