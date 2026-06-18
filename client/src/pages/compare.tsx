@@ -5,9 +5,10 @@ import { PageFaq } from "@/components/page-faq";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Link, useRoute, Redirect } from "wouter";
 import { useTranslation } from "react-i18next";
+import { getComparison } from "@/lib/comparisons-data";
 import { ArrowLeft, Check, X, Sparkles } from "lucide-react";
 
-const validSlugs = ["calm", "betterhelp", "headspace", "waking-up", "noom"];
+const validSlugs = ["calm", "betterhelp", "headspace", "waking-up", "noom", "mental"];
 
 function slugToKey(slug: string): string {
   return slug.replace(/-/g, '_');
@@ -90,6 +91,10 @@ export default function CompareDetail() {
   const migration = safeObject<MigrationInfo>(
     t(`comparisons_data.${key}.migration`, { returnObjects: true })
   );
+
+  const comparisonMeta = getComparison(slug);
+  const competitorMenFocus = comparisonMeta?.menFocus ?? false;
+  const competitorCbtAct = comparisonMeta?.cbtAct ?? "varies";
 
   const compareFaq = [
     {
@@ -182,7 +187,15 @@ export default function CompareDetail() {
                   </tr>
                   <tr className="border-b border-border/50">
                     <td className="py-4 px-4 font-medium">{t('comparisons.table.cbt_act')}</td>
-                    <td className="py-4 px-4 text-muted-foreground">{t('comparisons.table.varies')}</td>
+                    <td className="py-4 px-4 text-muted-foreground">
+                      {competitorCbtAct === "varies" ? (
+                        t('comparisons.table.varies')
+                      ) : competitorCbtAct ? (
+                        <Check className="w-5 h-5 inline" />
+                      ) : (
+                        <X className="w-5 h-5 inline" />
+                      )}
+                    </td>
                     <td className="py-4 px-4 text-primary"><Check className="w-5 h-5 inline" /></td>
                   </tr>
                   <tr className="border-b border-border/50">
@@ -192,7 +205,13 @@ export default function CompareDetail() {
                   </tr>
                   <tr className="border-b border-border/50">
                     <td className="py-4 px-4 font-medium">{t('comparisons.table.men_focus')}</td>
-                    <td className="py-4 px-4 text-muted-foreground"><X className="w-5 h-5 inline" /></td>
+                    <td className="py-4 px-4 text-muted-foreground">
+                      {competitorMenFocus ? (
+                        <Check className="w-5 h-5 inline" />
+                      ) : (
+                        <X className="w-5 h-5 inline" />
+                      )}
+                    </td>
                     <td className="py-4 px-4 text-primary"><Check className="w-5 h-5 inline" /></td>
                   </tr>
                 </tbody>
