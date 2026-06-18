@@ -68,6 +68,8 @@ export default function BlogPost() {
             <img 
               src={typeof post.image === "string" ? post.image : (post.image as any)?.src || post.image} 
               alt={post.title} 
+              width={1200}
+              height={675}
               className="w-full h-auto" 
               loading="eager"
               fetchPriority="high"

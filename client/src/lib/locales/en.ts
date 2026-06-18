@@ -400,6 +400,7 @@ export const en = {
     cta_description: "Apply this technique with guided questions in our Telegram bot. Completely anonymous.",
     start_practice: "Start Practice",
     back_to_techniques: "Back to Techniques",
+    explore_other: "Explore other techniques",
     cta: {
       title: "Ready to Start?",
       description: "Try these techniques with guided practice in our Telegram bot. Completely free to start.",
@@ -816,6 +817,7 @@ export const en = {
     recommended_techniques: "Recommended Techniques",
     practical_tips: "Practical Tips You Can Use Today",
     related_professions: "Related Professions",
+    related_resources: "Related resources",
     start_practice: "Start Your Practice",
     cta: {
       title: "Ready to Start?",

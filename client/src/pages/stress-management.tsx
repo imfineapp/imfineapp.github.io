@@ -20,6 +20,8 @@ export default function StressManagement() {
         <img 
           src={stressImage} 
           alt={t('common.alt_stress_management')} 
+          width={1600}
+          height={900}
           className="w-full h-full object-cover opacity-40"
           loading="eager"
           fetchPriority="high"

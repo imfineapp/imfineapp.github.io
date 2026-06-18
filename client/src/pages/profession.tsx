@@ -149,6 +149,25 @@ export default function ProfessionDetail() {
             </div>
           </section>
 
+          {/* Related resources */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">{t('professions.related_resources')}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link href="/techniques" className="flex items-center justify-between p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group">
+                <span className="font-medium">{t('nav.techniques')}</span>
+                <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+              <Link href="/stress-test" className="flex items-center justify-between p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group">
+                <span className="font-medium">{t('nav.stress_test')}</span>
+                <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+              <Link href="/stress-cards" className="flex items-center justify-between p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group">
+                <span className="font-medium">{t('nav.stress_cards')}</span>
+                <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="py-12 bg-primary text-black rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">{t('professions.start_practice')}</h2>

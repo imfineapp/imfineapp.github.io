@@ -3,7 +3,7 @@ import type { Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import { copyFileSync } from "fs";
+import { copyFileSync, existsSync, readdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 /**
@@ -110,6 +110,39 @@ function sortHeadBySeoPriority(html: string): string {
   return html.replace(headRe, `<head${attrs}>${newInner}</head>`);
 }
 
+function sanitizeAssetNamesPlugin(): Plugin {
+  return {
+    name: "sanitize-asset-names",
+    enforce: "post",
+    closeBundle() {
+      const distPath = path.resolve(import.meta.dirname, "dist");
+      const assetsDir = path.join(distPath, "assets");
+      if (!existsSync(assetsDir)) return;
+
+      const renames = new Map<string, string>();
+      for (const file of readdirSync(assetsDir)) {
+        if (!file.includes("_")) continue;
+        const next = file.replace(/_/g, "-");
+        if (next === file) continue;
+        renameSync(path.join(assetsDir, file), path.join(assetsDir, next));
+        renames.set(file, next);
+      }
+
+      if (renames.size === 0) return;
+
+      for (const htmlName of ["index.html", "404.html"]) {
+        const htmlPath = path.join(distPath, htmlName);
+        if (!existsSync(htmlPath)) continue;
+        let html = readFileSync(htmlPath, "utf-8");
+        renames.forEach((to, from) => {
+          html = html.replaceAll(`/assets/${from}`, `/assets/${to}`);
+        });
+        writeFileSync(htmlPath, html, "utf-8");
+      }
+    },
+  };
+}
+
 function htmlHeadPrioritySortPlugin(): Plugin {
   return {
     name: "html-head-priority-sort",
@@ -147,6 +180,7 @@ export default defineConfig({
     runtimeErrorOverlay(),
     tailwindcss(),
     copy404Plugin(),
+    sanitizeAssetNamesPlugin(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [

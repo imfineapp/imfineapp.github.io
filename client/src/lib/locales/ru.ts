@@ -400,6 +400,7 @@ nav: {
     cta_description: "Примените эту технику с направляющими вопросами в нашем Telegram-боте. Полностью анонимно.",
     start_practice: "Начать практику",
     back_to_techniques: "Назад к техникам",
+    explore_other: "Другие техники",
     cta: {
       title: "Готовы начать?",
       description: "Попробуйте эти техники с направляющей практикой в нашем Telegram-боте. Полностью бесплатно.",
@@ -816,6 +817,7 @@ nav: {
     recommended_techniques: "Рекомендуемые техники",
     practical_tips: "Практические советы",
     related_professions: "Связанные профессии",
+    related_resources: "Полезные разделы",
     start_practice: "Начните практику",
     cta: {
       title: "Готовы начать?",
