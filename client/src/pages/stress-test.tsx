@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { PageFaq } from "@/components/page-faq";
 import { Button } from "@/components/ui/button";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { useState } from "react";
@@ -7,9 +8,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { RefreshCcw } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { getFaqFromI18n } from "@/lib/faq";
 
 export default function StressTest() {
   const { t } = useTranslation();
+  const faqItems = getFaqFromI18n(t, "stress_test.page_faq");
   const [started, setStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [scores, setScores] = useState<number[]>([]);
@@ -67,6 +70,12 @@ export default function StressTest() {
             <p className="text-xl text-muted-foreground">
               {t('stress_test.subtitle')}
             </p>
+            <section className="text-left max-w-xl mx-auto pt-4">
+              <h2 className="text-2xl font-bold mb-4">{t('stress_test.intro_heading')}</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('stress_test.intro_body')}
+              </p>
+            </section>
             <Button size="lg" onClick={() => setStarted(true)} className="text-lg px-12 h-14 rounded-full shadow-xl shadow-primary/20">
               {t('stress_test.start_test')}
             </Button>
@@ -126,6 +135,8 @@ export default function StressTest() {
           </div>
         )}
       </div>
+
+      {!started && <PageFaq title={t("stress_test.page_faq_title")} items={faqItems} />}
     </Layout>
   );
 }

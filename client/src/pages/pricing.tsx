@@ -1,13 +1,16 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { PageFaq } from "@/components/page-faq";
 import { StructuredData } from "@/components/structured-data";
 import { Button } from "@/components/ui/button";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { getFaqFromI18n } from "@/lib/faq";
 
 export default function Pricing() {
   const { t } = useTranslation();
+  const faqItems = getFaqFromI18n(t, "pricing.faq");
   
   return (
     <Layout>
@@ -26,11 +29,18 @@ export default function Pricing() {
           </p>
         </div>
 
+        <section className="max-w-3xl mx-auto mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">{t("pricing.title")}</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            {t("pricing.page_intro")}
+          </p>
+        </section>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Free Tier */}
           <div className="border border-border rounded-3xl p-8 bg-muted shadow-sm relative overflow-hidden">
             <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-2">{t('pricing.basic_title')}</h3>
+              <h2 className="text-2xl font-bold mb-2">{t('pricing.basic_title')}</h2>
               <p className="text-muted-foreground">{t('pricing.basic_desc')}</p>
             </div>
             <div className="mb-8">
@@ -62,7 +72,7 @@ export default function Pricing() {
               {t('pricing.premium_badge')}
             </div>
             <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-2 text-white">{t('pricing.premium_title')}</h3>
+              <h2 className="text-2xl font-bold mb-2 text-white">{t('pricing.premium_title')}</h2>
               <p className="text-white/70">{t('pricing.premium_desc')}</p>
             </div>
             <div className="mb-8">
@@ -90,6 +100,8 @@ export default function Pricing() {
             <p className="text-center text-xs text-white/40 mt-4">{t('pricing.premium_note')}</p>
           </div>
         </div>
+
+        <PageFaq title={t("pricing.faq_title")} items={faqItems} />
       </div>
     </Layout>
   );

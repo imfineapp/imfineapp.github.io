@@ -1,12 +1,13 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { StructuredData } from "@/components/structured-data";
+import { PageFaq } from "@/components/page-faq";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Link, useRoute, Redirect } from "wouter";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft, Check, X, Sparkles } from "lucide-react";
 
-const validSlugs = ["calm", "betterhelp", "headspace", "waking-up", "noom", "mental"];
+const validSlugs = ["calm", "betterhelp", "headspace", "waking-up", "noom"];
 
 function slugToKey(slug: string): string {
   return slug.replace(/-/g, '_');
@@ -90,21 +91,31 @@ export default function CompareDetail() {
     t(`comparisons_data.${key}.migration`, { returnObjects: true })
   );
 
+  const compareFaq = [
+    {
+      question: `Is Menhausen better than ${seoName}?`,
+      answer: "Menhausen offers anonymity, no account required, and targets men's stress with evidence-based CBT/ACT techniques in Telegram.",
+    },
+    {
+      question: `How does ${seoName} compare to Menhausen?`,
+      answer: keyDifferences[0] || tagline,
+    },
+    {
+      question: t("comparisons.quick_verdict"),
+      answer: bestFor[0] || tagline,
+    },
+  ];
+
   return (
     <Layout>
       <SEO 
-        title={`${seoName} vs Menhausen - ${t('comparisons.seo_title')}`}
+        title={`${seoName} vs Menhausen`}
         description={`Compare ${seoName} with Menhausen. ${keyDifferences[0] || ""} Find the best stress management solution for men.`}
         canonical={`/compare/${slug}`}
       />
       <StructuredData 
         type="faq" 
-        data={{
-          faqItems: [
-            { question: `Is Menhausen better than ${seoName}?`, answer: `Menhausen offers anonymity, no account required, and targets men specific stress issues with evidence-based CBT/ACT techniques.` },
-            { question: `How does ${seoName} compare to Menhausen?`, answer: keyDifferences[0] || "" }
-          ]
-        }}
+        data={{ faqItems: compareFaq }}
       />
 
       <article className="py-16">
@@ -345,6 +356,8 @@ export default function CompareDetail() {
               </div>
             </section>
           )}
+
+          <PageFaq title={t("comparisons.detail_faq_title")} items={compareFaq} />
 
           {/* CTA */}
           <section className="py-12 bg-primary text-black rounded-2xl p-8 md:p-12 text-center">

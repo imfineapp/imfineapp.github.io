@@ -1,13 +1,16 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { PageFaq } from "@/components/page-faq";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { getAllBlogPosts } from "@/lib/blog-data";
 import { useTranslation } from "react-i18next";
+import { getFaqFromI18n } from "@/lib/faq";
 
 export default function Blog() {
   const { t } = useTranslation();
   const posts = getAllBlogPosts();
+  const faqItems = getFaqFromI18n(t, "blog.faq");
 
   return (
     <Layout>
@@ -26,7 +29,15 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-8 py-16">
+      <div className="container mx-auto px-4 sm:px-8 py-12 max-w-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">{t("blog.title")}</h2>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          {t("blog.page_intro")}
+        </p>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-8 pb-16">
+        <h2 className="text-2xl font-bold mb-8">{t("blog.subtitle")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
@@ -47,9 +58,9 @@ export default function Blog() {
                 </div>
                 <div className="flex-1 flex flex-col">
                   <p className="text-sm text-muted-foreground mb-2">{post.date}</p>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
+                  <h2 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
                     {post.title}
-                  </h3>
+                  </h2>
                   <p className="text-muted-foreground line-clamp-3 mb-4 flex-1">
                     {post.excerpt}
                   </p>
@@ -62,6 +73,8 @@ export default function Blog() {
           ))}
         </div>
       </div>
+
+      <PageFaq title={t("blog.faq_title")} items={faqItems} />
     </Layout>
   );
 }

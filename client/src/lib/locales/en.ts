@@ -174,6 +174,18 @@ export const en = {
     office: "Headquarters",
     office_address: "Digital Only. We operate globally.",
     seo_description: "Contact Menhausen support team. We are here to help with any questions about our anonymous stress management app.",
+    page_intro: "Questions about privacy, billing, or how Menhausen works? Reach us by email or Telegram. We typically respond within one business day and never ask for more personal data than necessary.",
+    faq_title: "Contact FAQ",
+    faq: [
+      {
+        question: "What should I include in a support message?",
+        answer: "Describe your issue and the device or Telegram client you use. You do not need to share journal content or personal health details."
+      },
+      {
+        question: "Do you offer phone support?",
+        answer: "We support users via email and Telegram chat only. This keeps support fast and aligned with our privacy-first approach."
+      }
+    ],
     seo_keywords: "contact, support, help, men's mental health support"
   },
   privacy: {
@@ -209,6 +221,18 @@ export const en = {
   terms: {
     title: "Terms of Service",
     intro: "By using Menhausen, you agree to the following terms.",
+    page_intro: "These terms explain how you may use the Menhausen website and Telegram experience. Menhausen is a self-help stress tool — not therapy, not emergency care, and not a substitute for professional medical advice.",
+    faq_title: "Terms FAQ",
+    faq: [
+      {
+        question: "Is Menhausen a medical service?",
+        answer: "No. Content is for self-help and education. Always consult a qualified provider for medical or mental-health emergencies."
+      },
+      {
+        question: "Can I use Menhausen anonymously?",
+        answer: "Yes. We do not require a separate account. Usage is tied to Telegram authentication as described in our Privacy Policy."
+      }
+    ],
     section1: {
       title: "1. Acceptance of Terms",
       content: "By accessing or using our Telegram Mini App and website, you agree to be bound by these Terms of Service."
@@ -249,6 +273,18 @@ export const en = {
   blog: {
     title: "The Journal",
     subtitle: "Insights on psychology, neuroscience, and performance. Written for men who want to optimize their minds.",
+    page_intro: "Our articles translate clinical psychology into plain language for men who do not have time for fluff. Read evidence-based guides on burnout, anxiety, and daily stress management — then apply the techniques in Menhausen's Telegram bot.",
+    faq_title: "Blog FAQ",
+    faq: [
+      {
+        question: "Who writes Menhausen articles?",
+        answer: "Content is produced by the Menhausen team and grounded in CBT, ACT, and occupational stress research. Articles are practical guides, not medical diagnoses."
+      },
+      {
+        question: "Can I use the blog without the app?",
+        answer: "Yes. Every article stands alone. When you are ready to practice, open the Telegram bot for guided exercises based on the same methods."
+      }
+    ],
     seo_title: "Men's Mental Health Blog - Menhausen",
     seo_description: "Articles on stress management, burnout prevention, and anxiety specifically for men.",
     seo_keywords: "men's mental health blog, stress management articles, burnout prevention, anxiety management",
@@ -351,6 +387,19 @@ export const en = {
     retake_test: "Retake Test",
     seo_title: "1-Minute Stress Test",
     seo_description: "Quick anonymous stress assessment for men. 6 questions to evaluate your current stress levels.",
+    intro_heading: "What this test measures",
+    intro_body: "This six-question screen looks at sleep, irritability, focus, and physical tension — common stress signals in men aged 25–45. It is not a clinical diagnosis. Use your result as a quick pulse check and follow up with practical tools if your score is elevated.",
+    page_faq_title: "Stress Test FAQ",
+    page_faq: [
+      {
+        question: "Is this a medical diagnosis?",
+        answer: "No. The test is a self-screening tool for awareness. If you are in crisis or experiencing severe symptoms, contact a qualified professional or emergency services."
+      },
+      {
+        question: "How should I use my result?",
+        answer: "Low scores suggest maintenance habits are working. Moderate or high scores are a signal to try a short CBT or ACT exercise in Menhausen — many users start with a 5-minute stress card."
+      }
+    ],
     seo_keywords: "stress test, stress assessment, stress level, men's mental health test"
   },
   pricing: {
@@ -379,13 +428,45 @@ export const en = {
     premium_feature6: "Early Access to New Features",
     premium_cta: "Get Premium",
     premium_note: "Cancel anytime via Telegram.",
-    seo_title: "Pricing - Menhausen",
+    seo_title: "Pricing Plans - Menhausen",
     seo_description: "Simple, transparent pricing. Start for free. Upgrade for advanced stress management modules.",
+    page_intro: "Menhausen is free to start because stress support should not require a credit card on day one. The basic plan covers daily check-ins and core stress cards forever. Premium adds specialized modules, audio guides, and unlimited history for men who want deeper work.",
+    faq_title: "Pricing FAQ",
+    faq: [
+      {
+        question: "What is included in the free plan?",
+        answer: "Daily check-ins, 10+ basic stress cards, progress tracking, and full Telegram access — with no time limit and no account required."
+      },
+      {
+        question: "Can I cancel Premium anytime?",
+        answer: "Yes. Premium is managed inside Telegram. Cancel whenever you want; your basic access remains."
+      },
+      {
+        question: "Is there a free trial for Premium?",
+        answer: "The basic plan lets you experience Menhausen at no cost. Upgrade to Premium when you need advanced modules or audio guides."
+      }
+    ],
     seo_keywords: "pricing, subscription, premium, stress management pricing, men's mental health cost"
   },
   techniques: {
-    seo_title: "Evidence-Based Stress Management Techniques - CBT & ACT",
+    seo_title: "CBT & ACT Techniques for Stress",
     seo_description: "Learn proven CBT, ACT, and mindfulness techniques for stress management. Practical exercises to reduce anxiety, burnout, and improve mental resilience.",
+    page_intro: "Menhausen packages evidence-based psychology into short, practical exercises you can run in Telegram in 3–7 minutes. Browse the techniques below to find CBT reframing, ACT acceptance work, and somatic grounding tools built for busy men who want results, not lectures.",
+    faq_title: "Frequently Asked Questions",
+    faq: [
+      {
+        question: "Are these techniques evidence-based?",
+        answer: "Yes. Each method is rooted in Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), or mindfulness-based practice — approaches backed by clinical research for stress and anxiety."
+      },
+      {
+        question: "How long does each technique take?",
+        answer: "Most exercises take 3–7 minutes. They are designed for a commute, a break between meetings, or the end of a long day — not a 30-minute meditation session."
+      },
+      {
+        question: "Do I need an account to practice?",
+        answer: "No. Open the Menhausen Telegram bot and start anonymously. No email, no signup, and no personal data required for the basic plan."
+      }
+    ],
     hero: {
       title: "Techniques That Work",
       description: "Scientifically-backed methods from CBT, ACT, and mindfulness psychology. Each technique is designed for busy men who want practical tools, not theory.",
@@ -406,7 +487,22 @@ export const en = {
       description: "Try these techniques with guided practice in our Telegram bot. Completely free to start.",
       button: "Start in Telegram"
     },
-    when_choose_other: "When to Choose Alternatives"
+    when_choose_other: "When to Choose Alternatives",
+    detail_faq_title: "Technique FAQ",
+    detail_faq: [
+      {
+        question: "How often should I practice this technique?",
+        answer: "Start with one session when stress spikes, then repeat daily for a week to build the habit. Most men see the biggest gain from 3–7 minute sessions three to five times per week."
+      },
+      {
+        question: "Can I practice inside Menhausen?",
+        answer: "Yes. Open the Telegram bot for guided prompts based on this technique. Your answers stay private and no account is required on the basic plan."
+      },
+      {
+        question: "Is this a replacement for therapy?",
+        answer: "No. These are self-help exercises rooted in CBT and ACT. They complement professional care but do not replace it for clinical conditions."
+      }
+    ]
   },
   comparisons: {
     seo_title: "Compare Stress Management Apps",
@@ -417,6 +513,22 @@ export const en = {
       cta: "Start in Telegram"
     },
     see_comparison: "See comparison",
+    page_intro: "Choosing a stress app is personal. Menhausen is built for men who want anonymous, practical CBT and ACT tools in Telegram — not long meditations or therapy intake forms. Compare us side-by-side with Calm, BetterHelp, Headspace, Waking Up, and Noom to see which fit matches your schedule and privacy needs.",
+    faq_title: "Comparison FAQ",
+    faq: [
+      {
+        question: "Is Menhausen a meditation app?",
+        answer: "No. Menhausen focuses on short, actionable CBT and ACT exercises — reframing thoughts, grounding the body, and clarifying values — rather than guided meditation libraries."
+      },
+      {
+        question: "How is Menhausen different on privacy?",
+        answer: "You use Menhausen through Telegram with no separate account. We do not require email registration and we do not sell your mental-health data to advertisers."
+      },
+      {
+        question: "Can I try Menhausen before paying?",
+        answer: "Yes. The basic plan is free and includes daily check-ins and core stress cards. Premium unlocks advanced modules and audio guides."
+      }
+    ],
     why: {
       title: "Why Menhausen Stands Out",
       description: "Here's what makes Menhausen different from traditional meditation and therapy apps.",
@@ -434,6 +546,7 @@ export const en = {
     cta_description: "Start with our free plan. No account, no commitment.",
     start_free: "Start Free",
     back: "Back to Comparisons",
+    detail_faq_title: "Comparison FAQ",
     table: {
       feature: "Feature",
       price: "Price",
@@ -716,7 +829,7 @@ export const en = {
     },
     values_clarification: {
       name: "Values Clarification",
-      description: "An ACT technique that helps you identify what truly matters to you.",
+      description: "An ACT technique that helps you identify what truly matters when stress pulls you off course. Clarify your priorities in minutes so daily decisions align with the life you want, not just urgent fires.",
       benefits: [
         "Gain clarity on life direction",
         "Reduce stress from value conflicts",
@@ -738,7 +851,7 @@ export const en = {
     },
     behavioral_activation: {
       name: "Behavioral Activation",
-      description: "A proven technique for breaking the depression-stress cycle through action.",
+      description: "A CBT technique for breaking the stress-inaction loop by scheduling small, meaningful actions. When overwhelm freezes you, planned steps rebuild momentum and reduce rumination.",
       benefits: [
         "Break free from avoidance loops",
         "Boost mood through action",
@@ -760,7 +873,7 @@ export const en = {
     },
     acceptance_practice: {
       name: "Acceptance Practice",
-      description: "An ACT technique that teaches you to make room for difficult emotions.",
+      description: "An ACT exercise for making room for difficult emotions instead of fighting them. Learn to notice stress sensations without letting them dictate your next move.",
       benefits: [
         "Reduce struggle with difficult emotions",
         "Build emotional resilience",
@@ -782,7 +895,7 @@ export const en = {
     },
     defusion_technique: {
       name: "Thought Defusion",
-      description: "Learn to separate yourself from your thoughts.",
+      description: "An ACT method to step back from harsh or catastrophic thoughts. See them as mental events — not facts — so stress narratives lose their grip on your behavior.",
       benefits: [
         "Reduce the impact of negative thought spirals",
         "Gain distance from rumination",
@@ -806,6 +919,22 @@ export const en = {
   professions: {
     seo_title: "Stress Management by Profession",
     seo_description: "Targeted stress management techniques for software developers, entrepreneurs, executives, and other professionals.",
+    page_intro: "Stress looks different depending on your job. Developers battle deadline pressure and imposter syndrome; executives carry decision fatigue; healthcare workers face emotional exhaustion. Explore profession-specific guides with practical CBT and ACT techniques you can apply today.",
+    faq_title: "Profession Guides FAQ",
+    faq: [
+      {
+        question: "Why profession-specific stress advice?",
+        answer: "Generic wellness tips ignore how your role shapes stress — isolation in remote work, revenue pressure for founders, or compassion fatigue in healthcare. Tailored guidance makes techniques easier to apply."
+      },
+      {
+        question: "Can I use Menhausen if my job is not listed?",
+        answer: "Yes. The underlying CBT and ACT methods work across roles. Start with the profession closest to yours or browse our technique library for universal tools."
+      },
+      {
+        question: "How quickly can I start?",
+        answer: "Open the Telegram bot and complete your first stress card in under five minutes. No download and no registration required."
+      }
+    ],
     hero: {
       title: "Stress Management by Profession",
       description: "Every profession has unique stressors. Get tailored techniques that address the specific challenges of your work.",
@@ -827,6 +956,8 @@ export const en = {
     cta_description: "Apply these techniques with guided practice in Telegram. Completely free to start.",
     get_started: "Get Started",
     back: "Back to Professions",
+    detail_meta: "Stress management for {{profession}}s: evidence-based CBT and ACT techniques to handle pressure, burnout, and anxiety.",
+    detail_faq_title: "Profession FAQ",
     subtitle: "Stress management"
   },
   professions_data: {
