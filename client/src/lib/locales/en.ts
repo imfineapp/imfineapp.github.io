@@ -513,7 +513,7 @@ export const en = {
       cta: "Start in Telegram"
     },
     see_comparison: "See comparison",
-    page_intro: "Choosing a stress app is personal. Menhausen is built for men who want anonymous, practical CBT and ACT tools in Telegram — not long meditations or therapy intake forms. Compare us side-by-side with Calm, BetterHelp, Headspace, Waking Up, and Noom to see which fit matches your schedule and privacy needs.",
+    page_intro: "Choosing a stress app is personal. Menhausen is built for men who want anonymous, practical CBT and ACT tools in Telegram — not long meditations or therapy intake forms. Compare us side-by-side with Calm, BetterHelp, Headspace, Waking Up, Noom, and Mental to see which fit matches your schedule and privacy needs.",
     faq_title: "Comparison FAQ",
     faq: [
       {

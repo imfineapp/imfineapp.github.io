@@ -157,6 +157,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://menhausen.com/compare/mental</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://menhausen.com/professions/software-developer</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>

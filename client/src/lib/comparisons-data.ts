@@ -8,6 +8,8 @@ export interface Comparison {
   cons: string[];
   keyDifferences: string[];
   bestFor: string[];
+  menFocus?: boolean;
+  cbtAct?: boolean | "varies";
 }
 
 export const comparisons: Comparison[] = [
@@ -17,6 +19,8 @@ export const comparisons: Comparison[] = [
     tagline: "The #1 app for Sleep, Meditation and Relaxation",
     logo: "🧘",
     pricing: "$14.99/month or $69.99/year",
+    menFocus: false,
+    cbtAct: "varies",
     pros: [
       "Massive library of sleep stories",
       "Celebrity-led meditations",
@@ -43,6 +47,8 @@ export const comparisons: Comparison[] = [
     tagline: "Professional therapy, accessible anytime, anywhere",
     logo: "💬",
     pricing: "$60-80/week (billed monthly)",
+    menFocus: false,
+    cbtAct: "varies",
     pros: [
       "Licensed therapists",
       "Regular video sessions",
@@ -69,6 +75,8 @@ export const comparisons: Comparison[] = [
     tagline: "Mindfulness for every moment",
     logo: "🧠",
     pricing: "$12.99/month or $69.99/year",
+    menFocus: false,
+    cbtAct: "varies",
     pros: [
       "Fun, animated presentations",
       "Strong gamification",
@@ -95,6 +103,8 @@ export const comparisons: Comparison[] = [
     tagline: "A new way to meditate",
     logo: "🌅",
     pricing: "$12.99/month or $99.99/year",
+    menFocus: false,
+    cbtAct: "varies",
     pros: [
       "Philosophical depth",
       "No fluff or corporate vibe",
@@ -121,6 +131,8 @@ export const comparisons: Comparison[] = [
     tagline: "Psychology-backed weight loss",
     logo: "⚖️",
     pricing: "$199/month",
+    menFocus: false,
+    cbtAct: "varies",
     pros: [
       "Psychology-based approach",
       "Food tracking included",
@@ -140,6 +152,43 @@ export const comparisons: Comparison[] = [
       "Menhausen is quick - 3-7 minute sessions"
     ],
     bestFor: ["Those focused on weight loss", "People who want coaching", "Those with significant time to commit"]
+  },
+  {
+    slug: "mental",
+    name: "Mental",
+    tagline: "The #1 app for men — your mind's personal trainer",
+    logo: "🧠",
+    pricing: "7-day free trial, then ~$9.99/month or $59.99/year (no permanent free plan)",
+    menFocus: true,
+    cbtAct: false,
+    pros: [
+      "Strong press coverage (Forbes, GQ, NBC, Men's Journal, WSJ)",
+      "Polished native iOS and Android apps",
+      "Action-oriented, masculine tone that resonates with men",
+      "24/7 AI coaching with quick 15-minute sessions",
+      "Novel 'protocols' (cold shower, push-ups) with celebrity tie-ins"
+    ],
+    cons: [
+      "Requires account creation with email and name",
+      "No anonymity — identity is tied to your data",
+      "App download required (no Telegram or web-only option)",
+      "Content-rich but methodology-light — no CBT/ACT framework",
+      "No permanent free tier — credit card required after trial"
+    ],
+    keyDifferences: [
+      "Menhausen is 100% anonymous (no account, no email, no name)",
+      "Menhausen runs in Telegram — no app download required",
+      "Menhausen uses structured CBT/ACT techniques, not AI chat",
+      "Menhausen offers a permanent free plan with 10+ stress cards",
+      "Menhausen's sessions are 3–7 minutes, not 15-minute coaching blocks"
+    ],
+    bestFor: [
+      "Men who want a polished, dedicated mobile app",
+      "Users who want persistent progress tracking tied to a named profile",
+      "Those who prefer audio content (audiobooks, celebrity-led stories)",
+      "People who enjoy gamified 'protocols' with celebrity tie-ins",
+      "Anyone who values major-media validation (Forbes, GQ, WSJ)"
+    ]
   }
 ];
 

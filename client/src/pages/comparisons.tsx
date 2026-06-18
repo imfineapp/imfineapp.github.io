@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { getFaqFromI18n } from "@/lib/faq";
 import { ArrowRight, Check } from "lucide-react";
 
-const comparisonKeys = ["calm", "betterhelp", "headspace", "waking_up", "noom"];
+const comparisonKeys = ["calm", "betterhelp", "headspace", "waking_up", "noom", "mental"];
 
 export default function Comparisons() {
   const { t } = useTranslation();
