@@ -11,6 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "..", "dist");
 const PORT = Number(process.env.PRERENDER_PORT || 4173);
 const SITE_ORIGIN = process.env.PRERENDER_ORIGIN || `http://localhost:${PORT}`;
+const PROD_ORIGIN = process.env.PRERENDER_PUBLIC_ORIGIN || "https://menhausen.com";
 
 const BLOCKED_HOSTS = [
   "googletagmanager.com",
@@ -93,11 +94,15 @@ async function prerenderRoute(browser, route) {
   }
 }
 
+function normalizePrerenderedHtml(html) {
+  return html.split(SITE_ORIGIN).join(PROD_ORIGIN);
+}
+
 function writePrerenderedOutputs(outputs) {
   for (const [route, html] of outputs) {
     const outPath = routeToFilePath(route);
     mkdirSync(path.dirname(outPath), { recursive: true });
-    writeFileSync(outPath, html, "utf-8");
+    writeFileSync(outPath, normalizePrerenderedHtml(html), "utf-8");
     console.log(`✓ Wrote ${route} -> ${outPath}`);
   }
 }

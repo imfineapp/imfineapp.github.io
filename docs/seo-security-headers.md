@@ -65,3 +65,16 @@ curl -sI https://menhausen.com/ | grep -iE 'strict-transport|content-security|x-
 Re-run your SEO crawl tool to confirm HSTS / CSP / nosniff warnings are cleared for `menhausen.com` HTML responses.
 
 **Note:** Third-party assets (Google Fonts, gtag.js, Cloudflare Insights) are served from their own origins; their headers cannot be controlled from this repo.
+
+## 6. Accepted SEO audit warnings (third-party)
+
+The following warnings from crawl tools are **expected** and **not actionable** in this repository:
+
+| Source | Typical warnings | Decision |
+|--------|------------------|----------|
+| `fonts.googleapis.com` / `fonts.gstatic.com` | Missing HSTS, incorrect media type, underscore in font filenames | Keep Google Fonts |
+| `googletagmanager.com` / `google-analytics.com` | Incorrect media type | Required analytics |
+| `static.cloudflareinsights.com` | Incorrect media type, HSTS | Injected by Cloudflare |
+| External follow links (Telegram, social) | External follow | Intentional for our properties |
+
+Do not remove Google Fonts or analytics solely to clear these warnings. Focus fixes on first-party HTML, assets, and prerender output under `menhausen.com`.

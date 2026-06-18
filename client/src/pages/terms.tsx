@@ -1,9 +1,12 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
+import { PageFaq } from "@/components/page-faq";
 import { useTranslation } from "react-i18next";
+import { getFaqFromI18n } from "@/lib/faq";
 
 export default function Terms() {
   const { t } = useTranslation();
+  const faqItems = getFaqFromI18n(t, "terms.faq");
 
   return (
     <Layout>
@@ -19,35 +22,42 @@ export default function Terms() {
             {t('terms.intro')}
           </p>
 
+          <section className="mb-8">
+            <h2 className="font-heading font-bold text-2xl mb-4">{t('terms.title')}</h2>
+            <p className="text-muted-foreground font-sans leading-relaxed">{t('terms.page_intro')}</p>
+          </section>
+
           <div className="space-y-8">
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('terms.section1.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('terms.section1.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('terms.section1.content')}</p>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('terms.section2.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('terms.section2.title')}</h2>
               <div className="p-4 border-l-4 border-primary bg-primary/5 rounded-r-lg">
                 <p className="text-foreground font-sans font-medium">{t('terms.section2.content')}</p>
               </div>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('terms.section3.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('terms.section3.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('terms.section3.content')}</p>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('terms.section4.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('terms.section4.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('terms.section4.content')}</p>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('terms.section5.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('terms.section5.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('terms.section5.content')}</p>
             </section>
           </div>
         </div>
+
+        <PageFaq title={t("terms.faq_title")} items={faqItems} />
       </div>
     </Layout>
   );

@@ -21,12 +21,12 @@ export default function Privacy() {
 
           <div className="space-y-8">
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section1.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('privacy.section1.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('privacy.section1.content')}</p>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section2.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('privacy.section2.title')}</h2>
               <p className="text-muted-foreground font-sans mb-4">{t('privacy.section2.content')}</p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground font-sans">
                 {(t('privacy.section2.list', { returnObjects: true }) as string[]).map((item, i) => (
@@ -36,17 +36,17 @@ export default function Privacy() {
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section3.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('privacy.section3.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('privacy.section3.content')}</p>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section4.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('privacy.section4.title')}</h2>
               <p className="text-muted-foreground font-sans">{t('privacy.section4.content')}</p>
             </section>
 
             <section>
-              <h3 className="font-heading font-bold text-2xl mb-4">{t('privacy.section5.title')}</h3>
+              <h2 className="font-heading font-bold text-2xl mb-4">{t('privacy.section5.title')}</h2>
               <div className="p-4 border-l-4 border-primary bg-primary/5 rounded-r-lg">
                 <p className="text-foreground font-sans font-medium">{t('privacy.section5.content')}</p>
               </div>

@@ -1,9 +1,11 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { StructuredData } from "@/components/structured-data";
+import { PageFaq } from "@/components/page-faq";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Link, useRoute, Redirect } from "wouter";
 import { useTranslation } from "react-i18next";
+import { getFaqFromI18n } from "@/lib/faq";
 import { ArrowLeft, Brain, Heart, Sparkles, CheckCircle2 } from "lucide-react";
 
 const categoryIcons: Record<string, React.ReactElement> = {
@@ -52,6 +54,7 @@ export default function TechniqueDetail() {
   const benefits = (t(`techniques_data.${key}.benefits`, { returnObjects: true }) as string[]) || [];
   const howItWorks = (t(`techniques_data.${key}.howItWorks`, { returnObjects: true }) as string[]) || [];
   const questions = (t(`techniques_data.${key}.questions`, { returnObjects: true }) as string[]) || [];
+  const detailFaq = getFaqFromI18n(t, "techniques.detail_faq");
 
   const howtoSteps = howItWorks.map((step, index) => ({
     "@type": "HowToStep",
@@ -63,7 +66,7 @@ export default function TechniqueDetail() {
   return (
     <Layout>
       <SEO 
-        title={`${name} - ${t('techniques.seo_title')}`}
+        title={name}
         description={description}
         canonical={`/techniques/${slug}`}
       />
@@ -167,6 +170,8 @@ export default function TechniqueDetail() {
                 ))}
             </div>
           </section>
+
+          <PageFaq title={t("techniques.detail_faq_title")} items={detailFaq} />
 
           {/* CTA */}
           <section className="py-12 bg-primary text-black rounded-2xl p-8 md:p-12 text-center">

@@ -1,15 +1,17 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
-import { StructuredData } from "@/components/structured-data";
+import { PageFaq } from "@/components/page-faq";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { getFaqFromI18n } from "@/lib/faq";
 import { ArrowRight, Check } from "lucide-react";
 
-const comparisonKeys = ["calm", "betterhelp", "headspace", "waking_up", "noom", "mental"];
+const comparisonKeys = ["calm", "betterhelp", "headspace", "waking_up", "noom"];
 
 export default function Comparisons() {
   const { t } = useTranslation();
+  const faqItems = getFaqFromI18n(t, "comparisons.faq");
 
   return (
     <Layout>
@@ -33,6 +35,15 @@ export default function Comparisons() {
               {t('comparisons.hero.cta')}
             </TelegramCTA>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 border-t border-border">
+        <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">{t("comparisons.hero.title")}</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            {t("comparisons.page_intro")}
+          </p>
         </div>
       </section>
 
@@ -77,6 +88,8 @@ export default function Comparisons() {
           </div>
         </div>
       </section>
+
+      <PageFaq title={t("comparisons.faq_title")} items={faqItems} />
 
       {/* Why Menhausen Section */}
       <section className="py-20">

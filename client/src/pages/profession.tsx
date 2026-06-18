@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { SEO } from "@/components/seo";
 import { StructuredData } from "@/components/structured-data";
+import { PageFaq } from "@/components/page-faq";
 import { TelegramCTA } from "@/components/telegram-cta";
 import { Link, useRoute, Redirect } from "wouter";
 import { useTranslation } from "react-i18next";
@@ -46,21 +47,24 @@ export default function ProfessionDetail() {
   const techniques = (t(`professions_data.${key}.techniques`, { returnObjects: true }) as string[]) || [];
   const tips = (t(`professions_data.${key}.tips`, { returnObjects: true }) as string[]) || [];
 
+  const professionFaq = [
+    { question: `How do ${name}s manage stress?`, answer: stressFactors[0] || description },
+    { question: `What stress techniques work for ${name}s?`, answer: techniques.join(", ") },
+    { question: t("professions.practical_tips"), answer: tips[0] || description },
+  ];
+
+  const professionMeta = t("professions.detail_meta", { profession: name.toLowerCase() });
+
   return (
     <Layout>
       <SEO 
-        title={`${name} Stress Management - ${t('professions.seo_title')}`}
-        description={`Stress management for ${name.toLowerCase()}s. ${description} Learn evidence-based techniques.`}
+        title={`${name} Stress Management`}
+        description={professionMeta}
         canonical={`/professions/${slug}`}
       />
       <StructuredData 
         type="faq" 
-        data={{
-          faqItems: [
-            { question: `How do ${name}s manage stress?`, answer: stressFactors[0] || "" },
-            { question: `What stress techniques work for ${name}s?`, answer: techniques.join(", ") }
-          ]
-        }}
+        data={{ faqItems: professionFaq }}
       />
 
       <article className="py-16">
@@ -167,6 +171,8 @@ export default function ProfessionDetail() {
               </Link>
             </div>
           </section>
+
+          <PageFaq title={t("professions.detail_faq_title")} items={professionFaq} />
 
           {/* CTA */}
           <section className="py-12 bg-primary text-black rounded-2xl p-8 md:p-12 text-center">

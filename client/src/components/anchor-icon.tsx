@@ -10,7 +10,7 @@ interface AnchorIconProps {
 export function AnchorIcon({ className, loading = "eager", title = "Menhausen anchor symbol" }: AnchorIconProps) {
   return (
     <img 
-      src="/anchor_menhausen_symbol.svg" 
+      src="/anchor-menhausen-symbol.svg" 
       alt="Menhausen anchor symbol" 
       title={title}
       width={277}

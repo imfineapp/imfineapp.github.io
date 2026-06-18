@@ -15,6 +15,7 @@ alwaysApply: false
 - **Stack:** React SPA (`wouter`) built with Vite, deployed to **GitHub Pages** behind **Cloudflare**.
 - **Crawlers** receive static HTML from **build-time prerender** (`scripts/prerender.mjs`), not the empty JS shell.
 - **Route list** is defined once in [`scripts/routes.mjs`](../../scripts/routes.mjs) (static routes + slugs parsed from data files).
+- **Prerender** must replace `http://localhost:4173` with `https://menhausen.com` in captured HTML (`canonical`, `og:url`, `og:image`, `hreflang`, JSON-LD `url`). Set `PRERENDER_PUBLIC_ORIGIN` to override.
 
 ## Adding a new page or route
 
@@ -23,21 +24,38 @@ alwaysApply: false
 3. Add the static path to `STATIC_ROUTES` in [`scripts/routes.mjs`](../../scripts/routes.mjs) if it is not derived from data slugs.
 4. Run `npm run generate:sitemap` (or full `npm run build:client`) so [`client/public/sitemap.xml`](../../client/public/sitemap.xml) stays in sync.
 5. Verify prerender output: `dist/<path>.html` (or `dist/index.html` for `/`) must exist and return **200** on GitHub Pages without a trailing-slash redirect.
+6. **List card keys** (e.g. `comparisonKeys` in [`comparisons.tsx`](../../client/src/pages/comparisons.tsx)) must match data slugs and sitemap — never link to pages without data.
 
 ## Every page must have
 
 - Exactly **one** descriptive `<h1>` (visible, not `sr-only` only).
-- The [`<SEO>`](../../client/src/components/seo.tsx) component with `title` (≥ 20 chars with brand suffix), `description`, and `canonical`.
-- Meaningful body content in the prerendered HTML (not an empty `#root`).
+- The [`<SEO>`](../../client/src/components/seo.tsx) component with `title`, `description`, and `canonical`.
+- **Title** ≤ 60 characters (brand suffix ` | Menhausen` only when it fits and brand is not already in the title).
+- **Meta description** between 70 and 155 characters.
+- **Heading hierarchy:** no skipped levels before footer. Footer uses `<h3>`, so page content must include at least one `<h2>` before the footer.
+- Meaningful body content in the prerendered HTML (intro + FAQ on list/detail pages where applicable).
+
+## hreflang
+
+[`seo.tsx`](../../client/src/components/seo.tsx) must emit self-referential alternates on the canonical path:
+
+- `hreflang="en"` → bare URL (no `?lang=en`)
+- `hreflang="ru"` → `?lang=ru`
+- `hreflang="x-default"` → bare URL
 
 ## Images
 
 Every `<img>` must include:
 
-- `alt` — descriptive text, or `alt=""` for decorative tracking pixels only.
-- `width` and `height` — intrinsic dimensions to prevent layout shift.
+- `alt` — descriptive text (`alt="Yandex Metrica"` for the Yandex noscript pixel).
+- `width` and `height` — intrinsic dimensions (use `1`×`1` for tracking pixels).
 
 Prefer [`AnchorIcon`](../../client/src/components/anchor-icon.tsx) for the logo mark.
+
+## Asset filenames
+
+- Configure Vite `rollupOptions.output` with `hashCharacters: 'hex'` and sanitized `assetFileNames` — **do not** post-build rename assets (breaks JS bundle references).
+- Public files under `client/public/` must use hyphens, not underscores (e.g. `anchor-menhausen-symbol.svg`).
 
 ## Internal linking
 
@@ -51,6 +69,15 @@ Prefer [`AnchorIcon`](../../client/src/components/anchor-icon.tsx) for the logo 
 - Keep the CSP meta tag in [`client/index.html`](../../client/index.html) aligned with Cloudflare rules.
 - When adding a new third-party origin (analytics, fonts, APIs), update **both** CSP locations.
 
+## Accepted third-party SEO warnings (do not “fix”)
+
+These are outside our control; documented in [`docs/seo-security-headers.md`](../../docs/seo-security-headers.md):
+
+- Google Fonts — HSTS, media type, underscore in font URLs
+- `gtag.js` / Google Analytics — media type
+- Cloudflare Insights — media type / HSTS on their origin
+- External **follow** links to our own Telegram/social resources — intentional
+
 ## Build & deploy checklist
 
 Before merging landing changes:
@@ -62,10 +89,11 @@ npm run build:client
 Confirm:
 
 - [ ] `dist/<route>.html` exists for all routes in `scripts/routes.mjs` (`dist/index.html` for `/`)
-- [ ] Each prerendered page has unique `<title>`, one `<h1>`, and internal `<a href="/...">` links
+- [ ] Each prerendered page has unique `<title>` (≤ 60 chars), one `<h1>`, at least one content `<h2>`, and internal `<a href="/...">` links
+- [ ] `canonical` / `hreflang` / `og:url` use `https://menhausen.com`, not `localhost`
 - [ ] `client/public/sitemap.xml` includes all public routes
 - [ ] No new `<img>` without `alt` + `width` + `height`
-- [ ] Asset filenames under `dist/assets/` contain no underscores (Vite plugin renames them)
+- [ ] No `_` in `dist/assets/*` filenames or asset URLs in HTML/JS
 
 ## Do not
 
@@ -73,3 +101,4 @@ Confirm:
 - Add routes to `sitemap.xml` manually without updating `scripts/routes.mjs`.
 - Remove the prerender step from CI ([`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml)).
 - Overwrite `dist/index.html` during prerender before all routes are captured (prerender buffers output in memory).
+- Use `sanitizeAssetNamesPlugin` or any post-build asset rename that does not update JS bundle references.

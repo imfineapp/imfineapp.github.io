@@ -11,6 +11,9 @@ interface SEOProps {
   author?: string;
 }
 
+const TITLE_MAX_LENGTH = 60;
+const availableLangs = ["en", "ru"] as const;
+
 /** Self-referential canonical query: only `lang` (i18n), no UTM or other tracking. */
 function canonicalSearchSuffix(): string {
   const params = new URLSearchParams(window.location.search);
@@ -19,6 +22,14 @@ function canonicalSearchSuffix(): string {
     return `?lang=${encodeURIComponent(lang)}`;
   }
   return "";
+}
+
+function buildFullTitle(title: string, brandName: string): string {
+  if (title.includes(brandName)) {
+    return title;
+  }
+  const withBrand = `${title} | ${brandName}`;
+  return withBrand.length <= TITLE_MAX_LENGTH ? withBrand : title;
 }
 
 function getOrCreateMetaTag(property: string, attribute: "name" | "property" = "property"): HTMLElement {
@@ -59,28 +70,24 @@ export function SEO({
 }: SEOProps) {
   const [location] = useLocation();
   const currentLang = i18n.language || "en";
-  const availableLangs = ["en", "ru"];
 
   useEffect(() => {
     const origin = window.location.origin;
     const brandName = i18n.t('seo.brand_name');
-    const fullTitle = `${title} | ${brandName}`;
+    const fullTitle = buildFullTitle(title, brandName);
     document.title = fullTitle;
     document.querySelector('meta[name="keywords"]')?.remove();
     
-    // Base meta description
     if (description) {
       const metaDescription = getOrCreateMetaTag("description", "name") as HTMLMetaElement;
       metaDescription.setAttribute("content", description);
     }
 
-    // Absolute canonical URL (path from prop or router) + lang when present in address bar
     const path = canonical ?? location;
     const canonicalUrl = `${origin}${path}${canonicalSearchSuffix()}`;
     const linkCanonical = getOrCreateLinkTag("canonical");
     linkCanonical.setAttribute("href", canonicalUrl);
 
-    // Open Graph tags
     const ogTitle = getOrCreateMetaTag("og:title") as HTMLMetaElement;
     ogTitle.setAttribute("content", fullTitle);
 
@@ -101,7 +108,6 @@ export function SEO({
       : `${origin}/favicon.ico`;
     ogImage.setAttribute("content", imageUrl);
 
-    // Twitter Card tags
     const twitterCard = getOrCreateMetaTag("twitter:card", "name") as HTMLMetaElement;
     twitterCard.setAttribute("content", "summary_large_image");
 
@@ -121,40 +127,35 @@ export function SEO({
       metaAuthor.setAttribute("content", author);
     }
 
-    // hreflang tags
-    // Remove existing hreflang tags (only those we manage)
     const existingHreflang = document.querySelectorAll("link[rel='alternate'][hreflang]");
     existingHreflang.forEach(link => {
-      // Only remove if it's one of our managed languages or x-default
       const hreflang = link.getAttribute("hreflang");
-      if (hreflang && (availableLangs.includes(hreflang) || hreflang === "x-default")) {
+      if (hreflang && (availableLangs.includes(hreflang as typeof availableLangs[number]) || hreflang === "x-default")) {
         link.remove();
       }
     });
-    
-    // Add hreflang for each language
-    availableLangs.forEach(lang => {
-      const hreflangLink = document.createElement("link");
-      hreflangLink.setAttribute("rel", "alternate");
-      hreflangLink.setAttribute("hreflang", lang);
-      // Build URL with language parameter
-      const separator = location.includes("?") ? "&" : "?";
-      hreflangLink.setAttribute("href", `${origin}${location}${separator}lang=${lang}`);
-      document.head.appendChild(hreflangLink);
-    });
 
-    // Add x-default hreflang
+    const hreflangBase = `${origin}${path}`;
+
+    const enHreflang = document.createElement("link");
+    enHreflang.setAttribute("rel", "alternate");
+    enHreflang.setAttribute("hreflang", "en");
+    enHreflang.setAttribute("href", hreflangBase);
+    document.head.appendChild(enHreflang);
+
+    const ruHreflang = document.createElement("link");
+    ruHreflang.setAttribute("rel", "alternate");
+    ruHreflang.setAttribute("hreflang", "ru");
+    ruHreflang.setAttribute("href", `${hreflangBase}?lang=ru`);
+    document.head.appendChild(ruHreflang);
+
     const defaultHreflang = document.createElement("link");
     defaultHreflang.setAttribute("rel", "alternate");
     defaultHreflang.setAttribute("hreflang", "x-default");
-    defaultHreflang.setAttribute("href", `${origin}${location}`);
+    defaultHreflang.setAttribute("href", hreflangBase);
     document.head.appendChild(defaultHreflang);
 
-    // Cleanup function
-    return () => {
-      // Note: We don't remove meta tags on cleanup to avoid flickering
-      // They will be updated on next render
-    };
+    return () => {};
   }, [title, description, canonical, image, type, author, location, currentLang]);
 
   return null;
