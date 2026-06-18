@@ -22,7 +22,7 @@ alwaysApply: false
 2. If the route is dynamic, add a `slug` to the appropriate data file under `client/src/lib/`.
 3. Add the static path to `STATIC_ROUTES` in [`scripts/routes.mjs`](../../scripts/routes.mjs) if it is not derived from data slugs.
 4. Run `npm run generate:sitemap` (or full `npm run build:client`) so [`client/public/sitemap.xml`](../../client/public/sitemap.xml) stays in sync.
-5. Verify prerender output: `dist/<path>/index.html` must exist and return **200** on GitHub Pages.
+5. Verify prerender output: `dist/<path>.html` (or `dist/index.html` for `/`) must exist and return **200** on GitHub Pages without a trailing-slash redirect.
 
 ## Every page must have
 
@@ -61,7 +61,7 @@ npm run build:client
 
 Confirm:
 
-- [ ] `dist/<route>/index.html` exists for all routes in `scripts/routes.mjs`
+- [ ] `dist/<route>.html` exists for all routes in `scripts/routes.mjs` (`dist/index.html` for `/`)
 - [ ] Each prerendered page has unique `<title>`, one `<h1>`, and internal `<a href="/...">` links
 - [ ] `client/public/sitemap.xml` includes all public routes
 - [ ] No new `<img>` without `alt` + `width` + `height`

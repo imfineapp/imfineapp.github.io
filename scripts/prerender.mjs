@@ -19,11 +19,12 @@ const BLOCKED_HOSTS = [
   "cloudflareinsights.com",
 ];
 
+/** GitHub Pages serves `path.html` at `/path` (200). `path/index.html` only serves `/path/` and 301-redirects `/path`. */
 function routeToFilePath(route) {
   if (route === "/") {
     return path.join(distDir, "index.html");
   }
-  return path.join(distDir, route.slice(1), "index.html");
+  return path.join(distDir, `${route.slice(1)}.html`);
 }
 
 function startStaticServer(spaShell) {
