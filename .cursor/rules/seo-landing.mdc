@@ -1,0 +1,75 @@
+---
+description: SEO and crawlability standards for the Menhausen landing (React + Vite + GitHub Pages)
+globs:
+  - client/**
+  - scripts/**
+  - vite.config.ts
+  - .github/workflows/deploy.yml
+alwaysApply: false
+---
+
+# Menhausen landing — SEO development rules
+
+## Architecture
+
+- **Stack:** React SPA (`wouter`) built with Vite, deployed to **GitHub Pages** behind **Cloudflare**.
+- **Crawlers** receive static HTML from **build-time prerender** (`scripts/prerender.mjs`), not the empty JS shell.
+- **Route list** is defined once in [`scripts/routes.mjs`](../../scripts/routes.mjs) (static routes + slugs parsed from data files).
+
+## Adding a new page or route
+
+1. Add the route in [`client/src/App.tsx`](../../client/src/App.tsx).
+2. If the route is dynamic, add a `slug` to the appropriate data file under `client/src/lib/`.
+3. Add the static path to `STATIC_ROUTES` in [`scripts/routes.mjs`](../../scripts/routes.mjs) if it is not derived from data slugs.
+4. Run `npm run generate:sitemap` (or full `npm run build:client`) so [`client/public/sitemap.xml`](../../client/public/sitemap.xml) stays in sync.
+5. Verify prerender output: `dist/<path>/index.html` must exist and return **200** on GitHub Pages.
+
+## Every page must have
+
+- Exactly **one** descriptive `<h1>` (visible, not `sr-only` only).
+- The [`<SEO>`](../../client/src/components/seo.tsx) component with `title` (≥ 20 chars with brand suffix), `description`, and `canonical`.
+- Meaningful body content in the prerendered HTML (not an empty `#root`).
+
+## Images
+
+Every `<img>` must include:
+
+- `alt` — descriptive text, or `alt=""` for decorative tracking pixels only.
+- `width` and `height` — intrinsic dimensions to prevent layout shift.
+
+Prefer [`AnchorIcon`](../../client/src/components/anchor-icon.tsx) for the logo mark.
+
+## Internal linking
+
+- List/index pages must link to **every** detail page (techniques, professions, compare, blog).
+- Detail pages should link back to their index and to 1–2 related sections (techniques ↔ professions ↔ stress-test).
+- Nav and footer links live in [`client/src/components/layout.tsx`](../../client/src/components/layout.tsx); keep them updated.
+
+## Security headers
+
+- GitHub Pages cannot set response headers; use **Cloudflare** (see [`docs/seo-security-headers.md`](../../docs/seo-security-headers.md)).
+- Keep the CSP meta tag in [`client/index.html`](../../client/index.html) aligned with Cloudflare rules.
+- When adding a new third-party origin (analytics, fonts, APIs), update **both** CSP locations.
+
+## Build & deploy checklist
+
+Before merging landing changes:
+
+```bash
+npm run build:client
+```
+
+Confirm:
+
+- [ ] `dist/<route>/index.html` exists for all routes in `scripts/routes.mjs`
+- [ ] Each prerendered page has unique `<title>`, one `<h1>`, and internal `<a href="/...">` links
+- [ ] `client/public/sitemap.xml` includes all public routes
+- [ ] No new `<img>` without `alt` + `width` + `height`
+- [ ] Asset filenames under `dist/assets/` contain no underscores (Vite plugin renames them)
+
+## Do not
+
+- Rely on client-only `document.title` / meta updates for SEO — prerender must capture them.
+- Add routes to `sitemap.xml` manually without updating `scripts/routes.mjs`.
+- Remove the prerender step from CI ([`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml)).
+- Overwrite `dist/index.html` during prerender before all routes are captured (prerender buffers output in memory).

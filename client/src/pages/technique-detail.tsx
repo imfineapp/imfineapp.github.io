@@ -150,6 +150,24 @@ export default function TechniqueDetail() {
             </div>
           </section>
 
+          {/* Related techniques */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">{t('techniques.explore_other')}</h2>
+            <div className="flex flex-wrap gap-3">
+              {validSlugs
+                .filter((relatedSlug) => relatedSlug !== slug)
+                .map((relatedSlug) => (
+                  <Link
+                    key={relatedSlug}
+                    href={`/techniques/${relatedSlug}`}
+                    className="px-4 py-2 rounded-full border border-border bg-card hover:border-primary/50 hover:text-primary transition-colors text-sm font-medium"
+                  >
+                    {t(`techniques_data.${slugToKey(relatedSlug)}.name`)}
+                  </Link>
+                ))}
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="py-12 bg-primary text-black rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">{t('techniques.practice_now')}</h2>
